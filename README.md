@@ -15,6 +15,8 @@ El proyecto se dividió en cuatro módulos: test_VGA , buffer_ram_dp, VGA_Driver
 ### test_VGA
 Es el top del proyecto y tiene como función llamar a todos los demás módulos con los inputs y outputs correctos. También se encarga de enviar y recibir los datos de los pixeles y reloj al monitor y la cámara, asi como de recibir la selección del filtro en lo switches de la FPGA.
 
+A continuacion vemos el código del modulo test_VGA
+
 ```verilog
 module test_VGA(
     input wire clk,           // board clock: 32 MHz quacho 100 MHz nexys4 
@@ -87,10 +89,6 @@ solo RGB 111
 	assign VGA_G =data_RGB444[1];
 	assign VGA_B =data_RGB444[0];
 
-
-
-
-
 /* ***************************************************************************
 Se crear dos relojes, uno para la pantalla de 31.5 MHz y otro para la camara 
 de 24 MHz
@@ -126,7 +124,6 @@ buffer_ram_dp #( AW,DW)
 	.data_out(data_mem)
 	);
 	
-
 /* ****************************************************************************
 VGA_Driver640x480
 **************************************************************************** */
@@ -159,14 +156,9 @@ always @ (VGA_posX, VGA_posY) begin
 		DP_RAM_addr_out=tempx+tempy*CAM_SCREEN_X;	
 end
 
-
-
-
-
 assign resetcam=rst;
 assign xclk=clk24M;
 assign pwdn=0;
-
 
 //assign DP_RAM_addr_out=10000;
 
