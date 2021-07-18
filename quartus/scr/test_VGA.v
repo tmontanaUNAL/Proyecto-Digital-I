@@ -101,8 +101,7 @@ por lo tanto, los bits menos significactivos deben ser cero
 **************************************************************************** */
 assign clk50M =clk;
 
-
-clk50to108_2 clk108(
+clk50to31 clk108(
 	.inclk0(clk50M),
 	.c0(clk108M)
 	
@@ -113,10 +112,6 @@ clk50to24 clk24(
 	.c0(clk24M)
 	
 );
-
-
-//assign clk25M=clk;
-//assign clkout=clk25M;
 
 /* ****************************************************************************
 buffer_ram_dp buffer memoria dual port y reloj de lectura y escritura separados

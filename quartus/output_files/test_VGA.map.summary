@@ -1,4 +1,4 @@
-Analysis & Synthesis Status : Successful - Sun Jul 18 10:10:21 2021
+Analysis & Synthesis Status : Successful - Sun Jul 18 11:25:05 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : test_VGA
 Top-level Entity Name : test_VGA
@@ -7,7 +7,7 @@ Total logic elements : 94
     Total combinational functions : 94
     Dedicated logic registers : 42
 Total registers : 42
-Total pins : 34
+Total pins : 30
 Total virtual pins : 0
 Total memory bits : 65,536
 Embedded Multiplier 9-bit elements : 0

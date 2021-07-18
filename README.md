@@ -12,7 +12,7 @@ Es el top del proyecto y tiene como función llamar a todos los demás módulos 
 
 ```verilog
 module test_VGA(
-    input wire clk,           // board clock: 32 MHz quacho 100 MHz nexys4 
+    input wire clk,           // reloj de la tarjeta 50MHz
     input wire rst,         	// reset button
 	 
 	  
@@ -75,22 +75,15 @@ wire [10:0]VGA_posY;		   // Determinar la pos de memoria que viene del VGA
 
 
 /* ****************************************************************************
-la pantalla VGA es RGB 444, pero el almacenamiento en memoria se hace 332
-por lo tanto, los bits menos significactivos deben ser cero
+la pantalla VGA es RGB 444, pero por falta de un DAC en la tarjeta se envia solo RGB 111
 **************************************************************************** */
 	assign VGA_R =data_RGB444[2];
 	assign VGA_G =data_RGB444[1];
 	assign VGA_B =data_RGB444[0];
 
 
-
-
-
 /* ****************************************************************************
-  Este bloque se debe modificar según sea le caso. El ejemplo esta dado para
-  fpga Spartan6 lx9 a 32MHz.
-  usar "tools -> IP Generator ..."  y general el ip con Clocking Wizard
-  el bloque genera un reloj de 25Mhz usado para el VGA , a partir de una frecuencia de 12 Mhz
+  Se crear dos relojes, uno para la pantalla de 31.5 MHz y otro para la camara de 24 MHz
 **************************************************************************** */
 assign clk50M =clk;
 
@@ -107,14 +100,8 @@ clk50to24 clk24(
 	
 );
 
-
-//assign clk25M=clk;
-//assign clkout=clk25M;
-
 /* ****************************************************************************
-buffer_ram_dp buffer memoria dual port y reloj de lectura y escritura separados
-Se debe configurar AW  según los calculos realizados en el Wp01
-se recomiendia dejar DW a 8, con el fin de optimizar recursos  y hacer RGB 332
+Modulo de RAM, en la tarjeta es solo suficiente para guardar una imagen de 160x120
 **************************************************************************** */
 buffer_ram_dp #( AW,DW)
 	DP_RAM(  

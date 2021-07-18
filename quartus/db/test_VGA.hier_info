@@ -12,18 +12,15 @@ dat[7] => dat[7].IN1
 sync => sync.IN1
 pclk => pclk.IN2
 href => href.IN1
-pwdn << <GND>
-xclk << clk50to24:clk24.c0
-resetcam << rst.DB_MAX_OUTPUT_PORT_TYPE
-VGA_Hsync_n << VGA_Driver640x480:VGA640x480.Hsync_n
-VGA_Vsync_n << VGA_Driver640x480:VGA640x480.Vsync_n
-VGA_R << VGA_Driver640x480:VGA640x480.pixelOut
-VGA_G << VGA_Driver640x480:VGA640x480.pixelOut
-VGA_B << VGA_Driver640x480:VGA640x480.pixelOut
-clkout << <GND>
-bntr => ~NO_FANOUT~
-bntl => ~NO_FANOUT~
-init => ~NO_FANOUT~
+pwdn <= <GND>
+xclk <= clk50to24:clk24.c0
+resetcam <= rst.DB_MAX_OUTPUT_PORT_TYPE
+VGA_Hsync_n <= VGA_Driver640x480:VGA640x480.Hsync_n
+VGA_Vsync_n <= VGA_Driver640x480:VGA640x480.Vsync_n
+VGA_R <= VGA_Driver640x480:VGA640x480.pixelOut
+VGA_G <= VGA_Driver640x480:VGA640x480.pixelOut
+VGA_B <= VGA_Driver640x480:VGA640x480.pixelOut
+clkout <= <GND>
 FILTER[0] => FILTER[0].IN1
 FILTER[1] => FILTER[1].IN1
 FILTER[2] => FILTER[2].IN1
@@ -32,17 +29,16 @@ FILTER[4] => FILTER[4].IN1
 FILTER[5] => FILTER[5].IN1
 FILTER[6] => FILTER[6].IN1
 FILTER[7] => FILTER[7].IN1
-outPrueba << <GND>
 
 
-|test_VGA|clk50to108_2:clk108
+|test_VGA|clk50to31:clk108
 inclk0 => sub_wire1[0].IN1
 c0 <= altpll:altpll_component.clk
 
 
-|test_VGA|clk50to108_2:clk108|altpll:altpll_component
-inclk[0] => clk50to108_2_altpll:auto_generated.inclk[0]
-inclk[1] => clk50to108_2_altpll:auto_generated.inclk[1]
+|test_VGA|clk50to31:clk108|altpll:altpll_component
+inclk[0] => clk50to31_altpll:auto_generated.inclk[0]
+inclk[1] => clk50to31_altpll:auto_generated.inclk[1]
 fbin => ~NO_FANOUT~
 pllena => ~NO_FANOUT~
 clkswitch => ~NO_FANOUT~
@@ -100,7 +96,7 @@ fref <= <GND>
 icdrclk <= <GND>
 
 
-|test_VGA|clk50to108_2:clk108|altpll:altpll_component|clk50to108_2_altpll:auto_generated
+|test_VGA|clk50to31:clk108|altpll:altpll_component|clk50to31_altpll:auto_generated
 clk[0] <= pll1.CLK
 clk[1] <= pll1.CLK1
 clk[2] <= pll1.CLK2

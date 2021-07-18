@@ -143,7 +143,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 71        :        :                   :      
 clkout                       : 72        : output : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 73        :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 74        :        :                   :         : 5         :                
-outPrueba                    : 75        : output : 2.5 V             :         : 5         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 75        :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 76        :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 77        :        :                   :         : 5         :                
 VCCINT                       : 78        : power  :                   : 1.2V    :           :                
@@ -155,11 +155,11 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 83        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : 84        :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 85        :        :                   :         : 5         :                
 rst                          : 86        : input  : 2.5 V             :         : 5         : Y              
-init                         : 87        : input  : 2.5 V             :         : 5         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 87        :        :                   :         : 5         :                
 dat[0]                       : 88        : input  : 2.5 V             :         : 5         : Y              
 sync                         : 89        : input  : 2.5 V             :         : 5         : Y              
-bntl                         : 90        : input  : 2.5 V             :         : 6         : Y              
-bntr                         : 91        : input  : 2.5 V             :         : 6         : Y              
+GND+                         : 90        :        :                   :         : 6         :                
+GND+                         : 91        :        :                   :         : 6         :                
 CONF_DONE                    : 92        :        :                   :         : 6         :                
 VCCIO6                       : 93        : power  :                   : 2.5V    : 6         :                
 MSEL0                        : 94        :        :                   :         : 6         :                
