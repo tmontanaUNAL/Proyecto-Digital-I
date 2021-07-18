@@ -1,0 +1,123 @@
+# Reading pref.tcl
+# do test_VGA_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/difao/OneDrive/Documents/Digital\ I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr {C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/clk50to108_2.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:15:23 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr" C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/clk50to108_2.v 
+# -- Compiling module clk50to108_2
+# 
+# Top level modules:
+# 	clk50to108_2
+# End time: 18:15:23 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/difao/OneDrive/Documents/Digital\ I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr {C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/FSM_game.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:15:23 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr" C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/FSM_game.v 
+# -- Compiling module FSM_game
+# 
+# Top level modules:
+# 	FSM_game
+# End time: 18:15:24 on Dec 15,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/difao/OneDrive/Documents/Digital\ I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr {C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/VGA_driver.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:15:24 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr" C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/VGA_driver.v 
+# -- Compiling module VGA_Driver640x480
+# 
+# Top level modules:
+# 	VGA_Driver640x480
+# End time: 18:15:24 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/difao/OneDrive/Documents/Digital\ I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr {C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/test_VGA.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:15:24 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr" C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/test_VGA.v 
+# -- Compiling module test_VGA
+# 
+# Top level modules:
+# 	test_VGA
+# End time: 18:15:24 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/difao/OneDrive/Documents/Digital\ I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr {C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/buffer_ram_dp.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:15:24 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr" C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/buffer_ram_dp.v 
+# -- Compiling module buffer_ram_dp
+# 
+# Top level modules:
+# 	buffer_ram_dp
+# End time: 18:15:24 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/difao/OneDrive/Documents/Digital\ I/Laboratorio/wp01-vga-grupo04/hdl/quartus/db {C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/db/clk50to108_2_altpll.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:15:24 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/db" C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/db/clk50to108_2_altpll.v 
+# -- Compiling module clk50to108_2_altpll
+# 
+# Top level modules:
+# 	clk50to108_2_altpll
+# End time: 18:15:24 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/difao/OneDrive/Documents/Digital\ I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr {C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/test_VGA_TB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:15:24 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr" C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/test_VGA_TB.v 
+# -- Compiling module test_VGA_TB
+# 
+# Top level modules:
+# 	test_VGA_TB
+# End time: 18:15:25 on Dec 15,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  test_VGA_TB
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" test_VGA_TB 
+# Start time: 18:15:25 on Dec 15,2020
+# Loading work.test_VGA_TB
+# Loading work.test_VGA
+# Loading work.clk50to108_2
+# Loading altera_mf_ver.altpll
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.pll_iobuf
+# Loading work.buffer_ram_dp
+# Loading work.VGA_Driver640x480
+# Loading work.FSM_game
+# Loading altera_mf_ver.MF_cycloneiii_pll
+# Loading altera_mf_ver.cda_m_cntr
+# Loading altera_mf_ver.cda_n_cntr
+# Loading altera_mf_ver.cda_scale_cntr
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /test_VGA_TB/uut File: C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/test_VGA_TB.v Line: 40
+# ** Warning: (vsim-3722) C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/test_VGA_TB.v(40): [TFMPC] - Missing connection for port 'outPrueba'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DP_RAM'.  Expected 8, found 7.
+#    Time: 0 ps  Iteration: 0  Instance: /test_VGA_TB/uut/DP_RAM File: C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/test_VGA.v Line: 141
+# ** Warning: (vsim-3722) C:/Users/difao/OneDrive/Documents/Digital I/Laboratorio/wp01-vga-grupo04/hdl/quartus/scr/test_VGA.v(141): [TFMPC] - Missing connection for port 'reset'.
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: difao  Hostname: DESKTOP-T05HPKK  ProcessID: 8556
+#           Attempting to use alternate WLF file "./wlft94vsv3".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft94vsv3
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+#  Note : Cyclone IV E PLL locked to incoming clock
+# Time: 90000  Instance: test_VGA_TB.uut.clk108.altpll_component.cycloneiii_pll.pll3
+run -continue
+# End time: 18:22:39 on Dec 15,2020, Elapsed time: 0:07:14
+# Errors: 0, Warnings: 6
