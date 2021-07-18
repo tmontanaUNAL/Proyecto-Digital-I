@@ -23,14 +23,14 @@ module test_VGA(
     input wire rst,         	// reset button
 	 
 	  
-	 input [7:0]dat,
-	 input sync,
-	 input pclk,
-	 input href,
+	 input [7:0]dat, // Datos provenientes de la camara
+	 input sync, //Vsync de la camara
+	 input pclk, // Reloj proveniente de la camara
+	 input href, // Href de la camara
 	 
-	 output pwdn,
-	 output xclk,
-	 output resetcam,
+	 output pwdn, // Power Down de la camara (apagado o encendido)
+	 output xclk, // Reloj mandado a la camara
+	 output resetcam, // Resetear camara con 0
 	 
 
 	// VGA input/output  
@@ -43,12 +43,7 @@ module test_VGA(
  	
 	// input/output
 	
-	
-	input wire bntr,
-	input wire bntl,
-	input wire init,
-	input wire [7:0]FILTER,
-	output wire outPrueba
+	input wire [7:0]FILTER // Seleccion filtro con los switch.
 		
 );
 
