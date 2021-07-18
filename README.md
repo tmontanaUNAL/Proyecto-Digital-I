@@ -278,7 +278,7 @@ end
 endmodule
 ```
 ### VGA_Driver640x480
-
+Se encarga de controlar la posicion donde se dibujan los pixeles, tambien fija la resolucion de la pantalla. Esto lo hace con dos contadores que va recorriendo los pixeles de la resolucion especificada en vertical y horizontal (cuando llegan al final se resetean). Estos contadores funcionan como un sistema de coodenadas que inidican la direccion del pixel al test_VGA. Tambien a partir de estos contadores se crean las señales Vsync y Hsync ve van a la pantalla.
 ```verilog
 module VGA_Driver640x480 (
 	input rst,
