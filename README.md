@@ -7,7 +7,7 @@ Lo que se configura en los registros internos de la cámara es principalmente la
 <ol>HREF: Sincroniza los pixeles en  forma horizontal </ol> 
 <ol>VSYNC: Sincroniza los pixeles en  forma vertical </ol>
 <ol>PCLK: Reloj que nos envía la cámara</ol>  
-![image](https://user-images.githubusercontent.com/80170093/126074226-df90e6f8-6943-49a2-b1b6-cc991c2ddb74.png)
+
 
 
 Como este tipo de módulo no tiene memoria FIFO que permita guardar los datos , este nos enviara datos  de pixeles constante mente , es por esto que mediante el uso de la FPGA creamos nuestra memoria FIFO a partir de registros 
