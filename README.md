@@ -13,7 +13,7 @@ Como este tipo de módulo no tiene memoria FIFO que permita guardar los datos , 
 ## Documentación de Código 
 El proyecto se dividió en cuatro módulos: test_VGA , buffer_ram_dp, VGA_Driver640x480 y FSM_data.
 ### test_VGA
-Es el top del proyecto y tiene como función llamar a todos los demás módulos con los inputs y outputs correctos. También se encarga de enviar y recibir los datos de los pixeles y reloj al monitor y la cámara, asi como de recibir la selección del filtro en lo switches de la FPGA.
+Es el top del proyecto y tiene como función llamar a todos los demás módulos con los inputs y outputs correctos. También se encarga de enviar y recibir los datos de los pixeles y reloj al monitor y la cámara, asi como de recibir la selección del filtro en lo switches de la FPGA. Otra funcion es la de escalar la imagen de la camara a la seleccionada en el VGADriver.
 
 A continuacion vemos el código del modulo test_VGA
 
@@ -183,7 +183,7 @@ FSM_data  datos(
 endmodule
 ```
 ### buffer_ram_dp
-Este modulo se encarga de guardar los datos de los pixeles enviados por el modulo FSM_data (pixeles provenientes de la cámara luego de procesarlos), para ello se vale del reloj que envia la camara para saber cuando puede escribir y cuando no. Por otro lado se encarag de leer los datos guardados en la ram, para ello se usa el reloj de la VGA (31.5 MHz) y la direccion dada por el test_VGA segun sea la resolucion de la camara y el VGA.
+Este modulo se encarga de guardar los datos de los pixeles enviados por el modulo FSM_data (pixeles provenientes de la cámara luego de procesarlos), para ello se vale del reloj que envia la camara para saber cuando puede escribir y cuando no. Por otro lado se encarag de leer los datos guardados en la ram, para ello se usa el reloj de la VGA (31.5 MHz) y la direccion dada por el test_VGA segun sea la resolucion de la camara y el VGA (escalamiento de la imagen).
 ```verilog
 module buffer_ram_dp #( 
 	parameter AW = 15, // Cantidad de bits  de la dirección 
