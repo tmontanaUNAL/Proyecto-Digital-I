@@ -62,7 +62,7 @@ localparam BLUE_VGA =  3'b001;
 
 // Clk 
 wire clk50M;
-wire clk108M;
+wire clk31M;
 wire clk24M;
 
 
@@ -82,8 +82,8 @@ wire [10:0]VGA_posY;		   // Determinar la pos de memoria que viene del VGA
 
 
 /* ****************************************************************************
-la pantalla VGA es RGB 444, pero el almacenamiento en memoria se hace 332
-por lo tanto, los bits menos significactivos deben ser cero
+la pantalla VGA es RGB 444, pero por falta de un DAC en la tarjeta se envia 
+solo RGB 111
 **************************************************************************** */
 	assign VGA_R =data_RGB444[2];
 	assign VGA_G =data_RGB444[1];
@@ -93,17 +93,15 @@ por lo tanto, los bits menos significactivos deben ser cero
 
 
 
-/* ****************************************************************************
-  Este bloque se debe modificar según sea le caso. El ejemplo esta dado para
-  fpga Spartan6 lx9 a 32MHz.
-  usar "tools -> IP Generator ..."  y general el ip con Clocking Wizard
-  el bloque genera un reloj de 25Mhz usado para el VGA , a partir de una frecuencia de 12 Mhz
+/* ***************************************************************************
+Se crear dos relojes, uno para la pantalla de 31.5 MHz y otro para la camara 
+de 24 MHz
 **************************************************************************** */
 assign clk50M =clk;
 
-clk50to31 clk108(
+clk50to31 clk31(
 	.inclk0(clk50M),
-	.c0(clk108M)
+	.c0(clk31M)
 	
 );
 
@@ -114,9 +112,8 @@ clk50to24 clk24(
 );
 
 /* ****************************************************************************
-buffer_ram_dp buffer memoria dual port y reloj de lectura y escritura separados
-Se debe configurar AW  según los calculos realizados en el Wp01
-se recomiendia dejar DW a 8, con el fin de optimizar recursos  y hacer RGB 332
+Modulo de RAM, en la tarjeta es solo suficiente para guardar una imagen 
+de 160x120
 **************************************************************************** */
 buffer_ram_dp #( AW,DW)
 	DP_RAM(  
@@ -126,7 +123,7 @@ buffer_ram_dp #( AW,DW)
 	.regwrite(DP_RAM_regW),
 	.filter(FILTER),
 
-	.clk_r(clk108M), 
+	.clk_r(clk31M), 
 	.addr_out(DP_RAM_addr_out),
 	.data_out(data_mem)
 	);
@@ -138,7 +135,7 @@ VGA_Driver640x480
 VGA_Driver640x480 VGA640x480
 (
 	.rst(~rst),
-	.clk(clk108M), 				// 25MHz  para 60 hz de 640x480
+	.clk(clk31M), 				// 25MHz  para 60 hz de 640x480
 	.pixelIn(data_mem), 		// entrada del valor de color  pixel RGB 444 
 //	.pixelIn(RED_VGA), 		// entrada del valor de color  pixel RGB 444 
 	.pixelOut(data_RGB444), // salida del valor pixel a la VGA 
@@ -152,8 +149,7 @@ VGA_Driver640x480 VGA640x480
  
 /* ****************************************************************************
 LÓgica para actualizar el pixel acorde con la buffer de memoria y el pixel de 
-VGA si la imagen de la camara es menor que el display  VGA, los pixeles 
-adicionales seran iguales al color del último pixel de memoria 
+VGA
 **************************************************************************** */
 
 reg [10:0] tempx;
@@ -181,7 +177,7 @@ assign pwdn=0;
 este bloque debe crear un nuevo archivo 
 **************************************************************************** */
 FSM_data  datos( 
-      .CLK(clk108M),
+      .CLK(clk31M),
 		.D(dat),
 		.VSYNC(sync),
 		.PCLK(pclk),

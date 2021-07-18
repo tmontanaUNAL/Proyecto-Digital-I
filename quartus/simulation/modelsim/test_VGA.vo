@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
-// DATE "07/18/2021 11:25:16"
+// DATE "07/18/2021 11:32:23"
 
 // 
 // Device: Altera EP4CE10E22C8 Package TQFP144
@@ -133,10 +133,10 @@ wire \~ALTERA_nCEO~~padout ;
 wire \~ALTERA_DCLK~~obuf_o ;
 wire \~ALTERA_nCEO~~obuf_o ;
 wire \clk~input_o ;
-wire \clk108|altpll_component|auto_generated|wire_pll1_fbout ;
-wire \clk108|altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl_outclk ;
+wire \clk31|altpll_component|auto_generated|wire_pll1_fbout ;
+wire \clk31|altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl_outclk ;
 wire \rst~input_o ;
-wire \clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ;
+wire \clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ;
 wire \VGA640x480|countX[0]~11_combout ;
 wire \~GND~combout ;
 wire \VGA640x480|countX[10]~26_combout ;
@@ -296,7 +296,7 @@ wire [10:0] \VGA640x480|countX ;
 wire [10:0] \VGA640x480|countY ;
 wire [2:0] \DP_RAM|ram_rtl_0|auto_generated|rden_decode_b|w_anode76w ;
 wire [2:0] \datos|mem_px_data ;
-wire [4:0] \clk108|altpll_component|auto_generated|wire_pll1_clk ;
+wire [4:0] \clk31|altpll_component|auto_generated|wire_pll1_clk ;
 wire [1:0] \DP_RAM|ram_rtl_0|auto_generated|address_reg_b ;
 wire [14:0] \datos|mem_px_addr ;
 wire [2:0] \DP_RAM|ram_rtl_0|auto_generated|rden_decode_b|w_anode94w ;
@@ -312,7 +312,7 @@ wire [0:0] \DP_RAM|ram_rtl_0|auto_generated|ram_block1a6_PORTBDATAOUT_bus ;
 wire [0:0] \DP_RAM|ram_rtl_0|auto_generated|ram_block1a2_PORTBDATAOUT_bus ;
 wire [0:0] \DP_RAM|ram_rtl_0|auto_generated|ram_block1a4_PORTBDATAOUT_bus ;
 wire [0:0] \DP_RAM|ram_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus ;
-wire [4:0] \clk108|altpll_component|auto_generated|pll1_CLK_bus ;
+wire [4:0] \clk31|altpll_component|auto_generated|pll1_CLK_bus ;
 
 assign \DP_RAM|ram_rtl_0|auto_generated|ram_block1a7~portbdataout  = \DP_RAM|ram_rtl_0|auto_generated|ram_block1a7_PORTBDATAOUT_bus [0];
 
@@ -330,11 +330,11 @@ assign \DP_RAM|ram_rtl_0|auto_generated|ram_block1a4~portbdataout  = \DP_RAM|ram
 
 assign \DP_RAM|ram_rtl_0|auto_generated|ram_block1a0~portbdataout  = \DP_RAM|ram_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus [0];
 
-assign \clk108|altpll_component|auto_generated|wire_pll1_clk [0] = \clk108|altpll_component|auto_generated|pll1_CLK_bus [0];
-assign \clk108|altpll_component|auto_generated|wire_pll1_clk [1] = \clk108|altpll_component|auto_generated|pll1_CLK_bus [1];
-assign \clk108|altpll_component|auto_generated|wire_pll1_clk [2] = \clk108|altpll_component|auto_generated|pll1_CLK_bus [2];
-assign \clk108|altpll_component|auto_generated|wire_pll1_clk [3] = \clk108|altpll_component|auto_generated|pll1_CLK_bus [3];
-assign \clk108|altpll_component|auto_generated|wire_pll1_clk [4] = \clk108|altpll_component|auto_generated|pll1_CLK_bus [4];
+assign \clk31|altpll_component|auto_generated|wire_pll1_clk [0] = \clk31|altpll_component|auto_generated|pll1_CLK_bus [0];
+assign \clk31|altpll_component|auto_generated|wire_pll1_clk [1] = \clk31|altpll_component|auto_generated|pll1_CLK_bus [1];
+assign \clk31|altpll_component|auto_generated|wire_pll1_clk [2] = \clk31|altpll_component|auto_generated|pll1_CLK_bus [2];
+assign \clk31|altpll_component|auto_generated|wire_pll1_clk [3] = \clk31|altpll_component|auto_generated|pll1_CLK_bus [3];
+assign \clk31|altpll_component|auto_generated|wire_pll1_clk [4] = \clk31|altpll_component|auto_generated|pll1_CLK_bus [4];
 
 // Location: IOOBUF_X16_Y0_N9
 cycloneive_io_obuf \pwdn~output (
@@ -351,7 +351,7 @@ defparam \pwdn~output .open_drain_output = "false";
 
 // Location: IOOBUF_X13_Y0_N16
 cycloneive_io_obuf \xclk~output (
-	.i(\clk108|altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl_outclk ),
+	.i(\clk31|altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl_outclk ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -464,10 +464,10 @@ defparam \clk~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: PLL_1
-cycloneive_pll \clk108|altpll_component|auto_generated|pll1 (
+cycloneive_pll \clk31|altpll_component|auto_generated|pll1 (
 	.areset(gnd),
 	.pfdena(vcc),
-	.fbin(\clk108|altpll_component|auto_generated|wire_pll1_fbout ),
+	.fbin(\clk31|altpll_component|auto_generated|wire_pll1_fbout ),
 	.phaseupdown(gnd),
 	.phasestep(gnd),
 	.scandata(gnd),
@@ -484,103 +484,103 @@ cycloneive_pll \clk108|altpll_component|auto_generated|pll1 (
 	.locked(),
 	.vcooverrange(),
 	.vcounderrange(),
-	.fbout(\clk108|altpll_component|auto_generated|wire_pll1_fbout ),
-	.clk(\clk108|altpll_component|auto_generated|pll1_CLK_bus ),
+	.fbout(\clk31|altpll_component|auto_generated|wire_pll1_fbout ),
+	.clk(\clk31|altpll_component|auto_generated|pll1_CLK_bus ),
 	.clkbad());
 // synopsys translate_off
-defparam \clk108|altpll_component|auto_generated|pll1 .auto_settings = "false";
-defparam \clk108|altpll_component|auto_generated|pll1 .bandwidth_type = "medium";
-defparam \clk108|altpll_component|auto_generated|pll1 .c0_high = 6;
-defparam \clk108|altpll_component|auto_generated|pll1 .c0_initial = 1;
-defparam \clk108|altpll_component|auto_generated|pll1 .c0_low = 6;
-defparam \clk108|altpll_component|auto_generated|pll1 .c0_mode = "even";
-defparam \clk108|altpll_component|auto_generated|pll1 .c0_ph = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .c1_high = 13;
-defparam \clk108|altpll_component|auto_generated|pll1 .c1_initial = 1;
-defparam \clk108|altpll_component|auto_generated|pll1 .c1_low = 12;
-defparam \clk108|altpll_component|auto_generated|pll1 .c1_mode = "odd";
-defparam \clk108|altpll_component|auto_generated|pll1 .c1_ph = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .c1_use_casc_in = "off";
-defparam \clk108|altpll_component|auto_generated|pll1 .c2_high = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .c2_initial = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .c2_low = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .c2_mode = "bypass";
-defparam \clk108|altpll_component|auto_generated|pll1 .c2_ph = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .c2_use_casc_in = "off";
-defparam \clk108|altpll_component|auto_generated|pll1 .c3_high = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .c3_initial = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .c3_low = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .c3_mode = "bypass";
-defparam \clk108|altpll_component|auto_generated|pll1 .c3_ph = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .c3_use_casc_in = "off";
-defparam \clk108|altpll_component|auto_generated|pll1 .c4_high = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .c4_initial = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .c4_low = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .c4_mode = "bypass";
-defparam \clk108|altpll_component|auto_generated|pll1 .c4_ph = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .c4_use_casc_in = "off";
-defparam \clk108|altpll_component|auto_generated|pll1 .charge_pump_current_bits = 1;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk0_counter = "c0";
-defparam \clk108|altpll_component|auto_generated|pll1 .clk0_divide_by = 1;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk0_duty_cycle = 50;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk0_multiply_by = 1;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk0_phase_shift = "0";
-defparam \clk108|altpll_component|auto_generated|pll1 .clk1_counter = "c1";
-defparam \clk108|altpll_component|auto_generated|pll1 .clk1_divide_by = 25;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk1_duty_cycle = 50;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk1_multiply_by = 12;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk1_phase_shift = "0";
-defparam \clk108|altpll_component|auto_generated|pll1 .clk2_counter = "unused";
-defparam \clk108|altpll_component|auto_generated|pll1 .clk2_divide_by = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk2_duty_cycle = 50;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk2_multiply_by = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk2_phase_shift = "0";
-defparam \clk108|altpll_component|auto_generated|pll1 .clk3_counter = "unused";
-defparam \clk108|altpll_component|auto_generated|pll1 .clk3_divide_by = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk3_duty_cycle = 50;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk3_multiply_by = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk3_phase_shift = "0";
-defparam \clk108|altpll_component|auto_generated|pll1 .clk4_counter = "unused";
-defparam \clk108|altpll_component|auto_generated|pll1 .clk4_divide_by = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk4_duty_cycle = 50;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk4_multiply_by = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .clk4_phase_shift = "0";
-defparam \clk108|altpll_component|auto_generated|pll1 .compensate_clock = "clock0";
-defparam \clk108|altpll_component|auto_generated|pll1 .inclk0_input_frequency = 20000;
-defparam \clk108|altpll_component|auto_generated|pll1 .inclk1_input_frequency = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .loop_filter_c_bits = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .loop_filter_r_bits = 27;
-defparam \clk108|altpll_component|auto_generated|pll1 .m = 12;
-defparam \clk108|altpll_component|auto_generated|pll1 .m_initial = 1;
-defparam \clk108|altpll_component|auto_generated|pll1 .m_ph = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .n = 1;
-defparam \clk108|altpll_component|auto_generated|pll1 .operation_mode = "normal";
-defparam \clk108|altpll_component|auto_generated|pll1 .pfd_max = 200000;
-defparam \clk108|altpll_component|auto_generated|pll1 .pfd_min = 3076;
-defparam \clk108|altpll_component|auto_generated|pll1 .self_reset_on_loss_lock = "off";
-defparam \clk108|altpll_component|auto_generated|pll1 .simulation_type = "functional";
-defparam \clk108|altpll_component|auto_generated|pll1 .switch_over_type = "auto";
-defparam \clk108|altpll_component|auto_generated|pll1 .vco_center = 1538;
-defparam \clk108|altpll_component|auto_generated|pll1 .vco_divide_by = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .vco_frequency_control = "auto";
-defparam \clk108|altpll_component|auto_generated|pll1 .vco_max = 3333;
-defparam \clk108|altpll_component|auto_generated|pll1 .vco_min = 1538;
-defparam \clk108|altpll_component|auto_generated|pll1 .vco_multiply_by = 0;
-defparam \clk108|altpll_component|auto_generated|pll1 .vco_phase_shift_step = 208;
-defparam \clk108|altpll_component|auto_generated|pll1 .vco_post_scale = 2;
+defparam \clk31|altpll_component|auto_generated|pll1 .auto_settings = "false";
+defparam \clk31|altpll_component|auto_generated|pll1 .bandwidth_type = "medium";
+defparam \clk31|altpll_component|auto_generated|pll1 .c0_high = 6;
+defparam \clk31|altpll_component|auto_generated|pll1 .c0_initial = 1;
+defparam \clk31|altpll_component|auto_generated|pll1 .c0_low = 6;
+defparam \clk31|altpll_component|auto_generated|pll1 .c0_mode = "even";
+defparam \clk31|altpll_component|auto_generated|pll1 .c0_ph = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .c1_high = 13;
+defparam \clk31|altpll_component|auto_generated|pll1 .c1_initial = 1;
+defparam \clk31|altpll_component|auto_generated|pll1 .c1_low = 12;
+defparam \clk31|altpll_component|auto_generated|pll1 .c1_mode = "odd";
+defparam \clk31|altpll_component|auto_generated|pll1 .c1_ph = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .c1_use_casc_in = "off";
+defparam \clk31|altpll_component|auto_generated|pll1 .c2_high = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .c2_initial = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .c2_low = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .c2_mode = "bypass";
+defparam \clk31|altpll_component|auto_generated|pll1 .c2_ph = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .c2_use_casc_in = "off";
+defparam \clk31|altpll_component|auto_generated|pll1 .c3_high = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .c3_initial = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .c3_low = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .c3_mode = "bypass";
+defparam \clk31|altpll_component|auto_generated|pll1 .c3_ph = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .c3_use_casc_in = "off";
+defparam \clk31|altpll_component|auto_generated|pll1 .c4_high = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .c4_initial = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .c4_low = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .c4_mode = "bypass";
+defparam \clk31|altpll_component|auto_generated|pll1 .c4_ph = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .c4_use_casc_in = "off";
+defparam \clk31|altpll_component|auto_generated|pll1 .charge_pump_current_bits = 1;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk0_counter = "c0";
+defparam \clk31|altpll_component|auto_generated|pll1 .clk0_divide_by = 1;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk0_duty_cycle = 50;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk0_multiply_by = 1;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk0_phase_shift = "0";
+defparam \clk31|altpll_component|auto_generated|pll1 .clk1_counter = "c1";
+defparam \clk31|altpll_component|auto_generated|pll1 .clk1_divide_by = 25;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk1_duty_cycle = 50;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk1_multiply_by = 12;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk1_phase_shift = "0";
+defparam \clk31|altpll_component|auto_generated|pll1 .clk2_counter = "unused";
+defparam \clk31|altpll_component|auto_generated|pll1 .clk2_divide_by = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk2_duty_cycle = 50;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk2_multiply_by = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk2_phase_shift = "0";
+defparam \clk31|altpll_component|auto_generated|pll1 .clk3_counter = "unused";
+defparam \clk31|altpll_component|auto_generated|pll1 .clk3_divide_by = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk3_duty_cycle = 50;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk3_multiply_by = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk3_phase_shift = "0";
+defparam \clk31|altpll_component|auto_generated|pll1 .clk4_counter = "unused";
+defparam \clk31|altpll_component|auto_generated|pll1 .clk4_divide_by = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk4_duty_cycle = 50;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk4_multiply_by = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .clk4_phase_shift = "0";
+defparam \clk31|altpll_component|auto_generated|pll1 .compensate_clock = "clock0";
+defparam \clk31|altpll_component|auto_generated|pll1 .inclk0_input_frequency = 20000;
+defparam \clk31|altpll_component|auto_generated|pll1 .inclk1_input_frequency = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .loop_filter_c_bits = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .loop_filter_r_bits = 27;
+defparam \clk31|altpll_component|auto_generated|pll1 .m = 12;
+defparam \clk31|altpll_component|auto_generated|pll1 .m_initial = 1;
+defparam \clk31|altpll_component|auto_generated|pll1 .m_ph = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .n = 1;
+defparam \clk31|altpll_component|auto_generated|pll1 .operation_mode = "normal";
+defparam \clk31|altpll_component|auto_generated|pll1 .pfd_max = 200000;
+defparam \clk31|altpll_component|auto_generated|pll1 .pfd_min = 3076;
+defparam \clk31|altpll_component|auto_generated|pll1 .self_reset_on_loss_lock = "off";
+defparam \clk31|altpll_component|auto_generated|pll1 .simulation_type = "functional";
+defparam \clk31|altpll_component|auto_generated|pll1 .switch_over_type = "auto";
+defparam \clk31|altpll_component|auto_generated|pll1 .vco_center = 1538;
+defparam \clk31|altpll_component|auto_generated|pll1 .vco_divide_by = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .vco_frequency_control = "auto";
+defparam \clk31|altpll_component|auto_generated|pll1 .vco_max = 3333;
+defparam \clk31|altpll_component|auto_generated|pll1 .vco_min = 1538;
+defparam \clk31|altpll_component|auto_generated|pll1 .vco_multiply_by = 0;
+defparam \clk31|altpll_component|auto_generated|pll1 .vco_phase_shift_step = 208;
+defparam \clk31|altpll_component|auto_generated|pll1 .vco_post_scale = 2;
 // synopsys translate_on
 
 // Location: CLKCTRL_G1
-cycloneive_clkctrl \clk108|altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl (
+cycloneive_clkctrl \clk31|altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl (
 	.ena(vcc),
-	.inclk({vcc,vcc,vcc,\clk108|altpll_component|auto_generated|wire_pll1_clk [1]}),
+	.inclk({vcc,vcc,vcc,\clk31|altpll_component|auto_generated|wire_pll1_clk [1]}),
 	.clkselect(2'b00),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.outclk(\clk108|altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl_outclk ));
+	.outclk(\clk31|altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl_outclk ));
 // synopsys translate_off
-defparam \clk108|altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl .clock_type = "global clock";
-defparam \clk108|altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl .ena_register_mode = "none";
+defparam \clk31|altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl .clock_type = "global clock";
+defparam \clk31|altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl .ena_register_mode = "none";
 // synopsys translate_on
 
 // Location: IOIBUF_X34_Y9_N1
@@ -594,16 +594,16 @@ defparam \rst~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: CLKCTRL_G3
-cycloneive_clkctrl \clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl (
+cycloneive_clkctrl \clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl (
 	.ena(vcc),
-	.inclk({vcc,vcc,vcc,\clk108|altpll_component|auto_generated|wire_pll1_clk [0]}),
+	.inclk({vcc,vcc,vcc,\clk31|altpll_component|auto_generated|wire_pll1_clk [0]}),
 	.clkselect(2'b00),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.outclk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ));
+	.outclk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ));
 // synopsys translate_off
-defparam \clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl .clock_type = "global clock";
-defparam \clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl .ena_register_mode = "none";
+defparam \clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl .clock_type = "global clock";
+defparam \clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl .ena_register_mode = "none";
 // synopsys translate_on
 
 // Location: LCCOMB_X21_Y20_N8
@@ -712,7 +712,7 @@ defparam \VGA640x480|countX[10]~34 .sum_lutc_input = "cin";
 
 // Location: FF_X21_Y20_N29
 dffeas \VGA640x480|countX[10] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countX[10]~34_combout ),
 	.asdata(\~GND~combout ),
 	.clrn(vcc),
@@ -748,7 +748,7 @@ defparam \VGA640x480|countX[10]~27 .sum_lutc_input = "datac";
 
 // Location: FF_X21_Y20_N9
 dffeas \VGA640x480|countX[0] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countX[0]~11_combout ),
 	.asdata(\~GND~combout ),
 	.clrn(vcc),
@@ -802,7 +802,7 @@ defparam \rst~_wirecell .sum_lutc_input = "datac";
 
 // Location: FF_X21_Y20_N11
 dffeas \VGA640x480|countX[1] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countX[1]~13_combout ),
 	.asdata(\rst~_wirecell_combout ),
 	.clrn(vcc),
@@ -839,7 +839,7 @@ defparam \VGA640x480|countX[2]~15 .sum_lutc_input = "cin";
 
 // Location: FF_X21_Y20_N13
 dffeas \VGA640x480|countX[2] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countX[2]~15_combout ),
 	.asdata(\rst~_wirecell_combout ),
 	.clrn(vcc),
@@ -876,7 +876,7 @@ defparam \VGA640x480|countX[3]~17 .sum_lutc_input = "cin";
 
 // Location: FF_X21_Y20_N15
 dffeas \VGA640x480|countX[3] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countX[3]~17_combout ),
 	.asdata(\rst~_wirecell_combout ),
 	.clrn(vcc),
@@ -913,7 +913,7 @@ defparam \VGA640x480|countX[4]~19 .sum_lutc_input = "cin";
 
 // Location: FF_X21_Y20_N17
 dffeas \VGA640x480|countX[4] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countX[4]~19_combout ),
 	.asdata(\rst~_wirecell_combout ),
 	.clrn(vcc),
@@ -950,7 +950,7 @@ defparam \VGA640x480|countX[5]~21 .sum_lutc_input = "cin";
 
 // Location: FF_X21_Y20_N19
 dffeas \VGA640x480|countX[5] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countX[5]~21_combout ),
 	.asdata(\rst~_wirecell_combout ),
 	.clrn(vcc),
@@ -987,7 +987,7 @@ defparam \VGA640x480|countX[6]~23 .sum_lutc_input = "cin";
 
 // Location: FF_X21_Y20_N21
 dffeas \VGA640x480|countX[6] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countX[6]~23_combout ),
 	.asdata(\~GND~combout ),
 	.clrn(vcc),
@@ -1024,7 +1024,7 @@ defparam \VGA640x480|countX[7]~28 .sum_lutc_input = "cin";
 
 // Location: FF_X21_Y20_N23
 dffeas \VGA640x480|countX[7] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countX[7]~28_combout ),
 	.asdata(\~GND~combout ),
 	.clrn(vcc),
@@ -1061,7 +1061,7 @@ defparam \VGA640x480|countX[8]~30 .sum_lutc_input = "cin";
 
 // Location: FF_X21_Y20_N25
 dffeas \VGA640x480|countX[8] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countX[8]~30_combout ),
 	.asdata(\rst~_wirecell_combout ),
 	.clrn(vcc),
@@ -1080,7 +1080,7 @@ defparam \VGA640x480|countX[8] .power_up = "low";
 
 // Location: FF_X21_Y20_N27
 dffeas \VGA640x480|countX[9] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countX[9]~32_combout ),
 	.asdata(\rst~_wirecell_combout ),
 	.clrn(vcc),
@@ -1187,7 +1187,7 @@ defparam \VGA640x480|countY[7]~27 .sum_lutc_input = "cin";
 
 // Location: FF_X19_Y20_N19
 dffeas \VGA640x480|countY[7] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countY[7]~27_combout ),
 	.asdata(\rst~_wirecell_combout ),
 	.clrn(vcc),
@@ -1224,7 +1224,7 @@ defparam \VGA640x480|countY[8]~29 .sum_lutc_input = "cin";
 
 // Location: FF_X19_Y20_N21
 dffeas \VGA640x480|countY[8] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countY[8]~29_combout ),
 	.asdata(\rst~_wirecell_combout ),
 	.clrn(vcc),
@@ -1261,7 +1261,7 @@ defparam \VGA640x480|countY[9]~31 .sum_lutc_input = "cin";
 
 // Location: FF_X19_Y20_N23
 dffeas \VGA640x480|countY[9] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countY[9]~31_combout ),
 	.asdata(\~GND~combout ),
 	.clrn(vcc),
@@ -1297,7 +1297,7 @@ defparam \VGA640x480|countY[10]~33 .sum_lutc_input = "cin";
 
 // Location: FF_X19_Y20_N25
 dffeas \VGA640x480|countY[10] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countY[10]~33_combout ),
 	.asdata(\~GND~combout ),
 	.clrn(vcc),
@@ -1367,7 +1367,7 @@ defparam \VGA640x480|countY[8]~18 .sum_lutc_input = "datac";
 
 // Location: FF_X19_Y20_N5
 dffeas \VGA640x480|countY[0] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countY[0]~12_combout ),
 	.asdata(\~GND~combout ),
 	.clrn(vcc),
@@ -1404,7 +1404,7 @@ defparam \VGA640x480|countY[1]~14 .sum_lutc_input = "cin";
 
 // Location: FF_X19_Y20_N7
 dffeas \VGA640x480|countY[1] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countY[1]~14_combout ),
 	.asdata(\~GND~combout ),
 	.clrn(vcc),
@@ -1441,7 +1441,7 @@ defparam \VGA640x480|countY[2]~16 .sum_lutc_input = "cin";
 
 // Location: FF_X19_Y20_N9
 dffeas \VGA640x480|countY[2] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countY[2]~16_combout ),
 	.asdata(\~GND~combout ),
 	.clrn(vcc),
@@ -1478,7 +1478,7 @@ defparam \VGA640x480|countY[3]~19 .sum_lutc_input = "cin";
 
 // Location: FF_X19_Y20_N11
 dffeas \VGA640x480|countY[3] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countY[3]~19_combout ),
 	.asdata(\~GND~combout ),
 	.clrn(vcc),
@@ -1515,7 +1515,7 @@ defparam \VGA640x480|countY[4]~21 .sum_lutc_input = "cin";
 
 // Location: FF_X19_Y20_N13
 dffeas \VGA640x480|countY[4] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countY[4]~21_combout ),
 	.asdata(\rst~_wirecell_combout ),
 	.clrn(vcc),
@@ -1552,7 +1552,7 @@ defparam \VGA640x480|countY[5]~23 .sum_lutc_input = "cin";
 
 // Location: FF_X19_Y20_N15
 dffeas \VGA640x480|countY[5] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countY[5]~23_combout ),
 	.asdata(\rst~_wirecell_combout ),
 	.clrn(vcc),
@@ -1571,7 +1571,7 @@ defparam \VGA640x480|countY[5] .power_up = "low";
 
 // Location: FF_X19_Y20_N17
 dffeas \VGA640x480|countY[6] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\VGA640x480|countY[6]~25_combout ),
 	.asdata(\rst~_wirecell_combout ),
 	.clrn(vcc),
@@ -2820,7 +2820,7 @@ cycloneive_ram_block \DP_RAM|ram_rtl_0|auto_generated|ram_block1a5 (
 	.portbre(vcc),
 	.portbaddrstall(gnd),
 	.clk0(!\pclk~inputclkctrl_outclk ),
-	.clk1(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk1(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.ena0(\DP_RAM|ram_rtl_0|auto_generated|decode2|w_anode135w[2]~0_combout ),
 	.ena1(\DP_RAM|ram_rtl_0|auto_generated|rden_decode_b|w_anode85w [2]),
 	.ena2(vcc),
@@ -2916,7 +2916,7 @@ cycloneive_ram_block \DP_RAM|ram_rtl_0|auto_generated|ram_block1a1 (
 	.portbre(vcc),
 	.portbaddrstall(gnd),
 	.clk0(!\pclk~inputclkctrl_outclk ),
-	.clk1(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk1(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.ena0(\DP_RAM|ram_rtl_0|auto_generated|decode2|w_anode114w [2]),
 	.ena1(\DP_RAM|ram_rtl_0|auto_generated|rden_decode_b|w_anode62w [2]),
 	.ena2(vcc),
@@ -2988,7 +2988,7 @@ defparam \DP_RAM|ram_rtl_0|auto_generated|address_reg_b[0]~feeder .sum_lutc_inpu
 
 // Location: FF_X16_Y20_N9
 dffeas \DP_RAM|ram_rtl_0|auto_generated|address_reg_b[0] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\DP_RAM|ram_rtl_0|auto_generated|address_reg_b[0]~feeder_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
@@ -3024,7 +3024,7 @@ defparam \DP_RAM|ram_rtl_0|auto_generated|address_reg_b[1]~feeder .sum_lutc_inpu
 
 // Location: FF_X16_Y20_N11
 dffeas \DP_RAM|ram_rtl_0|auto_generated|address_reg_b[1] (
-	.clk(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.d(\DP_RAM|ram_rtl_0|auto_generated|address_reg_b[1]~feeder_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
@@ -3102,7 +3102,7 @@ cycloneive_ram_block \DP_RAM|ram_rtl_0|auto_generated|ram_block1a3 (
 	.portbre(vcc),
 	.portbaddrstall(gnd),
 	.clk0(!\pclk~inputclkctrl_outclk ),
-	.clk1(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk1(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.ena0(\DP_RAM|ram_rtl_0|auto_generated|decode2|w_anode127w[2]~0_combout ),
 	.ena1(\DP_RAM|ram_rtl_0|auto_generated|rden_decode_b|w_anode76w [2]),
 	.ena2(vcc),
@@ -3198,7 +3198,7 @@ cycloneive_ram_block \DP_RAM|ram_rtl_0|auto_generated|ram_block1a7 (
 	.portbre(vcc),
 	.portbaddrstall(gnd),
 	.clk0(!\pclk~inputclkctrl_outclk ),
-	.clk1(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk1(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.ena0(\DP_RAM|ram_rtl_0|auto_generated|decode2|w_anode143w[2]~0_combout ),
 	.ena1(\DP_RAM|ram_rtl_0|auto_generated|rden_decode_b|w_anode94w [2]),
 	.ena2(vcc),
@@ -3348,7 +3348,7 @@ cycloneive_ram_block \DP_RAM|ram_rtl_0|auto_generated|ram_block1a4 (
 	.portbre(vcc),
 	.portbaddrstall(gnd),
 	.clk0(!\pclk~inputclkctrl_outclk ),
-	.clk1(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk1(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.ena0(\DP_RAM|ram_rtl_0|auto_generated|decode2|w_anode135w[2]~0_combout ),
 	.ena1(\DP_RAM|ram_rtl_0|auto_generated|rden_decode_b|w_anode85w [2]),
 	.ena2(vcc),
@@ -3410,7 +3410,7 @@ cycloneive_ram_block \DP_RAM|ram_rtl_0|auto_generated|ram_block1a0 (
 	.portbre(vcc),
 	.portbaddrstall(gnd),
 	.clk0(!\pclk~inputclkctrl_outclk ),
-	.clk1(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk1(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.ena0(\DP_RAM|ram_rtl_0|auto_generated|decode2|w_anode114w [2]),
 	.ena1(\DP_RAM|ram_rtl_0|auto_generated|rden_decode_b|w_anode62w [2]),
 	.ena2(vcc),
@@ -3490,7 +3490,7 @@ cycloneive_ram_block \DP_RAM|ram_rtl_0|auto_generated|ram_block1a6 (
 	.portbre(vcc),
 	.portbaddrstall(gnd),
 	.clk0(!\pclk~inputclkctrl_outclk ),
-	.clk1(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk1(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.ena0(\DP_RAM|ram_rtl_0|auto_generated|decode2|w_anode143w[2]~0_combout ),
 	.ena1(\DP_RAM|ram_rtl_0|auto_generated|rden_decode_b|w_anode94w [2]),
 	.ena2(vcc),
@@ -3552,7 +3552,7 @@ cycloneive_ram_block \DP_RAM|ram_rtl_0|auto_generated|ram_block1a2 (
 	.portbre(vcc),
 	.portbaddrstall(gnd),
 	.clk0(!\pclk~inputclkctrl_outclk ),
-	.clk1(\clk108|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.clk1(\clk31|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
 	.ena0(\DP_RAM|ram_rtl_0|auto_generated|decode2|w_anode127w[2]~0_combout ),
 	.ena1(\DP_RAM|ram_rtl_0|auto_generated|rden_decode_b|w_anode76w [2]),
 	.ena2(vcc),

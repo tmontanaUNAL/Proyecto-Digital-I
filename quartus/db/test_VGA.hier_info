@@ -31,12 +31,12 @@ FILTER[6] => FILTER[6].IN1
 FILTER[7] => FILTER[7].IN1
 
 
-|test_VGA|clk50to31:clk108
+|test_VGA|clk50to31:clk31
 inclk0 => sub_wire1[0].IN1
 c0 <= altpll:altpll_component.clk
 
 
-|test_VGA|clk50to31:clk108|altpll:altpll_component
+|test_VGA|clk50to31:clk31|altpll:altpll_component
 inclk[0] => clk50to31_altpll:auto_generated.inclk[0]
 inclk[1] => clk50to31_altpll:auto_generated.inclk[1]
 fbin => ~NO_FANOUT~
@@ -96,7 +96,7 @@ fref <= <GND>
 icdrclk <= <GND>
 
 
-|test_VGA|clk50to31:clk108|altpll:altpll_component|clk50to31_altpll:auto_generated
+|test_VGA|clk50to31:clk31|altpll:altpll_component|clk50to31_altpll:auto_generated
 clk[0] <= pll1.CLK
 clk[1] <= pll1.CLK1
 clk[2] <= pll1.CLK2
