@@ -16,26 +16,6 @@ El proyecto se dividió en cuatro módulos: test_VGA , buffer_ram_dp, VGA_Driver
 Es el top del proyecto y tiene como función llamar a todos los demás módulos con los inputs y outputs correctos. También se encarga de enviar y recibir los datos de los pixeles y reloj al monitor y la cámara, asi como de recibir la selección del filtro en lo switches de la FPGA.
 
 ```verilog
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    10:46:19 11/04/2020
-// Design Name: 
-// Module Name:    test_VGA
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
 module test_VGA(
     input wire clk,           // board clock: 32 MHz quacho 100 MHz nexys4 
     input wire rst,         	// reset button
