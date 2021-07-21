@@ -343,8 +343,10 @@ endmodule
 
 ```
 ### FSM_data
+Este modulo se encarga de recibir los datos del pixel de la cámara, asi como el reloj PCLK, y las señales de sincronización de la imagen VSYNC y HREF. Tambien convierte el formato de los datos de RGB 444 a RGB 111, crea la señal de direccion de memoria de escritura con un contador.
 
-```
+Es de notar que un pixel lo recibe en 2 pulsos de PCLK debido a que la camara solo puede manda 8 bits al tiempo y se requieren 16 para un pixel en RGB 444.
+```verilog
 module FSM_data #(
 		parameter AW = 15,
 		parameter DW = 3)(
