@@ -13,7 +13,7 @@ Como este tipo de módulo no tiene memoria FIFO que permita guardar los datos , 
 ## Documentación de Código 
 El proyecto se dividió en cuatro módulos: test_VGA , buffer_ram_dp, VGA_Driver640x480 y FSM_data.
 ### test_VGA
-Es el top del proyecto y tiene como función llamar a todos los demás módulos con los inputs y outputs correctos. También se encarga de enviar y recibir los datos de los pixeles y reloj al monitor y la cámara, asi como de recibir la selección del filtro en lo switches de la FPGA.
+Es el top del proyecto y tiene como función llamar a todos los demás módulos con los inputs y outputs correctos. También se encarga de enviar y recibir los datos de los pixeles y reloj al monitor y la cámara, asi como de recibir la selección del filtro en lo switches de la FPGA. Otra funcion es la de escalar la imagen de la camara a la seleccionada en el VGADriver.
 
 A continuacion vemos el código del modulo test_VGA
 
@@ -180,5 +180,215 @@ FSM_data  datos(
 		
    );
 	
+endmodule
+```
+### buffer_ram_dp
+Este modulo se encarga de guardar los datos de los pixeles enviados por el modulo FSM_data (pixeles provenientes de la cámara luego de procesarlos), para ello se vale del reloj que envia la camara para saber cuando puede escribir y cuando no. Por otro lado se encarag de leer los datos guardados en la ram, para ello se usa el reloj de la VGA (31.5 MHz) y la direccion dada por el test_VGA segun sea la resolucion de la camara y el VGA (escalamiento de la imagen).
+```verilog
+module buffer_ram_dp #( 
+	parameter AW = 15, // Cantidad de bits  de la dirección 
+	parameter DW = 3) // cantidad de Bits de los datos 
+	(  
+	input  clk_w, // Reloj de escritura proveniente de la camara
+	input  [AW-1: 0] addr_in, // Dirección de escritura proveniente de FSM_data
+	input  [DW-1: 0] data_in, // Datos del pixel provenientes de FSM_data
+	input  regwrite, // Habilitador escritura proveniente de FSM_data
+	input  [7:0] filter, // Selector del filtro proveniente de los switches de la tarjeta
+	
+	input  clk_r, // Reloj de lectura proveniente de la FPGA
+	input [AW-1: 0] addr_out, // direccion de lectrura proveniente de test_VGA
+	output reg [DW-1: 0] data_out, // datos del pixel leido
+	input reset
+	);
+	
+	reg [2: 0] data;
+	
+// Calcular el numero de posiciones totales de memoria 
+localparam NPOS = 2 ** AW; // Memoria
+
+ reg [DW-1: 0] ram [0: NPOS-1];
+
+
+//	 escritura  de la memoria
+
+always @(negedge clk_w) begin
+      
+
+  if (regwrite==1)begin
+  
+		ram[addr_in]<=data_in;
+		
+	end 
+	
+end
+
+   
+always @(posedge clk_r) begin
+
+	data_out <= ram[addr_out]; // escribe el pixel en un registro temporal para su posterior manipulación
+	
+	// cada caso representa un filtro de color aplicado al pixel, selecciona con los switches
+	
+	
+	/*data_out[2] <= data[2];
+	data_out[1] <= data[1];
+	data_out[0] <= data[0];*\
+	/*case(filter)
+			
+		8'd0:begin //sin filto
+		data_out[2] <= data[2];
+		data_out[1] <= data[1];
+		data_out[0] <= data[0];
+		end
+		
+		8'd1:begin //filtro color invertido
+		data_out[2] <= ~data[2];
+		data_out[1] <= ~data[1];
+		data_out[0] <= ~data[0];
+		end
+		
+		8'd2:begin //filtro rojo intenso
+		data_out[2] <= data[2];
+		data_out[1] <= 0;
+		data_out[0] <= 0;
+		end
+		
+		8'd3:begin //filtro verde intenso
+		data_out[2] <= 0;
+		data_out[1] <= data[1];
+		data_out[0] <= 0;
+		end
+		
+		8'd4:begin //filtro azul intenso
+		data_out[2] <= 0;
+		data_out[1] <= 0;
+		data_out[0] <= data[0];
+		end
+		
+		default:begin
+	   data_out[2] <= data[2];
+		data_out[1] <= data[1];
+		data_out[0] <= data[0];
+		end
+		
+	endcase */
+		
+end
+
+endmodule
+```
+### VGA_Driver640x480
+Se encarga de controlar la posicion donde se dibujan los pixeles, tambien fija la resolucion de la pantalla. Esto lo hace con dos contadores que va recorriendo los pixeles de la resolucion especificada en vertical y horizontal (cuando llegan al final se resetean). Estos contadores funcionan como un sistema de coodenadas que inidican la direccion del pixel al test_VGA. Tambien a partir de estos contadores se crean las señales Vsync y Hsync ve van a la pantalla.
+```verilog
+module VGA_Driver640x480 (
+	input rst,
+	input clk, 				// reloj de 31.5 MHz  para 60 hz de 640x480 proveniente de la tarjeta
+	input  [2:0] pixelIn, 	// entrada del valor de color  pixel 
+	output  [2:0] pixelOut, // salida del valor pixel a la VGA 
+	output  Hsync_n,		// señal de sincronización en horizontal
+	output  Vsync_n,		// señal de sincronización en vertical
+	output  [10:0] posX, 	// posicion en horizontal del pixel siguiente
+	output  [10:0] posY 		// posicion en vertical  del pixel siguiente
+);
+
+localparam SCREEN_X = 640; // tamaño de la pantalla visible en horizontal 
+localparam FRONT_PORCH_X =16; 
+localparam SYNC_PULSE_X = 64;  
+localparam BACK_PORCH_X = 120;  
+localparam TOTAL_SCREEN_X = SCREEN_X+FRONT_PORCH_X+SYNC_PULSE_X+BACK_PORCH_X; 	// total pixel pantalla en horizontal 
+
+
+localparam SCREEN_Y = 480; // tamaño de la pantalla visible en Vertical 
+localparam FRONT_PORCH_Y =1;  
+localparam SYNC_PULSE_Y = 3;  
+localparam BACK_PORCH_Y = 16; 
+localparam TOTAL_SCREEN_Y = SCREEN_Y+FRONT_PORCH_Y+SYNC_PULSE_Y+BACK_PORCH_Y; 	// total pixel pantalla en Vertical 
+
+
+reg  [10:0] countX;
+reg  [10:0] countY;
+
+assign posX    = countX;
+assign posY    = countY;
+
+assign pixelOut = (countX<SCREEN_X) ? (pixelIn ) : (3'b000) ; // si la ubicacion del pixel esta dentro de la pantalla se envia el pixel si no se envia 0.
+
+assign Hsync_n = ~((countX>=SCREEN_X+FRONT_PORCH_X) && (countX<SCREEN_X+SYNC_PULSE_X+FRONT_PORCH_X)); 
+assign Vsync_n = ~((countY>=SCREEN_Y+FRONT_PORCH_Y) && (countY<SCREEN_Y+FRONT_PORCH_Y+SYNC_PULSE_Y));
+
+
+always @(posedge clk) begin
+	if (rst) begin
+		countX <= TOTAL_SCREEN_X- 10; /*para la simulación sea mas rapido*/
+		countY <= TOTAL_SCREEN_Y-4;/*para la simulación sea mas rapido*/
+	end
+	else begin 
+		if (countX >= (TOTAL_SCREEN_X)) begin
+			countX <= 0;
+			if (countY >= (TOTAL_SCREEN_Y)) begin
+				countY <= 0;
+			end 
+			else begin
+				countY <= countY + 1;
+			end
+		end 
+		else begin
+			countX <= countX + 1;
+			countY <= countY;
+		end
+	end
+end
+
+endmodule
+
+```
+### FSM_data
+Este modulo se encarga de recibir los datos del pixel de la cámara, asi como el reloj PCLK, y las señales de sincronización de la imagen VSYNC y HREF. Tambien convierte el formato de los datos de RGB 444 a RGB 111, crea la señal de direccion de memoria de escritura con un contador.
+
+Es de notar que un pixel lo recibe en 2 pulsos de PCLK debido a que la camara solo puede manda 8 bits al tiempo y se requieren 16 para un pixel en RGB 444.
+```verilog
+module FSM_data #(
+		parameter AW = 15,
+		parameter DW = 3)(
+	 	input CLK,
+		input [7:0] D,
+		input VSYNC,
+		input PCLK,
+	   input HREF,
+		input rst,
+		
+		output reg[AW-1: 0] mem_px_addr,
+      output reg[DW-1: 0] mem_px_data,
+      output reg px_wr
+   );
+
+localparam INICIO=0, BT1=1, BT2=2, NPixels=19199; //Npixels en QQVGA
+reg [1:0] estado=0;
+
+reg i=0;
+always @(posedge PCLK) begin
+   
+if((mem_px_addr==NPixels)|VSYNC) begin //Revisa si ya se termino el frame y manda al inicio
+						mem_px_addr<=0;
+	      end
+	
+	if(~VSYNC&HREF)begin //Verifica que los datos sean validos
+	      
+			px_wr<=0;
+			if(i==0)begin
+			mem_px_data[2]<=(D[3:0]<8) ? (1'b0):(1'b1);
+			end
+			if(i==1)begin
+			mem_px_data[1]<=(D[7:4]<8) ? (1'b0):(1'b1);
+	      mem_px_data[0]<=(D[3:0]<8) ? (1'b0):(1'b1);
+			px_wr<=1;
+			mem_px_addr<=mem_px_addr+1;
+			
+			end
+	      i<=~i;		
+		end 
+end
+	
+
 endmodule
 ```
