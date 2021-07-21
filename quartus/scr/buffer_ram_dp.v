@@ -17,18 +17,18 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module buffer_ram_dp #( 
-	parameter AW = 15, // Cantidad de bits  de la direccin 
+	parameter AW = 15, // Cantidad de bits  de la dirección 
 	parameter DW = 3) // cantidad de Bits de los datos 
 	(  
-	input  clk_w, 
-	input  [AW-1: 0] addr_in, 
-	input  [DW-1: 0] data_in,
-	input  regwrite, 
-	input  [7:0] filter,
+	input  clk_w, // Reloj de escritura proveniente de la camara
+	input  [AW-1: 0] addr_in, // Dirección de escritura proveniente de FSM_data
+	input  [DW-1: 0] data_in, // Datos del pixel provenientes de FSM_data
+	input  regwrite, // Habilitador escritura proveniente de FSM_data
+	input  [7:0] filter, // Selector del filtro proveniente de los switches de la tarjeta
 	
-	input  clk_r, 
-	input [AW-1: 0] addr_out,
-	output reg [DW-1: 0] data_out,
+	input  clk_r, // Reloj de lectura proveniente de la FPGA
+	input [AW-1: 0] addr_out, // direccion de lectrura proveniente de test_VGA
+	output reg [DW-1: 0] data_out, // datos del pixel leido
 	input reset
 	);
 	
@@ -104,7 +104,6 @@ always @(posedge clk_r) begin
 		
 	endcase */
 		
-	
 end
 
 endmodule

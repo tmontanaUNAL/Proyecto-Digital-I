@@ -20,6 +20,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "VGA_G",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_B",
 					"strict" : false
 				},
@@ -41,6 +45,10 @@
 				},
 				{
 					"name" : "dat[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dat[7]",
 					"strict" : false
 				}
 			]
