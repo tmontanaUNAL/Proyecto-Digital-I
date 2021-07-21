@@ -377,7 +377,7 @@ if((mem_px_addr==NPixels)|VSYNC) begin //Revisa si ya se termino el frame y mand
 			mem_px_data[2]<=(D[3:0]<8) ? (1'b0):(1'b1);
 			end
 			if(i==1)begin
-			mem_px_data[1]<=0;//(D[7:4]<8) ? (1'b0):(1'b1);
+			mem_px_data[1]<=(D[7:4]<8) ? (1'b0):(1'b1);
 	      mem_px_data[0]<=(D[3:0]<8) ? (1'b0):(1'b1);
 			px_wr<=1;
 			mem_px_addr<=mem_px_addr+1;
