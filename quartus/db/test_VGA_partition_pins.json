@@ -32,15 +32,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "FILTER[0]",
-					"strict" : false
-				},
-				{
-					"name" : "FILTER[1]",
-					"strict" : false
-				},
-				{
-					"name" : "FILTER[2]",
+					"name" : "FILTER[7]",
 					"strict" : false
 				},
 				{
@@ -60,7 +52,35 @@
 					"strict" : false
 				},
 				{
-					"name" : "FILTER[7]",
+					"name" : "FILTER[2]",
+					"strict" : false
+				},
+				{
+					"name" : "FILTER[1]",
+					"strict" : false
+				},
+				{
+					"name" : "FILTER[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pclk",
+					"strict" : false
+				},
+				{
+					"name" : "href",
+					"strict" : false
+				},
+				{
+					"name" : "sync",
+					"strict" : false
+				},
+				{
+					"name" : "dat[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dat[7]",
 					"strict" : false
 				}
 			]

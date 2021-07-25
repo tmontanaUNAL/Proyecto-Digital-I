@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test_VGA
-Thu Jul 22 20:58:40 2021
+Sun Jul 25 13:50:33 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,21 +13,26 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |test_VGA
- 13. Parameter Settings for User Entity Instance: clk50to31:clk31|altpll:altpll_component
- 14. Parameter Settings for User Entity Instance: clk50to24:clk24|altpll:altpll_component
- 15. Parameter Settings for User Entity Instance: buffer_ram_dp:DP_RAM
- 16. Parameter Settings for User Entity Instance: FSM_data:datos
- 17. altpll Parameter Settings by Entity Instance
- 18. Port Connectivity Checks: "VGA_Driver640x480:VGA640x480"
- 19. Port Connectivity Checks: "buffer_ram_dp:DP_RAM"
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Registers Packed Into Inferred Megafunctions
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |test_VGA
+ 16. Parameter Settings for User Entity Instance: clk50to31:clk31|altpll:altpll_component
+ 17. Parameter Settings for User Entity Instance: clk50to24:clk24|altpll:altpll_component
+ 18. Parameter Settings for User Entity Instance: buffer_ram_dp:DP_RAM
+ 19. Parameter Settings for User Entity Instance: FSM_data:datos
+ 20. Parameter Settings for Inferred Entity Instance: buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0
+ 21. altpll Parameter Settings by Entity Instance
+ 22. altsyncram Parameter Settings by Entity Instance
+ 23. Port Connectivity Checks: "VGA_Driver640x480:VGA640x480"
+ 24. Port Connectivity Checks: "buffer_ram_dp:DP_RAM"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -54,18 +59,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jul 22 20:58:40 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun Jul 25 13:50:33 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; test_VGA                                    ;
 ; Top-level Entity Name              ; test_VGA                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 40                                          ;
-;     Total combinational functions  ; 40                                          ;
-;     Dedicated logic registers      ; 23                                          ;
-; Total registers                    ; 23                                          ;
+; Total logic elements               ; 109                                         ;
+;     Total combinational functions  ; 107                                         ;
+;     Dedicated logic registers      ; 46                                          ;
+; Total registers                    ; 46                                          ;
 ; Total pins                         ; 30                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
+; Total memory bits                  ; 98,304                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 2                                           ;
 +------------------------------------+---------------------------------------------+
@@ -174,29 +179,42 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processors 3-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                              ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
-; scr/PLL/clk50to31.v              ; yes             ; User Wizard-Generated File   ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/PLL/clk50to31.v   ;         ;
-; scr/VGA_driver.v                 ; yes             ; User Verilog HDL File        ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/VGA_driver.v      ;         ;
-; scr/test_VGA.v                   ; yes             ; User Verilog HDL File        ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v        ;         ;
-; scr/buffer_ram_dp.v              ; yes             ; User Verilog HDL File        ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/buffer_ram_dp.v   ;         ;
-; scr/FSM_data.v                   ; yes             ; User Verilog HDL File        ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/FSM_data.v        ;         ;
-; scr/PLL/clk50to24.v              ; yes             ; User Wizard-Generated File   ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/PLL/clk50to24.v   ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf                         ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                     ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc                    ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc                  ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cycloneii_pll.inc                  ;         ;
-; db/clk50to31_altpll.v            ; yes             ; Auto-Generated Megafunction  ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/clk50to31_altpll.v ;         ;
-; db/clk50to24_altpll.v            ; yes             ; Auto-Generated Megafunction  ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/clk50to24_altpll.v ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; scr/PLL/clk50to31.v              ; yes             ; User Wizard-Generated File   ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/PLL/clk50to31.v    ;         ;
+; scr/VGA_driver.v                 ; yes             ; User Verilog HDL File        ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/VGA_driver.v       ;         ;
+; scr/test_VGA.v                   ; yes             ; User Verilog HDL File        ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v         ;         ;
+; scr/buffer_ram_dp.v              ; yes             ; User Verilog HDL File        ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/buffer_ram_dp.v    ;         ;
+; scr/FSM_data.v                   ; yes             ; User Verilog HDL File        ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/FSM_data.v         ;         ;
+; scr/PLL/clk50to24.v              ; yes             ; User Wizard-Generated File   ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/PLL/clk50to24.v    ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf                          ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                      ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc                     ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc                   ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cycloneii_pll.inc                   ;         ;
+; db/clk50to31_altpll.v            ; yes             ; Auto-Generated Megafunction  ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/clk50to31_altpll.v  ;         ;
+; db/clk50to24_altpll.v            ; yes             ; Auto-Generated Megafunction  ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/clk50to24_altpll.v  ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                      ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc               ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                         ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                      ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                       ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                          ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                          ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                        ;         ;
+; db/altsyncram_s9d1.tdf           ; yes             ; Auto-Generated Megafunction  ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/altsyncram_s9d1.tdf ;         ;
+; db/decode_msa.tdf                ; yes             ; Auto-Generated Megafunction  ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/decode_msa.tdf      ;         ;
+; db/decode_f8a.tdf                ; yes             ; Auto-Generated Megafunction  ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/decode_f8a.tdf      ;         ;
+; db/mux_1nb.tdf                   ; yes             ; Auto-Generated Megafunction  ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/mux_1nb.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------+
@@ -204,23 +222,24 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                    ;
 +---------------------------------------------+------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 40                                                                                       ;
+; Estimated Total logic elements              ; 109                                                                                      ;
 ;                                             ;                                                                                          ;
-; Total combinational functions               ; 40                                                                                       ;
+; Total combinational functions               ; 107                                                                                      ;
 ; Logic element usage by number of LUT inputs ;                                                                                          ;
-;     -- 4 input functions                    ; 12                                                                                       ;
-;     -- 3 input functions                    ; 1                                                                                        ;
-;     -- <=2 input functions                  ; 27                                                                                       ;
+;     -- 4 input functions                    ; 27                                                                                       ;
+;     -- 3 input functions                    ; 24                                                                                       ;
+;     -- <=2 input functions                  ; 56                                                                                       ;
 ;                                             ;                                                                                          ;
 ; Logic elements by mode                      ;                                                                                          ;
-;     -- normal mode                          ; 20                                                                                       ;
-;     -- arithmetic mode                      ; 20                                                                                       ;
+;     -- normal mode                          ; 57                                                                                       ;
+;     -- arithmetic mode                      ; 50                                                                                       ;
 ;                                             ;                                                                                          ;
-; Total registers                             ; 23                                                                                       ;
-;     -- Dedicated logic registers            ; 23                                                                                       ;
+; Total registers                             ; 46                                                                                       ;
+;     -- Dedicated logic registers            ; 46                                                                                       ;
 ;     -- I/O registers                        ; 0                                                                                        ;
 ;                                             ;                                                                                          ;
 ; I/O pins                                    ; 30                                                                                       ;
+; Total memory bits                           ; 98304                                                                                    ;
 ;                                             ;                                                                                          ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                                        ;
 ;                                             ;                                                                                          ;
@@ -228,28 +247,43 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 2                                                                                        ;
 ;                                             ;                                                                                          ;
 ; Maximum fan-out node                        ; clk50to31:clk31|altpll:altpll_component|clk50to31_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 24                                                                                       ;
-; Total fan-out                               ; 242                                                                                      ;
-; Average fan-out                             ; 1.94                                                                                     ;
+; Maximum fan-out                             ; 40                                                                                       ;
+; Total fan-out                               ; 876                                                                                      ;
+; Average fan-out                             ; 3.86                                                                                     ;
 +---------------------------------------------+------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                          ;
-+--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------+-------------------+--------------+
-; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                               ; Entity Name       ; Library Name ;
-+--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------+-------------------+--------------+
-; |test_VGA                                  ; 40 (2)              ; 23 (0)                    ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |test_VGA                                                                         ; test_VGA          ; work         ;
-;    |VGA_Driver640x480:VGA640x480|          ; 35 (35)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|VGA_Driver640x480:VGA640x480                                            ; VGA_Driver640x480 ; work         ;
-;    |buffer_ram_dp:DP_RAM|                  ; 3 (3)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|buffer_ram_dp:DP_RAM                                                    ; buffer_ram_dp     ; work         ;
-;    |clk50to24:clk24|                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clk50to24:clk24                                                         ; clk50to24         ; work         ;
-;       |altpll:altpll_component|            ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clk50to24:clk24|altpll:altpll_component                                 ; altpll            ; work         ;
-;          |clk50to24_altpll:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clk50to24:clk24|altpll:altpll_component|clk50to24_altpll:auto_generated ; clk50to24_altpll  ; work         ;
-;    |clk50to31:clk31|                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clk50to31:clk31                                                         ; clk50to31         ; work         ;
-;       |altpll:altpll_component|            ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clk50to31:clk31|altpll:altpll_component                                 ; altpll            ; work         ;
-;          |clk50to31_altpll:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clk50to31:clk31|altpll:altpll_component|clk50to31_altpll:auto_generated ; clk50to31_altpll  ; work         ;
-+--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------+-------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                    ;
++--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                         ; Entity Name       ; Library Name ;
++--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; |test_VGA                                  ; 107 (20)            ; 46 (0)                    ; 98304       ; 0            ; 0       ; 0         ; 30   ; 0            ; |test_VGA                                                                                                   ; test_VGA          ; work         ;
+;    |FSM_data:datos|                        ; 25 (25)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|FSM_data:datos                                                                                    ; FSM_data          ; work         ;
+;    |VGA_Driver640x480:VGA640x480|          ; 37 (37)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|VGA_Driver640x480:VGA640x480                                                                      ; VGA_Driver640x480 ; work         ;
+;    |buffer_ram_dp:DP_RAM|                  ; 25 (15)             ; 5 (3)                     ; 98304       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|buffer_ram_dp:DP_RAM                                                                              ; buffer_ram_dp     ; work         ;
+;       |altsyncram:ram_rtl_0|               ; 10 (0)              ; 2 (0)                     ; 98304       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0                                                         ; altsyncram        ; work         ;
+;          |altsyncram_s9d1:auto_generated|  ; 10 (0)              ; 2 (2)                     ; 98304       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated                          ; altsyncram_s9d1   ; work         ;
+;             |decode_f8a:rden_decode_b|     ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_f8a:rden_decode_b ; decode_f8a        ; work         ;
+;             |decode_msa:decode2|           ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_msa:decode2       ; decode_msa        ; work         ;
+;             |mux_1nb:mux3|                 ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|mux_1nb:mux3             ; mux_1nb           ; work         ;
+;    |clk50to24:clk24|                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clk50to24:clk24                                                                                   ; clk50to24         ; work         ;
+;       |altpll:altpll_component|            ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clk50to24:clk24|altpll:altpll_component                                                           ; altpll            ; work         ;
+;          |clk50to24_altpll:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clk50to24:clk24|altpll:altpll_component|clk50to24_altpll:auto_generated                           ; clk50to24_altpll  ; work         ;
+;    |clk50to31:clk31|                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clk50to31:clk31                                                                                   ; clk50to31         ; work         ;
+;       |altpll:altpll_component|            ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clk50to31:clk31|altpll:altpll_component                                                           ; altpll            ; work         ;
+;          |clk50to31_altpll:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_VGA|clk50to31:clk31|altpll:altpll_component|clk50to31_altpll:auto_generated                           ; clk50to31_altpll  ; work         ;
++--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                         ;
++-------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+; Name                                                                                ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
++-------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32768        ; 3            ; 32768        ; 3            ; 98304 ; None ;
++-------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -262,14 +296,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+---------------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                   ;
-+---------------------------------------+----------------------------------------------+
-; Register name                         ; Reason for Removal                           ;
-+---------------------------------------+----------------------------------------------+
-; buffer_ram_dp:DP_RAM|data_out[1,2]    ; Merged with buffer_ram_dp:DP_RAM|data_out[0] ;
-; Total Number of Removed Registers = 2 ;                                              ;
-+---------------------------------------+----------------------------------------------+
++----------------------------------------------------------------------+
+; Registers Removed During Synthesis                                   ;
++---------------------------------------+------------------------------+
+; Register name                         ; Reason for Removal           ;
++---------------------------------------+------------------------------+
+; FSM_data:datos|px_wr                  ; Merged with FSM_data:datos|i ;
+; Total Number of Removed Registers = 1 ;                              ;
++---------------------------------------+------------------------------+
 
 
 +------------------------------------------------------+
@@ -277,24 +311,43 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 23    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 46    ;
+; Number of registers using Synchronous Clear  ; 15    ;
 ; Number of registers using Synchronous Load   ; 22    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 11    ;
+; Number of registers using Clock Enable       ; 28    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |test_VGA|VGA_Driver640x480:VGA640x480|countX[10] ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |test_VGA|VGA_Driver640x480:VGA640x480|countY[10] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
++-------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                            ;
++---------------------------------+--------------------------------+------+
+; Register Name                   ; Megafunction                   ; Type ;
++---------------------------------+--------------------------------+------+
+; buffer_ram_dp:DP_RAM|data[0..2] ; buffer_ram_dp:DP_RAM|ram_rtl_0 ; RAM  ;
++---------------------------------+--------------------------------+------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |test_VGA|FSM_data:datos|mem_px_addr[2]          ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |test_VGA|VGA_Driver640x480:VGA640x480|countX[6] ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |test_VGA|VGA_Driver640x480:VGA640x480|countY[4] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Source assignments for buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------+
+; Assignment                      ; Value              ; From ; To                                ;
++---------------------------------+--------------------+------+-----------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                 ;
++---------------------------------+--------------------+------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -1078,6 +1131,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0 ;
++------------------------------------+----------------------+--------------------------------+
+; Parameter Name                     ; Value                ; Type                           ;
++------------------------------------+----------------------+--------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                 ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                        ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                        ;
+; WIDTH_A                            ; 3                    ; Untyped                        ;
+; WIDTHAD_A                          ; 15                   ; Untyped                        ;
+; NUMWORDS_A                         ; 32768                ; Untyped                        ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                        ;
+; WIDTH_B                            ; 3                    ; Untyped                        ;
+; WIDTHAD_B                          ; 15                   ; Untyped                        ;
+; NUMWORDS_B                         ; 32768                ; Untyped                        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                        ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                        ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                        ;
+; BYTE_SIZE                          ; 8                    ; Untyped                        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
+; INIT_FILE                          ; UNUSED               ; Untyped                        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                        ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                        ;
+; CBXI_PARAMETER                     ; altsyncram_s9d1      ; Untyped                        ;
++------------------------------------+----------------------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                            ;
 +-------------------------------+-----------------------------------------+
@@ -1101,6 +1215,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- VCO_MULTIPLY_BY        ; 0                                       ;
 ;     -- VCO_DIVIDE_BY          ; 0                                       ;
 +-------------------------------+-----------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                      ;
++-------------------------------------------+-------------------------------------------+
+; Name                                      ; Value                                     ;
++-------------------------------------------+-------------------------------------------+
+; Number of entity instances                ; 1                                         ;
+; Entity Instance                           ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                 ;
+;     -- WIDTH_A                            ; 3                                         ;
+;     -- NUMWORDS_A                         ; 32768                                     ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                              ;
+;     -- WIDTH_B                            ; 3                                         ;
+;     -- NUMWORDS_B                         ; 32768                                     ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                 ;
++-------------------------------------------+-------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -1128,23 +1262,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 30                          ;
-; cycloneiii_ff         ; 23                          ;
+; cycloneiii_ff         ; 46                          ;
+;     ENA               ; 2                           ;
+;     ENA SCLR          ; 15                          ;
 ;     ENA SLD           ; 11                          ;
 ;     SLD               ; 11                          ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 40                          ;
-;     arith             ; 20                          ;
-;         2 data inputs ; 20                          ;
-;     normal            ; 20                          ;
+;     plain             ; 7                           ;
+; cycloneiii_lcell_comb ; 107                         ;
+;     arith             ; 50                          ;
+;         2 data inputs ; 39                          ;
+;         3 data inputs ; 11                          ;
+;     normal            ; 57                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 12                          ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 27                          ;
 ; cycloneiii_pll        ; 2                           ;
+; cycloneiii_ram_block  ; 12                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.73                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.35                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1153,7 +1291,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1163,7 +1301,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Jul 22 20:58:30 2021
+    Info: Processing started: Sun Jul 25 13:50:22 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test_VGA -c test_VGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -1311,8 +1449,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/clk5
     Info (12023): Found entity 1: clk50to24_altpll File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/clk50to24_altpll.v Line: 30
 Info (12128): Elaborating entity "clk50to24_altpll" for hierarchy "clk50to24:clk24|altpll:altpll_component|clk50to24_altpll:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "buffer_ram_dp" for hierarchy "buffer_ram_dp:DP_RAM" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 129
-Warning (10858): Verilog HDL warning at buffer_ram_dp.v(35): object data used but never assigned File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/buffer_ram_dp.v Line: 35
-Warning (10030): Net "data" at buffer_ram_dp.v(35) has no driver or initial value, using a default initial value '0' File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/buffer_ram_dp.v Line: 35
 Info (12128): Elaborating entity "VGA_Driver640x480" for hierarchy "VGA_Driver640x480:VGA640x480" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 146
 Warning (10230): Verilog HDL assignment warning at VGA_driver.v(57): truncated value with size 32 to match size of target (11) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 57
 Warning (10230): Verilog HDL assignment warning at VGA_driver.v(58): truncated value with size 32 to match size of target (11) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 58
@@ -1321,6 +1457,47 @@ Warning (10230): Verilog HDL assignment warning at VGA_driver.v(71): truncated v
 Info (12128): Elaborating entity "FSM_data" for hierarchy "FSM_data:datos" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 190
 Warning (10036): Verilog HDL or VHDL warning at FSM_data.v(19): object "estado" assigned a value but never read File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/FSM_data.v Line: 19
 Warning (10230): Verilog HDL assignment warning at FSM_data.v(38): truncated value with size 32 to match size of target (15) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/FSM_data.v Line: 38
+Warning (276027): Inferred dual-clock RAM node "buffer_ram_dp:DP_RAM|ram_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "buffer_ram_dp:DP_RAM|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 3
+        Info (286033): Parameter WIDTHAD_A set to 15
+        Info (286033): Parameter NUMWORDS_A set to 32768
+        Info (286033): Parameter WIDTH_B set to 3
+        Info (286033): Parameter WIDTHAD_B set to 15
+        Info (286033): Parameter NUMWORDS_B set to 32768
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12130): Elaborated megafunction instantiation "buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "3"
+    Info (12134): Parameter "WIDTHAD_A" = "15"
+    Info (12134): Parameter "NUMWORDS_A" = "32768"
+    Info (12134): Parameter "WIDTH_B" = "3"
+    Info (12134): Parameter "WIDTHAD_B" = "15"
+    Info (12134): Parameter "NUMWORDS_B" = "32768"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_s9d1.tdf
+    Info (12023): Found entity 1: altsyncram_s9d1 File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/altsyncram_s9d1.tdf Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_msa.tdf
+    Info (12023): Found entity 1: decode_msa File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/decode_msa.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_f8a.tdf
+    Info (12023): Found entity 1: decode_f8a File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/decode_f8a.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_1nb.tdf
+    Info (12023): Found entity 1: mux_1nb File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/mux_1nb.tdf Line: 23
 Warning (12162): EDA synthesis tool is specified as "Custom", but Library Mapping File is not specified
 Warning (12163): EDA synthesis tool is specified as "Custom", but VCC is not specified
 Warning (12164): EDA synthesis tool is specified as "Custom", but GND is not specified
@@ -1331,27 +1508,23 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 11 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "dat[0]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
-    Warning (15610): No output dependent on input pin "dat[1]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
+Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "dat[2]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
-    Warning (15610): No output dependent on input pin "dat[3]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
-    Warning (15610): No output dependent on input pin "dat[4]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
-    Warning (15610): No output dependent on input pin "dat[5]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
+    Warning (15610): No output dependent on input pin "dat[1]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
+    Warning (15610): No output dependent on input pin "dat[0]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
     Warning (15610): No output dependent on input pin "dat[6]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
-    Warning (15610): No output dependent on input pin "dat[7]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
-    Warning (15610): No output dependent on input pin "sync" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 27
-    Warning (15610): No output dependent on input pin "pclk" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 28
-    Warning (15610): No output dependent on input pin "href" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 29
-Info (21057): Implemented 72 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "dat[5]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
+    Warning (15610): No output dependent on input pin "dat[4]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
+Info (21057): Implemented 155 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 21 input pins
     Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 40 logic cells
+    Info (21061): Implemented 111 logic cells
+    Info (21064): Implemented 12 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
-    Info: Peak virtual memory: 4791 megabytes
-    Info: Processing ended: Thu Jul 22 20:58:40 2021
-    Info: Elapsed time: 00:00:10
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
+    Info: Peak virtual memory: 4797 megabytes
+    Info: Processing ended: Sun Jul 25 13:50:33 2021
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:17
 
 

@@ -56,7 +56,7 @@ end
    
 always @(posedge clk_r) begin
 
-	data_out <= ram[addr_out]; // escribe el pixel en un registro temporal para su posterior manipulación
+	data <= ram[addr_out]; // escribe el pixel en un registro temporal para su posterior manipulación
 	
 	// cada caso representa un filtro de color aplicado al pixel, selecciona con los switches
 	
