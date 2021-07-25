@@ -63,8 +63,9 @@ always @(posedge clk_r) begin
 	
 	/*data_out[2] <= data[2];
 	data_out[1] <= data[1];
-	data_out[0] <= data[0];*\
-	/*case(filter)
+	data_out[0] <= data[0];*/
+	
+	case(filter)
 			
 		8'd0:begin //sin filto
 		data_out[2] <= data[2];
@@ -102,7 +103,7 @@ always @(posedge clk_r) begin
 		data_out[0] <= data[0];
 		end
 		
-	endcase */
+	endcase
 		
 end
 

@@ -32,23 +32,35 @@
 					"strict" : false
 				},
 				{
-					"name" : "pclk",
+					"name" : "FILTER[0]",
 					"strict" : false
 				},
 				{
-					"name" : "href",
+					"name" : "FILTER[1]",
 					"strict" : false
 				},
 				{
-					"name" : "sync",
+					"name" : "FILTER[2]",
 					"strict" : false
 				},
 				{
-					"name" : "dat[3]",
+					"name" : "FILTER[3]",
 					"strict" : false
 				},
 				{
-					"name" : "dat[7]",
+					"name" : "FILTER[4]",
+					"strict" : false
+				},
+				{
+					"name" : "FILTER[5]",
+					"strict" : false
+				},
+				{
+					"name" : "FILTER[6]",
+					"strict" : false
+				},
+				{
+					"name" : "FILTER[7]",
 					"strict" : false
 				}
 			]
