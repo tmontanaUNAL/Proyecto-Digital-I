@@ -1,5 +1,5 @@
 Timing Analyzer report for test_VGA
-Sun Jul 25 13:50:47 2021
+Sun Jul 25 21:39:41 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -105,15 +105,15 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 6           ;
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 1.16        ;
+; Average used               ; 1.17        ;
 ; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   4.9%      ;
-;     Processor 3            ;   4.6%      ;
-;     Processor 4            ;   4.3%      ;
-;     Processors 5-6         ;   1.0%      ;
+;     Processor 2            ;   5.2%      ;
+;     Processor 3            ;   5.0%      ;
+;     Processor 4            ;   4.6%      ;
+;     Processors 5-6         ;   1.1%      ;
 +----------------------------+-------------+
 
 
@@ -413,11 +413,11 @@ No paths to report.
 ; 0.485 ; FSM_data:datos|i               ; FSM_data:datos|i                                                                                          ; pclk         ; pclk        ; 0.000        ; 0.049      ; 0.746      ;
 ; 0.485 ; FSM_data:datos|mem_px_data[2]  ; FSM_data:datos|mem_px_data[2]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.049      ; 0.746      ;
 ; 0.540 ; FSM_data:datos|mem_px_addr[14] ; FSM_data:datos|mem_px_addr[14]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.049      ; 0.801      ;
-; 0.793 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[5]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.049      ; 1.054      ;
 ; 0.793 ; FSM_data:datos|mem_px_addr[3]  ; FSM_data:datos|mem_px_addr[3]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.049      ; 1.054      ;
+; 0.793 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[5]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.049      ; 1.054      ;
 ; 0.795 ; FSM_data:datos|mem_px_addr[7]  ; FSM_data:datos|mem_px_addr[7]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.049      ; 1.056      ;
-; 0.796 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[4]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.049      ; 1.057      ;
 ; 0.796 ; FSM_data:datos|mem_px_addr[2]  ; FSM_data:datos|mem_px_addr[2]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.049      ; 1.057      ;
+; 0.796 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[4]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.049      ; 1.057      ;
 ; 0.797 ; FSM_data:datos|mem_px_addr[10] ; FSM_data:datos|mem_px_addr[10]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.049      ; 1.058      ;
 ; 0.802 ; FSM_data:datos|mem_px_addr[11] ; FSM_data:datos|mem_px_addr[11]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.049      ; 1.063      ;
 ; 0.803 ; FSM_data:datos|mem_px_addr[9]  ; FSM_data:datos|mem_px_addr[9]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.049      ; 1.064      ;
@@ -428,18 +428,18 @@ No paths to report.
 ; 0.829 ; FSM_data:datos|mem_px_addr[8]  ; FSM_data:datos|mem_px_addr[8]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.049      ; 1.090      ;
 ; 1.091 ; FSM_data:datos|mem_px_addr[0]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a10~porta_address_reg0 ; pclk         ; pclk        ; -0.500       ; 0.400      ; 1.245      ;
 ; 1.112 ; FSM_data:datos|mem_px_addr[3]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a10~porta_address_reg0 ; pclk         ; pclk        ; -0.500       ; 0.400      ; 1.266      ;
-; 1.143 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[6]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.409      ;
 ; 1.143 ; FSM_data:datos|mem_px_addr[3]  ; FSM_data:datos|mem_px_addr[4]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.409      ;
+; 1.143 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[6]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.409      ;
 ; 1.144 ; FSM_data:datos|mem_px_addr[7]  ; FSM_data:datos|mem_px_addr[8]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.410      ;
 ; 1.151 ; FSM_data:datos|mem_px_addr[0]  ; FSM_data:datos|mem_px_addr[1]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.417      ;
-; 1.152 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[5]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.418      ;
 ; 1.152 ; FSM_data:datos|mem_px_addr[2]  ; FSM_data:datos|mem_px_addr[3]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.418      ;
+; 1.152 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[5]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.418      ;
 ; 1.152 ; FSM_data:datos|mem_px_addr[9]  ; FSM_data:datos|mem_px_addr[10]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.418      ;
 ; 1.152 ; FSM_data:datos|mem_px_addr[11] ; FSM_data:datos|mem_px_addr[12]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.418      ;
 ; 1.153 ; FSM_data:datos|mem_px_addr[10] ; FSM_data:datos|mem_px_addr[11]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.419      ;
 ; 1.160 ; FSM_data:datos|mem_px_addr[0]  ; FSM_data:datos|mem_px_addr[2]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.426      ;
-; 1.161 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[6]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.427      ;
 ; 1.161 ; FSM_data:datos|mem_px_addr[2]  ; FSM_data:datos|mem_px_addr[4]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.427      ;
+; 1.161 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[6]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.427      ;
 ; 1.162 ; FSM_data:datos|mem_px_addr[10] ; FSM_data:datos|mem_px_addr[12]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.428      ;
 ; 1.166 ; FSM_data:datos|mem_px_addr[1]  ; FSM_data:datos|mem_px_addr[2]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.432      ;
 ; 1.175 ; FSM_data:datos|mem_px_addr[6]  ; FSM_data:datos|mem_px_addr[7]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.441      ;
@@ -448,23 +448,23 @@ No paths to report.
 ; 1.185 ; FSM_data:datos|mem_px_addr[12] ; FSM_data:datos|mem_px_addr[14]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.451      ;
 ; 1.194 ; FSM_data:datos|mem_px_addr[8]  ; FSM_data:datos|mem_px_addr[10]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.460      ;
 ; 1.237 ; FSM_data:datos|mem_px_addr[5]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a10~porta_address_reg0 ; pclk         ; pclk        ; -0.500       ; 0.400      ; 1.391      ;
-; 1.274 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[7]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.540      ;
 ; 1.274 ; FSM_data:datos|mem_px_addr[3]  ; FSM_data:datos|mem_px_addr[5]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.540      ;
+; 1.274 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[7]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.540      ;
 ; 1.275 ; FSM_data:datos|mem_px_addr[7]  ; FSM_data:datos|mem_px_addr[9]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.541      ;
-; 1.283 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[8]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.549      ;
 ; 1.283 ; FSM_data:datos|mem_px_addr[3]  ; FSM_data:datos|mem_px_addr[6]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.549      ;
+; 1.283 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[8]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.549      ;
 ; 1.283 ; FSM_data:datos|mem_px_addr[9]  ; FSM_data:datos|mem_px_addr[11]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.549      ;
 ; 1.284 ; FSM_data:datos|mem_px_addr[7]  ; FSM_data:datos|mem_px_addr[10]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.550      ;
 ; 1.288 ; FSM_data:datos|mem_px_addr[12] ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a10~porta_address_reg0 ; pclk         ; pclk        ; -0.500       ; 0.400      ; 1.442      ;
 ; 1.291 ; FSM_data:datos|mem_px_addr[0]  ; FSM_data:datos|mem_px_addr[3]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.557      ;
-; 1.292 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[7]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.558      ;
 ; 1.292 ; FSM_data:datos|mem_px_addr[2]  ; FSM_data:datos|mem_px_addr[5]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.558      ;
+; 1.292 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[7]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.558      ;
 ; 1.292 ; FSM_data:datos|mem_px_addr[9]  ; FSM_data:datos|mem_px_addr[12]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.558      ;
 ; 1.292 ; FSM_data:datos|mem_px_addr[11] ; FSM_data:datos|mem_px_addr[14]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.558      ;
 ; 1.297 ; FSM_data:datos|mem_px_addr[1]  ; FSM_data:datos|mem_px_addr[3]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.563      ;
 ; 1.300 ; FSM_data:datos|mem_px_addr[0]  ; FSM_data:datos|mem_px_addr[4]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.566      ;
-; 1.301 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[8]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.567      ;
 ; 1.301 ; FSM_data:datos|mem_px_addr[2]  ; FSM_data:datos|mem_px_addr[6]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.567      ;
+; 1.301 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[8]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.567      ;
 ; 1.302 ; FSM_data:datos|mem_px_addr[10] ; FSM_data:datos|mem_px_addr[14]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.568      ;
 ; 1.306 ; FSM_data:datos|mem_px_addr[1]  ; FSM_data:datos|mem_px_addr[4]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.572      ;
 ; 1.315 ; FSM_data:datos|mem_px_addr[6]  ; FSM_data:datos|mem_px_addr[9]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.581      ;
@@ -482,23 +482,23 @@ No paths to report.
 ; 1.406 ; FSM_data:datos|mem_px_addr[9]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a1~porta_address_reg0  ; pclk         ; pclk        ; -0.500       ; 0.386      ; 1.546      ;
 ; 1.409 ; FSM_data:datos|mem_px_addr[7]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a9~porta_address_reg0  ; pclk         ; pclk        ; -0.500       ; 0.402      ; 1.565      ;
 ; 1.411 ; FSM_data:datos|mem_px_addr[10] ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a4~porta_address_reg0  ; pclk         ; pclk        ; -0.500       ; 0.377      ; 1.542      ;
-; 1.414 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[9]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.680      ;
 ; 1.414 ; FSM_data:datos|mem_px_addr[3]  ; FSM_data:datos|mem_px_addr[7]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.680      ;
+; 1.414 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[9]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.680      ;
 ; 1.415 ; FSM_data:datos|mem_px_addr[7]  ; FSM_data:datos|mem_px_addr[11]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.681      ;
-; 1.423 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[10]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.689      ;
 ; 1.423 ; FSM_data:datos|mem_px_addr[3]  ; FSM_data:datos|mem_px_addr[8]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.689      ;
+; 1.423 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[10]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.689      ;
 ; 1.424 ; FSM_data:datos|mem_px_addr[7]  ; FSM_data:datos|mem_px_addr[12]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.690      ;
 ; 1.431 ; FSM_data:datos|mem_px_addr[0]  ; FSM_data:datos|mem_px_addr[5]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.697      ;
-; 1.432 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[9]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.698      ;
 ; 1.432 ; FSM_data:datos|mem_px_addr[2]  ; FSM_data:datos|mem_px_addr[7]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.698      ;
+; 1.432 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[9]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.698      ;
 ; 1.432 ; FSM_data:datos|mem_px_addr[9]  ; FSM_data:datos|mem_px_addr[14]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.698      ;
 ; 1.434 ; FSM_data:datos|mem_px_addr[10] ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a1~porta_address_reg0  ; pclk         ; pclk        ; -0.500       ; 0.386      ; 1.574      ;
 ; 1.437 ; FSM_data:datos|mem_px_addr[1]  ; FSM_data:datos|mem_px_addr[5]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.703      ;
 ; 1.438 ; FSM_data:datos|mem_px_addr[1]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a1~porta_address_reg0  ; pclk         ; pclk        ; -0.500       ; 0.386      ; 1.578      ;
 ; 1.439 ; FSM_data:datos|mem_px_addr[7]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a1~porta_address_reg0  ; pclk         ; pclk        ; -0.500       ; 0.386      ; 1.579      ;
 ; 1.440 ; FSM_data:datos|mem_px_addr[0]  ; FSM_data:datos|mem_px_addr[6]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.706      ;
-; 1.441 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[10]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.707      ;
 ; 1.441 ; FSM_data:datos|mem_px_addr[2]  ; FSM_data:datos|mem_px_addr[8]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.707      ;
+; 1.441 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[10]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.707      ;
 ; 1.446 ; FSM_data:datos|mem_px_addr[1]  ; FSM_data:datos|mem_px_addr[6]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.712      ;
 ; 1.454 ; FSM_data:datos|mem_px_addr[7]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11~porta_address_reg0 ; pclk         ; pclk        ; -0.500       ; 0.356      ; 1.564      ;
 ; 1.455 ; FSM_data:datos|mem_px_addr[6]  ; FSM_data:datos|mem_px_addr[11]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.054      ; 1.721      ;
@@ -918,8 +918,8 @@ No paths to report.
 ; 0.761 ; FSM_data:datos|mem_px_addr[0]  ; FSM_data:datos|mem_px_addr[0]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.044      ; 1.000      ;
 ; 0.761 ; FSM_data:datos|mem_px_addr[12] ; FSM_data:datos|mem_px_addr[12]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.044      ; 1.000      ;
 ; 0.769 ; FSM_data:datos|mem_px_addr[8]  ; FSM_data:datos|mem_px_addr[8]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.044      ; 1.008      ;
-; 1.048 ; FSM_data:datos|mem_px_addr[3]  ; FSM_data:datos|mem_px_addr[4]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.294      ;
 ; 1.048 ; FSM_data:datos|mem_px_addr[0]  ; FSM_data:datos|mem_px_addr[1]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.294      ;
+; 1.048 ; FSM_data:datos|mem_px_addr[3]  ; FSM_data:datos|mem_px_addr[4]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.294      ;
 ; 1.048 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[6]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.294      ;
 ; 1.049 ; FSM_data:datos|mem_px_addr[2]  ; FSM_data:datos|mem_px_addr[3]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.295      ;
 ; 1.050 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[5]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.296      ;
@@ -942,8 +942,8 @@ No paths to report.
 ; 1.148 ; FSM_data:datos|mem_px_addr[7]  ; FSM_data:datos|mem_px_addr[9]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.394      ;
 ; 1.160 ; FSM_data:datos|mem_px_addr[9]  ; FSM_data:datos|mem_px_addr[11]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.406      ;
 ; 1.168 ; FSM_data:datos|mem_px_addr[1]  ; FSM_data:datos|mem_px_addr[3]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.414      ;
-; 1.170 ; FSM_data:datos|mem_px_addr[3]  ; FSM_data:datos|mem_px_addr[6]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.416      ;
 ; 1.170 ; FSM_data:datos|mem_px_addr[0]  ; FSM_data:datos|mem_px_addr[3]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.416      ;
+; 1.170 ; FSM_data:datos|mem_px_addr[3]  ; FSM_data:datos|mem_px_addr[6]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.416      ;
 ; 1.170 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[8]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.416      ;
 ; 1.171 ; FSM_data:datos|mem_px_addr[2]  ; FSM_data:datos|mem_px_addr[5]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.417      ;
 ; 1.172 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[7]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.418      ;
@@ -965,8 +965,8 @@ No paths to report.
 ; 1.264 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[9]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.510      ;
 ; 1.270 ; FSM_data:datos|mem_px_addr[7]  ; FSM_data:datos|mem_px_addr[11]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.516      ;
 ; 1.290 ; FSM_data:datos|mem_px_addr[1]  ; FSM_data:datos|mem_px_addr[5]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.536      ;
-; 1.292 ; FSM_data:datos|mem_px_addr[3]  ; FSM_data:datos|mem_px_addr[8]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.538      ;
 ; 1.292 ; FSM_data:datos|mem_px_addr[0]  ; FSM_data:datos|mem_px_addr[5]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.538      ;
+; 1.292 ; FSM_data:datos|mem_px_addr[3]  ; FSM_data:datos|mem_px_addr[8]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.538      ;
 ; 1.292 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[10]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.538      ;
 ; 1.293 ; FSM_data:datos|mem_px_addr[2]  ; FSM_data:datos|mem_px_addr[7]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.539      ;
 ; 1.294 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[9]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.540      ;
@@ -987,8 +987,8 @@ No paths to report.
 ; 1.399 ; FSM_data:datos|mem_px_addr[9]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a8~porta_address_reg0  ; pclk         ; pclk        ; -0.500       ; 0.202      ; 1.331      ;
 ; 1.409 ; FSM_data:datos|mem_px_addr[12] ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a10~porta_address_reg0 ; pclk         ; pclk        ; -0.500       ; 0.222      ; 1.361      ;
 ; 1.412 ; FSM_data:datos|mem_px_addr[1]  ; FSM_data:datos|mem_px_addr[7]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.658      ;
-; 1.414 ; FSM_data:datos|mem_px_addr[3]  ; FSM_data:datos|mem_px_addr[10]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.660      ;
 ; 1.414 ; FSM_data:datos|mem_px_addr[0]  ; FSM_data:datos|mem_px_addr[7]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.660      ;
+; 1.414 ; FSM_data:datos|mem_px_addr[3]  ; FSM_data:datos|mem_px_addr[10]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.660      ;
 ; 1.414 ; FSM_data:datos|mem_px_addr[5]  ; FSM_data:datos|mem_px_addr[12]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.660      ;
 ; 1.415 ; FSM_data:datos|mem_px_addr[2]  ; FSM_data:datos|mem_px_addr[9]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.661      ;
 ; 1.416 ; FSM_data:datos|mem_px_addr[4]  ; FSM_data:datos|mem_px_addr[11]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.051      ; 1.662      ;
@@ -1398,8 +1398,8 @@ No paths to report.
 ; 0.324 ; FSM_data:datos|mem_px_addr[9]  ; FSM_data:datos|mem_px_addr[9]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.022      ; 0.430      ;
 ; 0.324 ; FSM_data:datos|mem_px_addr[11] ; FSM_data:datos|mem_px_addr[11]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.022      ; 0.430      ;
 ; 0.327 ; FSM_data:datos|mem_px_addr[9]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a8~porta_address_reg0  ; pclk         ; pclk        ; -0.500       ; 0.665      ; 0.596      ;
-; 0.330 ; FSM_data:datos|mem_px_addr[1]  ; FSM_data:datos|mem_px_addr[1]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.022      ; 0.436      ;
 ; 0.330 ; FSM_data:datos|mem_px_addr[0]  ; FSM_data:datos|mem_px_addr[0]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.022      ; 0.436      ;
+; 0.330 ; FSM_data:datos|mem_px_addr[1]  ; FSM_data:datos|mem_px_addr[1]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.022      ; 0.436      ;
 ; 0.331 ; FSM_data:datos|mem_px_addr[6]  ; FSM_data:datos|mem_px_addr[6]                                                                             ; pclk         ; pclk        ; 0.000        ; 0.022      ; 0.437      ;
 ; 0.332 ; FSM_data:datos|mem_px_addr[12] ; FSM_data:datos|mem_px_addr[12]                                                                            ; pclk         ; pclk        ; 0.000        ; 0.022      ; 0.438      ;
 ; 0.333 ; FSM_data:datos|mem_px_addr[5]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a10~porta_address_reg0 ; pclk         ; pclk        ; -0.500       ; 0.674      ; 0.611      ;
@@ -1658,7 +1658,7 @@ No synchronizer chains to report.
 ; FILTER[0]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; pclk                    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; href                    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; sync                    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; vsync                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; dat[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; dat[7]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -1801,7 +1801,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; dat[7]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; href       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; rst        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; sync       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; vsync      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +------------+--------------------------------------------------------------------------------------+
 
 
@@ -1837,7 +1837,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; dat[7]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; href       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; rst        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; sync       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; vsync      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +------------+--------------------------------------------------------------------------------------+
 
 
@@ -1862,7 +1862,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Jul 25 13:50:45 2021
+    Info: Processing started: Sun Jul 25 21:39:39 2021
 Info: Command: quartus_sta test_VGA -c test_VGA
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1952,7 +1952,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 4784 megabytes
-    Info: Processing ended: Sun Jul 25 13:50:47 2021
+    Info: Processing ended: Sun Jul 25 21:39:41 2021
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

@@ -157,7 +157,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 85        :        :                   :      
 rst                          : 86        : input  : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 87        :        :                   :         : 5         :                
 dat[0]                       : 88        : input  : 2.5 V             :         : 5         : Y              
-sync                         : 89        : input  : 2.5 V             :         : 5         : Y              
+vsync                        : 89        : input  : 2.5 V             :         : 5         : Y              
 GND+                         : 90        :        :                   :         : 6         :                
 GND+                         : 91        :        :                   :         : 6         :                
 CONF_DONE                    : 92        :        :                   :         : 6         :                

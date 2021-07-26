@@ -28,8 +28,7 @@ module buffer_ram_dp #(
 	
 	input  clk_r, // Reloj de lectura proveniente de la FPGA
 	input [AW-1: 0] addr_out, // direccion de lectrura proveniente de test_VGA
-	output reg [DW-1: 0] data_out, // datos del pixel leido
-	input reset
+	output reg [DW-1: 0] data_out // datos del pixel leido
 	);
 	
 	reg [2: 0] data;

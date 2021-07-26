@@ -24,7 +24,7 @@ module test_VGA(
 	 
 	  
 	 input [7:0]dat, // Datos provenientes de la camara
-	 input sync, //Vsync de la camara
+	 input vsync, //Vsync de la camara
 	 input pclk, // Reloj proveniente de la camara
 	 input href, // Href de la camara
 	 
@@ -155,8 +155,8 @@ reg [10:0] tempx;
 reg [10:0] tempy;
 
 always @ (VGA_posX, VGA_posY) begin
-		tempx = VGA_posX/4;
-	  tempy = VGA_posY/4;	
+		tempx = VGA_posX/4; // Se divide ancho del frame de la cámara 640 en 4 para los 160 del QQVGA
+	  tempy = VGA_posY/4;  // Se divide ancho del frame de la cámara 480 en 4 para los 120 del QQVGA
 		DP_RAM_addr_out=tempx+tempy*CAM_SCREEN_X;	
 end
 
@@ -164,7 +164,7 @@ end
 
 
 
-assign resetcam=rst;
+assign resetcam=~rst;
 assign xclk=clk24M;
 assign pwdn=0;
 
@@ -176,9 +176,8 @@ assign pwdn=0;
 este bloque debe crear un nuevo archivo 
 **************************************************************************** */
 FSM_data  datos( 
-      .CLK(clk31M),
 		.D(dat),
-		.VSYNC(sync),
+		.VSYNC(vsync),
 		.PCLK(pclk),
 		.HREF(href),
 		.rst(rst),

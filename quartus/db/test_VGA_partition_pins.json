@@ -72,7 +72,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "sync",
+					"name" : "vsync",
 					"strict" : false
 				},
 				{

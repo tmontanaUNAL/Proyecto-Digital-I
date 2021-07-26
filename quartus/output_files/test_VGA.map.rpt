@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test_VGA
-Sun Jul 25 13:50:33 2021
+Sun Jul 25 21:39:32 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -29,10 +29,9 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  21. altpll Parameter Settings by Entity Instance
  22. altsyncram Parameter Settings by Entity Instance
  23. Port Connectivity Checks: "VGA_Driver640x480:VGA640x480"
- 24. Port Connectivity Checks: "buffer_ram_dp:DP_RAM"
- 25. Post-Synthesis Netlist Statistics for Top Partition
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -59,7 +58,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jul 25 13:50:33 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun Jul 25 21:39:32 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; test_VGA                                    ;
 ; Top-level Entity Name              ; test_VGA                                    ;
@@ -179,7 +178,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 ;     Processors 3-6         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -1247,15 +1246,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "buffer_ram_dp:DP_RAM"                                                                                                                        ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
@@ -1291,7 +1281,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -1301,7 +1291,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Jul 25 13:50:22 2021
+    Info: Processing started: Sun Jul 25 21:39:23 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test_VGA -c test_VGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -1454,9 +1444,9 @@ Warning (10230): Verilog HDL assignment warning at VGA_driver.v(57): truncated v
 Warning (10230): Verilog HDL assignment warning at VGA_driver.v(58): truncated value with size 32 to match size of target (11) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 58
 Warning (10230): Verilog HDL assignment warning at VGA_driver.v(67): truncated value with size 32 to match size of target (11) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 67
 Warning (10230): Verilog HDL assignment warning at VGA_driver.v(71): truncated value with size 32 to match size of target (11) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 71
-Info (12128): Elaborating entity "FSM_data" for hierarchy "FSM_data:datos" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 190
-Warning (10036): Verilog HDL or VHDL warning at FSM_data.v(19): object "estado" assigned a value but never read File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/FSM_data.v Line: 19
-Warning (10230): Verilog HDL assignment warning at FSM_data.v(38): truncated value with size 32 to match size of target (15) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/FSM_data.v Line: 38
+Info (12128): Elaborating entity "FSM_data" for hierarchy "FSM_data:datos" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 189
+Warning (10036): Verilog HDL or VHDL warning at FSM_data.v(18): object "estado" assigned a value but never read File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/FSM_data.v Line: 18
+Warning (10230): Verilog HDL assignment warning at FSM_data.v(37): truncated value with size 32 to match size of target (15) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/FSM_data.v Line: 37
 Warning (276027): Inferred dual-clock RAM node "buffer_ram_dp:DP_RAM|ram_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "buffer_ram_dp:DP_RAM|ram_rtl_0" 
@@ -1501,7 +1491,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mux_
 Warning (12162): EDA synthesis tool is specified as "Custom", but Library Mapping File is not specified
 Warning (12163): EDA synthesis tool is specified as "Custom", but VCC is not specified
 Warning (12164): EDA synthesis tool is specified as "Custom", but GND is not specified
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "pwdn" is stuck at GND File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 31
     Warning (13410): Pin "clkout" is stuck at GND File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 42
@@ -1521,10 +1510,10 @@ Info (21057): Implemented 155 device resources after synthesis - the final resou
     Info (21061): Implemented 111 logic cells
     Info (21064): Implemented 12 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 4797 megabytes
-    Info: Processing ended: Sun Jul 25 13:50:33 2021
-    Info: Elapsed time: 00:00:11
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
+    Info: Peak virtual memory: 4794 megabytes
+    Info: Processing ended: Sun Jul 25 21:39:32 2021
+    Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:17
 
 

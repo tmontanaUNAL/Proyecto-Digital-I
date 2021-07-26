@@ -3,7 +3,6 @@
 module FSM_data #(
 		parameter AW = 15,
 		parameter DW = 3)(
-	 	input CLK,
 		input [7:0] D,
 		input VSYNC,
 		input PCLK,

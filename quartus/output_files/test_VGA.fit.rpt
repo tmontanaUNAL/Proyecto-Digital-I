@@ -1,5 +1,5 @@
 Fitter report for test_VGA
-Sun Jul 25 13:50:41 2021
+Sun Jul 25 21:39:37 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -72,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Jul 25 13:50:41 2021       ;
+; Fitter Status                      ; Successful - Sun Jul 25 21:39:37 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; test_VGA                                    ;
 ; Top-level Entity Name              ; test_VGA                                    ;
@@ -163,8 +163,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.0%      ;
-;     Processors 3-6         ;   0.9%      ;
+;     Processor 2            ;   1.1%      ;
+;     Processors 3-6         ;   1.0%      ;
 +----------------------------+-------------+
 
 
@@ -368,7 +368,7 @@ The pin-out file can be found in E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyec
 ; href      ; 54    ; 4        ; 18           ; 0            ; 21           ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; pclk      ; 39    ; 3        ; 1            ; 0            ; 14           ; 31                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; rst       ; 86    ; 5        ; 34           ; 9            ; 0            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; sync      ; 89    ; 5        ; 34           ; 12           ; 14           ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; vsync     ; 89    ; 5        ; 34           ; 12           ; 14           ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 +-----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -520,7 +520,7 @@ The pin-out file can be found in E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyec
 ; 86       ; 120        ; 5        ; rst                                                       ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; 87       ; 121        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 88       ; 125        ; 5        ; dat[0]                                                    ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; 89       ; 126        ; 5        ; sync                                                      ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 89       ; 126        ; 5        ; vsync                                                     ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; 90       ; 127        ; 6        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; 91       ; 128        ; 6        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; 92       ; 129        ; 6        ; ^CONF_DONE                                                ;        ;              ;         ; --         ;                 ; --       ; --           ;
@@ -665,7 +665,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; FILTER[0]   ; Incomplete set of assignments ;
 ; pclk        ; Incomplete set of assignments ;
 ; href        ; Incomplete set of assignments ;
-; sync        ; Incomplete set of assignments ;
+; vsync       ; Incomplete set of assignments ;
 ; dat[3]      ; Incomplete set of assignments ;
 ; dat[7]      ; Incomplete set of assignments ;
 ; pwdn        ; Missing location assignment   ;
@@ -726,7 +726,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; FILTER[0]   ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; pclk        ; Input    ; (0) 0 ps      ; (0) 0 ps      ; --                    ; --  ; --   ;
 ; href        ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; sync        ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
+; vsync       ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; dat[3]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dat[7]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 +-------------+----------+---------------+---------------+-----------------------+-----+------+
@@ -814,7 +814,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - FSM_data:datos|mem_px_addr[2]~43                                                       ; 1                 ; 6       ;
 ;      - FSM_data:datos|i~0                                                                     ; 1                 ; 6       ;
 ;      - FSM_data:datos|mem_px_data[2]~1                                                        ; 1                 ; 6       ;
-; sync                                                                                          ;                   ;         ;
+; vsync                                                                                         ;                   ;         ;
 ; dat[3]                                                                                        ;                   ;         ;
 ;      - FSM_data:datos|mem_px_data[2]~2                                                        ; 0                 ; 6       ;
 ;      - FSM_data:datos|mem_px_data[0]~feeder                                                   ; 0                 ; 6       ;
@@ -1094,7 +1094,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 ; FILTER[0]          ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; pclk               ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; href               ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; sync               ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; vsync              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; dat[3]             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; dat[7]             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
@@ -1233,9 +1233,9 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Info (144001): Generated suppressed messages file E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/output_files/test_VGA.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5635 megabytes
-    Info: Processing ended: Sun Jul 25 13:50:42 2021
-    Info: Elapsed time: 00:00:08
+    Info: Peak virtual memory: 5632 megabytes
+    Info: Processing ended: Sun Jul 25 21:39:37 2021
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:06
 
 

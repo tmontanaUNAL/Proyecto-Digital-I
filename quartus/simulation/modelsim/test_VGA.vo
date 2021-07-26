@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
-// DATE "07/25/2021 13:50:48"
+// DATE "07/25/2021 21:39:42"
 
 // 
 // Device: Altera EP4CE10E22C8 Package TQFP144
@@ -33,7 +33,7 @@ module test_VGA (
 	clk,
 	rst,
 	dat,
-	sync,
+	vsync,
 	pclk,
 	href,
 	pwdn,
@@ -49,7 +49,7 @@ module test_VGA (
 input 	clk;
 input 	rst;
 input 	[7:0] dat;
-input 	sync;
+input 	vsync;
 input 	pclk;
 input 	href;
 output 	pwdn;
@@ -91,7 +91,7 @@ input 	[7:0] FILTER;
 // FILTER[0]	=>  Location: PIN_68,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // pclk	=>  Location: PIN_39,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // href	=>  Location: PIN_54,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// sync	=>  Location: PIN_89,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// vsync	=>  Location: PIN_89,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // dat[3]	=>  Location: PIN_51,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // dat[7]	=>  Location: PIN_38,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
@@ -197,7 +197,7 @@ wire \FILTER[0]~input_o ;
 wire \DP_RAM|Selector0~3_combout ;
 wire \pclk~input_o ;
 wire \href~input_o ;
-wire \sync~input_o ;
+wire \vsync~input_o ;
 wire \datos|i~0_combout ;
 wire \datos|i~q ;
 wire \datos|mem_px_addr[0]~15_combout ;
@@ -395,7 +395,7 @@ defparam \xclk~output .open_drain_output = "false";
 
 // Location: IOOBUF_X34_Y7_N9
 cycloneive_io_obuf \resetcam~output (
-	.i(\rst~input_o ),
+	.i(!\rst~input_o ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -1839,22 +1839,22 @@ defparam \href~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: IOIBUF_X34_Y12_N15
-cycloneive_io_ibuf \sync~input (
-	.i(sync),
+cycloneive_io_ibuf \vsync~input (
+	.i(vsync),
 	.ibar(gnd),
-	.o(\sync~input_o ));
+	.o(\vsync~input_o ));
 // synopsys translate_off
-defparam \sync~input .bus_hold = "false";
-defparam \sync~input .simulate_z_as = "z";
+defparam \vsync~input .bus_hold = "false";
+defparam \vsync~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: LCCOMB_X16_Y3_N22
 cycloneive_lcell_comb \datos|i~0 (
 // Equation(s):
-// \datos|i~0_combout  = \datos|i~q  $ (((\href~input_o  & !\sync~input_o )))
+// \datos|i~0_combout  = \datos|i~q  $ (((\href~input_o  & !\vsync~input_o )))
 
 	.dataa(\href~input_o ),
-	.datab(\sync~input_o ),
+	.datab(\vsync~input_o ),
 	.datac(\datos|i~q ),
 	.datad(gnd),
 	.cin(gnd),
@@ -1905,10 +1905,10 @@ defparam \datos|mem_px_addr[0]~15 .sum_lutc_input = "datac";
 // Location: LCCOMB_X16_Y3_N20
 cycloneive_lcell_comb \datos|mem_px_data[0]~0 (
 // Equation(s):
-// \datos|mem_px_data[0]~0_combout  = (\href~input_o  & (!\sync~input_o  & \datos|i~q ))
+// \datos|mem_px_data[0]~0_combout  = (\href~input_o  & (!\vsync~input_o  & \datos|i~q ))
 
 	.dataa(\href~input_o ),
-	.datab(\sync~input_o ),
+	.datab(\vsync~input_o ),
 	.datac(gnd),
 	.datad(\datos|i~q ),
 	.cin(gnd),
@@ -2061,11 +2061,11 @@ defparam \datos|Equal0~4 .sum_lutc_input = "datac";
 // Location: LCCOMB_X16_Y3_N26
 cycloneive_lcell_comb \datos|mem_px_addr[2]~43 (
 // Equation(s):
-// \datos|mem_px_addr[2]~43_combout  = (\sync~input_o ) # ((\datos|Equal0~4_combout ) # ((\href~input_o  & \datos|i~q )))
+// \datos|mem_px_addr[2]~43_combout  = (\vsync~input_o ) # ((\datos|Equal0~4_combout ) # ((\href~input_o  & \datos|i~q )))
 
 	.dataa(\href~input_o ),
 	.datab(\datos|i~q ),
-	.datac(\sync~input_o ),
+	.datac(\vsync~input_o ),
 	.datad(\datos|Equal0~4_combout ),
 	.cin(gnd),
 	.combout(\datos|mem_px_addr[2]~43_combout ),
@@ -2927,10 +2927,10 @@ defparam \dat[3]~input .simulate_z_as = "z";
 // Location: LCCOMB_X16_Y3_N12
 cycloneive_lcell_comb \datos|mem_px_data[2]~1 (
 // Equation(s):
-// \datos|mem_px_data[2]~1_combout  = (\href~input_o  & (!\sync~input_o  & !\datos|i~q ))
+// \datos|mem_px_data[2]~1_combout  = (\href~input_o  & (!\vsync~input_o  & !\datos|i~q ))
 
 	.dataa(\href~input_o ),
-	.datab(\sync~input_o ),
+	.datab(\vsync~input_o ),
 	.datac(gnd),
 	.datad(\datos|i~q ),
 	.cin(gnd),
