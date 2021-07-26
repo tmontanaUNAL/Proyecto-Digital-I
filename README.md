@@ -24,7 +24,7 @@ module test_VGA(
 	 
 	  
 	 input [7:0]dat, // Datos provenientes de la camara
-	 input sync, //Vsync de la camara
+	 input vsync, //Vsync de la camara
 	 input pclk, // Reloj proveniente de la camara
 	 input href, // Href de la camara
 	 
@@ -89,6 +89,10 @@ solo RGB 111
 	assign VGA_G =data_RGB444[1];
 	assign VGA_B =data_RGB444[0];
 
+
+
+
+
 /* ***************************************************************************
 Se crear dos relojes, uno para la pantalla de 31.5 MHz y otro para la camara 
 de 24 MHz
@@ -124,6 +128,7 @@ buffer_ram_dp #( AW,DW)
 	.data_out(data_mem)
 	);
 	
+
 /* ****************************************************************************
 VGA_Driver640x480
 **************************************************************************** */
@@ -132,7 +137,6 @@ VGA_Driver640x480 VGA640x480
 	.rst(~rst),
 	.clk(clk31M), 				// 25MHz  para 60 hz de 640x480
 	.pixelIn(data_mem), 		// entrada del valor de color  pixel RGB 444 
-//	.pixelIn(RED_VGA), 		// entrada del valor de color  pixel RGB 444 
 	.pixelOut(data_RGB444), // salida del valor pixel a la VGA 
 	.Hsync_n(VGA_Hsync_n),	// señal de sincronizaciÓn en horizontal negada
 	.Vsync_n(VGA_Vsync_n),	// señal de sincronizaciÓn en vertical negada 
@@ -151,14 +155,19 @@ reg [10:0] tempx;
 reg [10:0] tempy;
 
 always @ (VGA_posX, VGA_posY) begin
-		tempx = VGA_posX/4;
-	  tempy = VGA_posY/4;	
+		tempx = VGA_posX/4; // Se divide ancho del frame de la cámara 640 en 4 para los 160 del QQVGA
+	  tempy = VGA_posY/4;  // Se divide ancho del frame de la cámara 480 en 4 para los 120 del QQVGA
 		DP_RAM_addr_out=tempx+tempy*CAM_SCREEN_X;	
 end
 
-assign resetcam=rst;
+
+
+
+
+assign resetcam=~rst;
 assign xclk=clk24M;
 assign pwdn=0;
+
 
 //assign DP_RAM_addr_out=10000;
 
@@ -167,9 +176,8 @@ assign pwdn=0;
 este bloque debe crear un nuevo archivo 
 **************************************************************************** */
 FSM_data  datos( 
-      .CLK(clk31M),
 		.D(dat),
-		.VSYNC(sync),
+		.VSYNC(vsync),
 		.PCLK(pclk),
 		.HREF(href),
 		.rst(rst),
@@ -197,8 +205,7 @@ module buffer_ram_dp #(
 	
 	input  clk_r, // Reloj de lectura proveniente de la FPGA
 	input [AW-1: 0] addr_out, // direccion de lectrura proveniente de test_VGA
-	output reg [DW-1: 0] data_out, // datos del pixel leido
-	input reset
+	output reg [DW-1: 0] data_out // datos del pixel leido
 	);
 	
 	reg [2: 0] data;
@@ -225,15 +232,16 @@ end
    
 always @(posedge clk_r) begin
 
-	data_out <= ram[addr_out]; // escribe el pixel en un registro temporal para su posterior manipulación
+	data <= ram[addr_out]; // escribe el pixel en un registro temporal para su posterior manipulación
 	
 	// cada caso representa un filtro de color aplicado al pixel, selecciona con los switches
 	
 	
 	/*data_out[2] <= data[2];
 	data_out[1] <= data[1];
-	data_out[0] <= data[0];*\
-	/*case(filter)
+	data_out[0] <= data[0];*/
+	
+	case(filter)
 			
 		8'd0:begin //sin filto
 		data_out[2] <= data[2];
@@ -271,7 +279,7 @@ always @(posedge clk_r) begin
 		data_out[0] <= data[0];
 		end
 		
-	endcase */
+	endcase
 		
 end
 
@@ -340,7 +348,6 @@ always @(posedge clk) begin
 end
 
 endmodule
-
 ```
 ### FSM_data
 Este modulo se encarga de recibir los datos del pixel de la cámara, asi como el reloj PCLK, y las señales de sincronización de la imagen VSYNC y HREF. Tambien convierte el formato de los datos de RGB 444 a RGB 111, crea la señal de direccion de memoria de escritura con un contador.
@@ -350,7 +357,6 @@ Es de notar que un pixel lo recibe en 2 pulsos de PCLK debido a que la camara so
 module FSM_data #(
 		parameter AW = 15,
 		parameter DW = 3)(
-	 	input CLK,
 		input [7:0] D,
 		input VSYNC,
 		input PCLK,
@@ -392,3 +398,6 @@ end
 
 endmodule
 ```
+## Diagrama de bloques
+A continuacion vemos un diagrama de bloques mostrando el la interconexión de los distintos modulos, asi como el flujo de datos desde y hacia disposistivos externos (pantalla, cámara, switches y arduino).
+![image](https://user-images.githubusercontent.com/80001669/126925228-673c0f92-5e86-4c93-a49d-dac757951ee3.png)
