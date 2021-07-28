@@ -7,6 +7,7 @@ void setup() {
   Serial.begin(9600);  
   Serial.println("prueba");
   set_cam_RGB565_QCIF();
+  set_color_matrix();
   delay(100);
   get_cam_register();
   
@@ -15,11 +16,12 @@ void setup() {
 
 void set_cam_RGB565_QCIF(){
    
-  OV7670_write(0x12, 0x80);
+  //OV7670_write(0x12, 0x80);
 
 delay(100);
 
- OV7670_write(0xFF, 0xF0); 
+ //OV7670_write(0xFF, 0xF0); 
+ //OV7670_write(0x12, 0x14);  //COM7: Set QQVGA (160x120) and RGB
  OV7670_write(0x12, 0x04);  //COM7: Set RGB creo que queda con VGA (640x480)
  OV7670_write(0x11, 0xC0);       //CLKR: Set internal clock to use external clock
  //OV7670_write(0x11, 0x80);    
@@ -29,14 +31,17 @@ delay(100);
  //OV7670_write(0x3E, 0x13);   //Enable Scaling for Predefined Formats using COM14
  OV7670_write(0x8C,0x02);      //COM15: Set RGB 444
  OV7670_write(0x40,0xD0);      //COM15: Set RGB 444
+ //OV7670_write(0xA4, 0x08);
 
  //Color Bar
- //OV7670_write(0x42, 0x08); 
+// OV7670_write(0x42, 0x00); 
+ //OV7670_write(0x0D, 0x00); 
  //OV7670_write(0x12, 0x0E);
 
  //Registros Mágicos 
  OV7670_write(0x3A,0x04); //Imagen no negativa, output UV nomal, secuencia UV del output YUYV
- OV7670_write(0x14,0x28); //Gain ceiling, maximo valor de AGC queda en 4x 
+ OV7670_write(0x14,0x18); //Gain ceiling, maximo valor de AGC queda en 4x 
+ 
  OV7670_write(0x4F,0xB3); //Coeficiente 1 de la matriz queda con el valor 0xB3
  OV7670_write(0x50,0xB3); //Coeficiente 2 de la matriz queda con el valor 0xB3
  OV7670_write(0x51,0x00); //Coeficiente 3 de la matriz queda con el valor 0x00
@@ -52,7 +57,7 @@ delay(100);
  OV7670_write(0x1A,0x7A); //Formato de salida VREF (VSTOP) 0111 1010 <= 8 MSB
  OV7670_write(0x03,0xA4); //(VREF 1010 0100) Control VREF 10 <= AGC, 10 <= reservado, 01 <= 2 LSB de VSTOP, 00 <= 2 LSB de VSTRT
  OV7670_write(0x0F,0x41); // HREF en negro optico desactivado, usar linea negra optica como señal BLC, BLC digital desactivado
- OV7670_write(0x32,0x80); //Repetido
+ //OV7670_write(0x32,0x80); //Repetido
  OV7670_write(0x1E,0x00); //Se seleccion imagen no en espejo
  OV7670_write(0x33,0x0B); //Array current control = 0000 1011
  OV7670_write(0x3C,0x78); //No hay HREF cuando VSYNC es 0
@@ -63,6 +68,7 @@ delay(100);
  OV7670_write(0xB2,0x0E); //Reservado
  OV7670_write(0xB3,0x80); //Digital BLC target = 1000 0000
  OV7670_write(0x72,0x22); //Control DCW
+ 
  OV7670_write(0x73,0xF2); //Division pclk en 4
 
 

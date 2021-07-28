@@ -20,13 +20,13 @@ void setup() {
 
 void set_cam_RGB444_QCIF(){
    
-  OV7670_write(0x12, 0x80);
+ // OV7670_write(0x12, 0x80);
 
   delay(100);
  
- OV7670_write(0x12, 0x0C);  //COM7: Set QCIF and RGB
+ OV7670_write(0x12, 0x06);  //COM7: Set QCIF and RGB
  OV7670_write(0x11, 0xC0);       //CLKR: Set internal clock to use external clock
- OV7670_write(0x0C, 0x08);       //COM3: Enable Scaler
+ OV7670_write(0x0C, 0x04);       //COM3: Enable Scaler
  OV7670_write(0x3E, 0x1A);
  OV7670_write(0x40,0xD0);      //COM15: Set RGB
  OV7670_write(0x8C,0x02);      // Set RGB 444
