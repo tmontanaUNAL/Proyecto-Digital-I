@@ -43,7 +43,7 @@ module test_VGA(
  	
 	// input/output
 	
-	input wire [7:0]FILTER // Seleccion filtro con los switch.
+	input wire [7:0]filter // Seleccion filtro con los switch.
 		
 );
 
@@ -121,7 +121,7 @@ buffer_ram_dp #( AW,DW)
 	.addr_in(DP_RAM_addr_in), 
 	.data_in(DP_RAM_data_in),
 	.regwrite(DP_RAM_regW),
-	.filter(FILTER),
+	.filter(filter),
 
 	.clk_r(clk31M), 
 	.addr_out(DP_RAM_addr_out),
@@ -176,10 +176,10 @@ assign pwdn=0;
 este bloque debe crear un nuevo archivo 
 **************************************************************************** */
 FSM_data  datos( 
-		.D(dat),
-		.VSYNC(vsync),
-		.PCLK(pclk),
-		.HREF(href),
+		.data(dat),
+		.vsync(vsync),
+		.pclk(pclk),
+		.href(href),
 		.rst(rst),
 		
 		.mem_px_addr(DP_RAM_addr_in),
@@ -367,10 +367,10 @@ El código en verilog es:
 module FSM_data #(
 		parameter AW = 15,
 		parameter DW = 3)(
-		input [7:0] D,
-		input VSYNC,
-		input PCLK,
-	   input HREF,
+		input [7:0] data,
+		input vsync,
+		input pclk,
+	   input href,
 		input rst,
 		
 		output reg[AW-1: 0] mem_px_addr,
@@ -378,33 +378,46 @@ module FSM_data #(
       output reg px_wr
    );
 
-localparam INICIO=0, BT1=1, BT2=2, NPixels=19199; //Npixels en QQVGA
+localparam INICIO=0, ESCRITURA=1, NPixels=19199; //Npixels en QQVGA
 reg [1:0] estado=0;
 
 reg i=0;
-always @(posedge PCLK) begin
-   
-if((mem_px_addr==NPixels)|VSYNC) begin //Revisa si ya se termino el frame y manda al inicio
-						mem_px_addr<=0;
+reg vsync_antes=0;
+always @(posedge pclk) begin
+
+	case(estado)
+		INICIO:begin
+			i<=0;
+			mem_px_addr<=-1;
+			if (vsync==0 & vsync_antes==1)begin
+			estado<=ESCRITURA;
+			end
+			else begin
+			vsync_antes<=vsync;
+			end
+		end
+		
+		ESCRITURA:begin
+			if((mem_px_addr==NPixels)|vsync) begin //Revisa si ya se termino el frame y manda al inicio
+				estado<=INICIO;
 	      end
-	
-	if(~VSYNC&HREF)begin //Verifica que los datos sean validos
-	      
+			if(~vsync&href)begin //Verifica que los datos sean validos	
 			px_wr<=0;
 			if(i==0)begin
-			mem_px_data[2]<=(D[3:0]<8) ? (1'b0):(1'b1);
+			mem_px_addr<=mem_px_addr+1;
+			mem_px_data[2]<=(data[3:0]<8) ? (1'b0):(1'b1);
 			end
 			if(i==1)begin
-			mem_px_data[1]<=(D[7:4]<8) ? (1'b0):(1'b1);
-	      mem_px_data[0]<=(D[3:0]<8) ? (1'b0):(1'b1);
+			mem_px_data[1]<=(data[7:4]<8) ? (1'b0):(1'b1);
+			mem_px_data[0]<=(data[3:0]<8) ? (1'b0):(1'b1);
 			px_wr<=1;
-			mem_px_addr<=mem_px_addr+1;
-			
+
 			end
-	      i<=~i;		
-		end 
+			i<=~i;		
+			end
+		end
+	endcase
 end
-	
 
 endmodule
 ```
