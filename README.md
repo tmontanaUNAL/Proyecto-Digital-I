@@ -356,7 +356,7 @@ Es de notar que un pixel lo recibe en 2 pulsos de PCLK debido a que la camara so
 
 Para el funcionamiento de este modulo se uso una maquina de estado finito, el siguiente es el diagrama de flujo:
 
-![Diagrama en blanco](https://user-images.githubusercontent.com/80001669/127943768-67fb785e-21f3-4f9e-a3b0-984709486834.png)
+![Diagrama en blanco](https://user-images.githubusercontent.com/80001669/127943928-d61f879d-2907-4582-af90-1c705169d446.png)
 
 Y el diagrama de estados queda:
 
