@@ -82,7 +82,14 @@ Como se debe dividir entre 4 la escala inicial , entonces quiere decir que cada 
  
  
 
-Para configurar la ganancia de la camara  se medifico el registro 
+Para configurar la ganancia de la camara  se medifico el registro 14(COM9):
+
+
+![image](https://user-images.githubusercontent.com/80170093/128097222-e29e2e0d-7385-4225-bf60-d4e5abc2fe2a.png)
+
+Para configurar la ganancia  de la cámara la cual nos da la tonalidad del  brillo de cada imagen , tenemos que tener en cuenta cuales son los factores que nos permiten distinguir de una mejor manera la imagen que se captura , un factor es la cantidad de colores con los cuales estamos trabajando y también el timo de imágenes que tomaremos, después de realizar pruebas cambiando las diferentes ganancias tenemos que la ganancia que se adecua mas a la cantidad de colores que manejamos es  de 4x. Como los cuatro bits menos significativos  están  reservados y configurados previamente  con 1010 , entonces tenemos que el byte que representa la configuración de ese registro en binario es 00011010 que en hexadecimal es 18.
+
+OV7670_write(0x14,0x18);
 
 
 
