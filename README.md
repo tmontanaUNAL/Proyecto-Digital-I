@@ -68,13 +68,18 @@ Como se debe dividir entre 4 la escala inicial , entonces quiere decir que cada 
 
  OV7670_write(0x72,0x22);
  
- Para configurar el PCLK usamos el registro 73:
+ Ahora realizamos la divicion  del PCLK usando el registro 73:
  
  ![image](https://user-images.githubusercontent.com/80170093/128091745-fcd51946-1b0b-4974-9bc9-4a94d1183729.png)
 
+ Para poder hacer la división primero escogemos la magnitud entera a la cual se va a dividir,  que en este caso es 4 , mirando la anterior tablan  vemos que para dividir entre este valor, los tres primeros bit de menor peso deben ser 010. Para la configuración del divisor de reloj de bypass para control de escala DSP,  tenemos que seleccionar la opción divisor de reloj de bypass , esto se hace colocando el 4 bit del byte en 1 en el registro 73 , finalmente tenemos que el valor del byte en el registro 72  en binario debe se de 11110010 que en hexadecimal es F2.
+ 
+ OV7670_write(0x73,0xF2);
  
  
- OV7670_write(0x73,0xF2); //Division pclk en 4
+ 
+ 
+ 
 
 Para configurar la ganancia de la camara  se medifico el registro 
 
