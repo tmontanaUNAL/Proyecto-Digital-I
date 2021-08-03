@@ -1,7 +1,7 @@
 # Proyecto-Digital-I
 Proyecto curso Digital I, camara VGA
 ## Funcionamiento de Modulo OV7670
-El módulo OV7670 es un  sensor de imagen capaz de tomar hasta un máximo de 30 fotogramas por segundo , con una  resolución de 640x480 pixeles y voltaje de operación 3.3V. Para este proyecto se configuro los registros internos de este módulo mediante el uso  del puerto I2C de un Arduino mega 2560. Esta configuración nos permitió modificar el formato de imagen que nos envía la cámara , que  posteriormente será procesado por la FPGA.
+El módulo OV7670 es un  sensor de imagen capaz de tomar hasta un máximo de 30 fotogramas por segundo , con una  resolución de 640x480 pixeles y voltaje de operación 3.3V. Para este proyecto se configuro los registros internos de este módulo mediante el uso  del puerto I2C de un Arduino mega 2560(Pin 20  y Pin 21 ). Esta configuración nos permitió modificar el formato de imagen que nos envía la cámara , que  posteriormente será procesado por la FPGA.
 
 Lo que se configura en los registros internos de la cámara es principalmente la exposición y el control de ganancia , la exposición debido a que esto hace que el lente de la  cámara tome de una mejor o peor  manera  la imagen que se desea capturar . Esta configuración nos permitió modificar la forma como se enviaron la señales:
 <ol>HREF: Sincroniza los pixeles en  forma horizontal </ol> 
