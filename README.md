@@ -7,6 +7,7 @@ Lo que se configura en los registros internos de la cámara es principalmente la
 <ol>HREF: Sincroniza los pixeles en  forma horizontal </ol> 
 <ol>VSYNC: Sincroniza los pixeles en  forma vertical </ol>
 <ol>PCLK: Reloj que nos envía la cámara</ol>  
+
 <img src="https://user-images.githubusercontent.com/80170093/126074371-762d4df3-53be-41d3-aef7-fd3918965739.PNG"width="700"height="400">
 
 Como este tipo de módulo no tiene memoria FIFO que permita guardar los datos , este nos enviara datos  de pixeles constante mente , es por esto que mediante el uso de la FPGA creamos nuestra memoria FIFO a partir de registros 
@@ -355,9 +356,11 @@ Este modulo se encarga de recibir los datos del pixel de la cámara, asi como el
 Es de notar que un pixel lo recibe en 2 pulsos de PCLK debido a que la camara solo puede manda 8 bits al tiempo y se requieren 16 para un pixel en RGB 444.
 
 Para el funcionamiento de este modulo se uso una maquina de estado finito, el siguiente es el diagrama de flujo:
+
 ![Diagrama en blanco](https://user-images.githubusercontent.com/80001669/127937770-2676feb1-cc7f-4ea8-b8da-7cdeefe31acd.png)
 
 Y el diagrama de estados queda:
+
 ![image](https://user-images.githubusercontent.com/80001669/127943068-b7526698-1f0f-4f50-a65a-a6ebfefcd383.png)
 
 El código en verilog es:
@@ -408,4 +411,5 @@ endmodule
 ```
 ## Diagrama de bloques
 A continuacion vemos un diagrama de bloques mostrando el la interconexión de los distintos modulos, asi como el flujo de datos desde y hacia disposistivos externos (pantalla, cámara, switches y arduino).
+
 ![image](https://user-images.githubusercontent.com/80001669/126925228-673c0f92-5e86-4c93-a49d-dac757951ee3.png)
