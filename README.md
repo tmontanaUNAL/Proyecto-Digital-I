@@ -356,11 +356,11 @@ Es de notar que un pixel lo recibe en 2 pulsos de PCLK debido a que la camara so
 
 Para el funcionamiento de este modulo se uso una maquina de estado finito, el siguiente es el diagrama de flujo:
 
-![Diagrama en blanco](https://user-images.githubusercontent.com/80001669/127943928-d61f879d-2907-4582-af90-1c705169d446.png)
+![Diagrama en blanco](https://user-images.githubusercontent.com/80001669/128039062-53f6fcf5-8ac8-405a-9542-f7a9fcc24200.png)
 
 Y el diagrama de estados queda:
 
-![image](https://user-images.githubusercontent.com/80001669/127943799-a0db8879-5577-4575-9c1a-4c5c34d0d902.png)
+![image](https://user-images.githubusercontent.com/80001669/128039206-9081120b-c158-4c32-bb4c-a9e43e2d7e12.png)
 
 El código en verilog es:
 ```verilog
