@@ -33,7 +33,7 @@ Para configurar la cámara en RGB 444 se usa el registro 8C (RGB 444):
 OV7670_write(0x8C,0x02); 
  OV7670_write(0x40,0xD0);
 
-Como se evidencia en la tabla del registro 8C (RGB 444) , para configurar la cámara en  formato RGB 444 es necesario que el valor del registro en formato binario sea 0000010  que en hexadecimal  es 02, esto solo es valido cundo el registro 40( COM15[4]) en el posicion 4  esta en alto (1) , en este casa cundo esta activa la función RGB 555 o RGB 565.
+Como se evidencia en la tabla del registro 8C (RGB 444) , para configurar la cámara en  formato RGB 444 es necesario que el valor del registro en formato binario sea 00000010  que en hexadecimal  es 02, esto solo es valido cundo el registro 40( COM15[4]) en el posicion 4  esta en alto (1) , en este casa cundo esta activa la función RGB 555 o RGB 565.
 
 
 
@@ -44,7 +44,21 @@ Para que nuestra cámara nos envié la imagen en formato QQVGA es necesario ente
 
 Como se evidencia en el anterior gráfico , el frame timing del formato QQVGA es 1/4 del frame timing del VGA, por tal motivo es necesario dividir el reloj del formato VGA entre 4, para esto modificamos los siguientes registros:
 
-OV7670_write(0x0C, 0x04);       //COM3: Enable DCW
+* Activa el factor de escala  : OV7670_write(0x0C, 0x04);      
+
+![image](https://user-images.githubusercontent.com/80170093/128079565-0ba940eb-b79c-49fe-8668-b26ef7c39d39.png)
+
+Para esto el bit[3] del registro 0C(COM3) debe estar en alto , es así como el dato binario que debe estar en este registro debe ser 00000100 que en hexadecimal es 04 , esto solo sucede si  se establece un formato predefinido , el cual es que el registro 3E (COM14) en su posición 3 (COM14[3]) este en estado alto para que se de el ajuste manual. 
+
+* Para dividir el PCLK entre 4 es necesario configurar el registro 3E(COM14):
+
+
+![image](https://user-images.githubusercontent.com/80170093/128082814-3d66666f-85f2-496f-a0fe-a7a2589a163b.png)
+
+como muestra la anterior tabla , dado que se tiene que dividir entre 4 el PCLK (reloj que genera la Cámara) entonces los 3 primeros bit de byte son 010 , el 4 bit debe ser 1 dado que es una condición que se estableció anteriormente para el ajuste manual, y el 5 bit debe ser 1 debido a que con este se habilita el  DCW y la escala del PCLK. 
+
+
+
 
 OV7670_write(0x3E, 0x1A);     //Con DCW y con divisor del reloj pclk en 4
 
