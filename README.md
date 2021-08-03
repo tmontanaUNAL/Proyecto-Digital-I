@@ -60,7 +60,7 @@ OV7670_write(0x3E, 0x1A);
 como muestra la anterior tabla , dado que se tiene que dividir entre 4 el PCLK (reloj que genera la Cámara) entonces los 3 primeros bit de byte son 010 , el 4 bit debe ser 1 dado que es una condición que se estableció anteriormente para el ajuste manual el 5 bit debe ser 1 debido a que con este se habilita el  DCW y la escala del PCLK , y los bit restantes son 0, es así como el valor binario  que le corresponde al registro 3E (COM14) es 00011010 que en hexadecimal es  1A . 
 
 
-Para configurar el factor de escala usamos el registro 72:
+* Para configurar el factor de escala usamos el registro 72:
 
 ![image](https://user-images.githubusercontent.com/80170093/128089954-2ecf45c3-f0f7-4979-bf1b-004d42da8d57.png)
 
@@ -68,7 +68,7 @@ Como se debe dividir entre 4 la escala inicial , entonces quiere decir que cada 
 
  OV7670_write(0x72,0x22);
  
- Ahora realizamos la divicion  del PCLK usando el registro 73:
+* Ahora realizamos la divicion  del PCLK usando el registro 73:
  
  ![image](https://user-images.githubusercontent.com/80170093/128091745-fcd51946-1b0b-4974-9bc9-4a94d1183729.png)
 
