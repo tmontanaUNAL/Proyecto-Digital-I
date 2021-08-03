@@ -40,7 +40,7 @@ Como se evidencia en la tabla del registro 8C (RGB 444) , para configurar la cá
 Para que nuestra cámara nos envié la imagen en formato QQVGA es necesario entender la relación que existen entré este formato y el formato VGA:
 
 
-![image](https://user-images.githubusercontent.com/80170093/128057891-fd6616d5-27b8-4edb-8f61-c9108ede7d88.png)
+![image](https://user-images.githubusercontent.com/80170093/128084881-2d9955db-8f55-4b4e-9e19-003ccd6c4e96.png)
 
 Como se evidencia en el anterior gráfico , el frame timing del formato QQVGA es 1/4 del frame timing del VGA, por tal motivo es necesario dividir el reloj del formato VGA entre 4, para esto modificamos los siguientes registros:
 
