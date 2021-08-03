@@ -9,7 +9,53 @@ Lo que se configura en los registros internos de la cámara es principalmente la
 <ol>PCLK: Reloj que nos envía la cámara</ol>  
 <img src="https://user-images.githubusercontent.com/80170093/126074371-762d4df3-53be-41d3-aef7-fd3918965739.PNG"width="700"height="400">
 
-Como este tipo de módulo no tiene memoria FIFO que permita guardar los datos , este nos enviara datos  de pixeles constante mente , es por esto que mediante el uso de la FPGA creamos nuestra memoria FIFO a partir de registros 
+Como este tipo de módulo no tiene memoria FIFO que permita guardar los datos , este nos enviara datos  de pixeles constante mente , es por esto que mediante el uso de la FPGA creamos nuestra memoria FIFO a partir de registros . 
+
+
+
+Los registros configurados fueron:
+
+* Configuración del formato RGB de imagen  : 
+
+![image](https://user-images.githubusercontent.com/80170093/128038045-9a07b324-59e9-4749-b8da-636ba2b47c6e.png)
+
+
+Como se evidencia en la tabla del registro 12 (COM7), para configurar la cámara en  formato RGB es necesario que el valor del registro en formato binario sea 0000100  que en hexadecimal  es 04.
+
+OV7670_write(0x12, 0x04);
+
+
+Para configurar la cámara en RGB 444 se usa el registro 8C (RGB 444):
+
+![image](https://user-images.githubusercontent.com/80170093/128046962-a5e39cf9-b1a1-4965-8a59-a387d90ff102.png)
+
+
+OV7670_write(0x8C,0x02); 
+ OV7670_write(0x40,0xD0);
+
+Como se evidencia en la tabla del registro 8C (RGB 444) , para configurar la cámara en  formato RGB 444 es necesario que el valor del registro en formato binario sea 0000010  que en hexadecimal  es 02, esto solo es valido cundo el registro 40( COM15[4]) en el posicion 4  esta en alto (1) , en este casa cundo esta activa la función RGB 555 o RGB 565.
+
+
+
+Para que nuestra cámara nos envié la imagen en formato QQVGA es necesario entender la relación que existen entré este formato y el formato VGA:
+
+
+![image](https://user-images.githubusercontent.com/80170093/128057891-fd6616d5-27b8-4edb-8f61-c9108ede7d88.png)
+
+Como se evidencia en el anterior gráfico , el frame timing del formato QQVGA es 1/4 del frame timing del VGA, por tal motivo es necesario dividir el reloj del formato VGA entre 4, para esto modificamos los siguientes registros:
+
+OV7670_write(0x0C, 0x04);       //COM3: Enable DCW
+
+OV7670_write(0x3E, 0x1A);     //Con DCW y con divisor del reloj pclk en 4
+
+ OV7670_write(0x72,0x22); //Control DCW
+ 
+ OV7670_write(0x73,0xF2); //Division pclk en 4
+
+Para configurar la ganancia de la camara  se medifico el registro 
+
+
+
 ## Documentación de Código 
 El proyecto se dividió en cuatro módulos: test_VGA , buffer_ram_dp, VGA_Driver640x480 y FSM_data.
 ### test_VGA
@@ -43,7 +89,7 @@ module test_VGA(
  	
 	// input/output
 	
-	input wire [7:0]filter // Seleccion filtro con los switch.
+	input wire [7:0]FILTER // Seleccion filtro con los switch.
 		
 );
 
@@ -121,7 +167,7 @@ buffer_ram_dp #( AW,DW)
 	.addr_in(DP_RAM_addr_in), 
 	.data_in(DP_RAM_data_in),
 	.regwrite(DP_RAM_regW),
-	.filter(filter),
+	.filter(FILTER),
 
 	.clk_r(clk31M), 
 	.addr_out(DP_RAM_addr_out),
@@ -176,10 +222,10 @@ assign pwdn=0;
 este bloque debe crear un nuevo archivo 
 **************************************************************************** */
 FSM_data  datos( 
-		.data(dat),
-		.vsync(vsync),
-		.pclk(pclk),
-		.href(href),
+		.D(dat),
+		.VSYNC(vsync),
+		.PCLK(pclk),
+		.HREF(href),
 		.rst(rst),
 		
 		.mem_px_addr(DP_RAM_addr_in),
@@ -356,21 +402,21 @@ Es de notar que un pixel lo recibe en 2 pulsos de PCLK debido a que la camara so
 
 Para el funcionamiento de este modulo se uso una maquina de estado finito, el siguiente es el diagrama de flujo:
 
-![Diagrama en blanco](https://user-images.githubusercontent.com/80001669/128039062-53f6fcf5-8ac8-405a-9542-f7a9fcc24200.png)
+![Diagrama en blanco](https://user-images.githubusercontent.com/80001669/127943928-d61f879d-2907-4582-af90-1c705169d446.png)
 
 Y el diagrama de estados queda:
 
-![image](https://user-images.githubusercontent.com/80001669/128039206-9081120b-c158-4c32-bb4c-a9e43e2d7e12.png)
+![image](https://user-images.githubusercontent.com/80001669/127943799-a0db8879-5577-4575-9c1a-4c5c34d0d902.png)
 
 El código en verilog es:
 ```verilog
 module FSM_data #(
 		parameter AW = 15,
 		parameter DW = 3)(
-		input [7:0] data,
-		input vsync,
-		input pclk,
-	   input href,
+		input [7:0] D,
+		input VSYNC,
+		input PCLK,
+	   input HREF,
 		input rst,
 		
 		output reg[AW-1: 0] mem_px_addr,
@@ -378,46 +424,33 @@ module FSM_data #(
       output reg px_wr
    );
 
-localparam INICIO=0, ESCRITURA=1, NPixels=19199; //Npixels en QQVGA
+localparam INICIO=0, BT1=1, BT2=2, NPixels=19199; //Npixels en QQVGA
 reg [1:0] estado=0;
 
 reg i=0;
-reg vsync_antes=0;
-always @(posedge pclk) begin
-
-	case(estado)
-		INICIO:begin
-			i<=0;
-			mem_px_addr<=-1;
-			if (vsync==0 & vsync_antes==1)begin
-			estado<=ESCRITURA;
-			end
-			else begin
-			vsync_antes<=vsync;
-			end
-		end
-		
-		ESCRITURA:begin
-			if((mem_px_addr==NPixels)|vsync) begin //Revisa si ya se termino el frame y manda al inicio
-				estado<=INICIO;
+always @(posedge PCLK) begin
+   
+if((mem_px_addr==NPixels)|VSYNC) begin //Revisa si ya se termino el frame y manda al inicio
+						mem_px_addr<=0;
 	      end
-			if(~vsync&href)begin //Verifica que los datos sean validos	
+	
+	if(~VSYNC&HREF)begin //Verifica que los datos sean validos
+	      
 			px_wr<=0;
 			if(i==0)begin
-			mem_px_addr<=mem_px_addr+1;
-			mem_px_data[2]<=(data[3:0]<8) ? (1'b0):(1'b1);
+			mem_px_data[2]<=(D[3:0]<8) ? (1'b0):(1'b1);
 			end
 			if(i==1)begin
-			mem_px_data[1]<=(data[7:4]<8) ? (1'b0):(1'b1);
-			mem_px_data[0]<=(data[3:0]<8) ? (1'b0):(1'b1);
+			mem_px_data[1]<=(D[7:4]<8) ? (1'b0):(1'b1);
+	      mem_px_data[0]<=(D[3:0]<8) ? (1'b0):(1'b1);
 			px_wr<=1;
-
+			mem_px_addr<=mem_px_addr+1;
+			
 			end
-			i<=~i;		
-			end
-		end
-	endcase
+	      i<=~i;		
+		end 
 end
+	
 
 endmodule
 ```
