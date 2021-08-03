@@ -55,12 +55,10 @@ Para esto el bit[3] del registro 0C(COM3) debe estar en alto , es así como el d
 
 ![image](https://user-images.githubusercontent.com/80170093/128082814-3d66666f-85f2-496f-a0fe-a7a2589a163b.png)
 
-como muestra la anterior tabla , dado que se tiene que dividir entre 4 el PCLK (reloj que genera la Cámara) entonces los 3 primeros bit de byte son 010 , el 4 bit debe ser 1 dado que es una condición que se estableció anteriormente para el ajuste manual, y el 5 bit debe ser 1 debido a que con este se habilita el  DCW y la escala del PCLK. 
+OV7670_write(0x3E, 0x1A);
 
+como muestra la anterior tabla , dado que se tiene que dividir entre 4 el PCLK (reloj que genera la Cámara) entonces los 3 primeros bit de byte son 010 , el 4 bit debe ser 1 dado que es una condición que se estableció anteriormente para el ajuste manual el 5 bit debe ser 1 debido a que con este se habilita el  DCW y la escala del PCLK , y los bit restantes son 0, es así como el valor binario  que le corresponde al registro 3E (COM14) es 00011010 que en hexadecimal es  1A . 
 
-
-
-OV7670_write(0x3E, 0x1A);     //Con DCW y con divisor del reloj pclk en 4
 
  OV7670_write(0x72,0x22); //Control DCW
  
