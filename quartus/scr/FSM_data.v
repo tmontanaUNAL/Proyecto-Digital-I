@@ -18,27 +18,41 @@ localparam INICIO=0, BT1=1, BT2=2, NPixels=19199; //Npixels en QQVGA
 reg [1:0] estado=0;
 
 reg i=0;
+reg vsync_antes=0;
 always @(posedge PCLK) begin
-   
-if((mem_px_addr==NPixels)|VSYNC) begin //Revisa si ya se termino el frame y manda al inicio
-						mem_px_addr<=0;
+
+	case(estado)
+		INICIO:begin
+			i<=0;
+			mem_px_addr<=-1;
+			if (VSYNC==0 & vsync_antes==1)begin
+			estado<=BT1;
+			end
+			else begin
+			vsync_antes<=VSYNC;
+			end
+		end
+		
+		BT1:begin
+			if((mem_px_addr==NPixels)|VSYNC) begin //Revisa si ya se termino el frame y manda al inicio
+				estado<=INICIO;
 	      end
-	
-	if(~VSYNC&HREF)begin //Verifica que los datos sean validos
-	      
+			if(~VSYNC&HREF)begin //Verifica que los datos sean validos	
 			px_wr<=0;
 			if(i==0)begin
+			mem_px_addr<=mem_px_addr+1;
 			mem_px_data[2]<=(D[3:0]<8) ? (1'b0):(1'b1);
 			end
 			if(i==1)begin
 			mem_px_data[1]<=(D[7:4]<8) ? (1'b0):(1'b1);
-	      mem_px_data[0]<=(D[3:0]<8) ? (1'b0):(1'b1);
+			mem_px_data[0]<=(D[3:0]<8) ? (1'b0):(1'b1);
 			px_wr<=1;
-			mem_px_addr<=mem_px_addr+1;
-			
+
 			end
-	      i<=~i;		
-		end 
+			i<=~i;		
+			end
+		end
+	endcase
 end
 	
 

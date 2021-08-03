@@ -12,15 +12,15 @@ dat[7] => dat[7].IN1
 vsync => vsync.IN1
 pclk => pclk.IN2
 href => href.IN1
-pwdn <= <GND>
-xclk <= clk50to24:clk24.c0
-resetcam <= rst.DB_MAX_OUTPUT_PORT_TYPE
-VGA_Hsync_n <= VGA_Driver640x480:VGA640x480.Hsync_n
-VGA_Vsync_n <= VGA_Driver640x480:VGA640x480.Vsync_n
-VGA_R <= VGA_Driver640x480:VGA640x480.pixelOut
-VGA_G <= VGA_Driver640x480:VGA640x480.pixelOut
-VGA_B <= VGA_Driver640x480:VGA640x480.pixelOut
-clkout <= <GND>
+pwdn << <GND>
+xclk << clk50to24:clk24.c0
+resetcam << rst.DB_MAX_OUTPUT_PORT_TYPE
+VGA_Hsync_n << VGA_Driver640x480:VGA640x480.Hsync_n
+VGA_Vsync_n << VGA_Driver640x480:VGA640x480.Vsync_n
+VGA_R << VGA_Driver640x480:VGA640x480.pixelOut
+VGA_G << VGA_Driver640x480:VGA640x480.pixelOut
+VGA_B << VGA_Driver640x480:VGA640x480.pixelOut
+clkout << <GND>
 FILTER[0] => FILTER[0].IN1
 FILTER[1] => FILTER[1].IN1
 FILTER[2] => FILTER[2].IN1
@@ -37,8 +37,8 @@ c0 <= altpll:altpll_component.clk
 
 
 |test_VGA|clk50to31:clk31|altpll:altpll_component
-inclk[0] => clk50to31_altpll:auto_generated.inclk[0]
-inclk[1] => clk50to31_altpll:auto_generated.inclk[1]
+inclk[0] => clk50to31_altpll1:auto_generated.inclk[0]
+inclk[1] => clk50to31_altpll1:auto_generated.inclk[1]
 fbin => ~NO_FANOUT~
 pllena => ~NO_FANOUT~
 clkswitch => ~NO_FANOUT~
@@ -96,7 +96,7 @@ fref <= <GND>
 icdrclk <= <GND>
 
 
-|test_VGA|clk50to31:clk31|altpll:altpll_component|clk50to31_altpll:auto_generated
+|test_VGA|clk50to31:clk31|altpll:altpll_component|clk50to31_altpll1:auto_generated
 clk[0] <= pll1.CLK
 clk[1] <= pll1.CLK1
 clk[2] <= pll1.CLK2
@@ -360,13 +360,15 @@ D[4] => LessThan1.IN8
 D[5] => LessThan1.IN7
 D[6] => LessThan1.IN6
 D[7] => LessThan1.IN5
+VSYNC => vsync_antes.DATAA
 VSYNC => always0.IN1
 VSYNC => always0.IN0
-PCLK => i.CLK
+VSYNC => always0.IN1
 PCLK => mem_px_data[0]~reg0.CLK
 PCLK => mem_px_data[1]~reg0.CLK
 PCLK => mem_px_data[2]~reg0.CLK
 PCLK => px_wr~reg0.CLK
+PCLK => vsync_antes.CLK
 PCLK => mem_px_addr[0]~reg0.CLK
 PCLK => mem_px_addr[1]~reg0.CLK
 PCLK => mem_px_addr[2]~reg0.CLK
@@ -382,6 +384,8 @@ PCLK => mem_px_addr[11]~reg0.CLK
 PCLK => mem_px_addr[12]~reg0.CLK
 PCLK => mem_px_addr[13]~reg0.CLK
 PCLK => mem_px_addr[14]~reg0.CLK
+PCLK => i.CLK
+PCLK => estado~3.DATAIN
 HREF => always0.IN1
 rst => ~NO_FANOUT~
 mem_px_addr[0] <= mem_px_addr[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
