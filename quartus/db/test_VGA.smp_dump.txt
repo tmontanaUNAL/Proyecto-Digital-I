@@ -1,5 +1,5 @@
 
 State Machine - |test_VGA|FSM_data:datos|estado
-Name estado.BT1 
+Name estado.ESCRITURA 
 estado.00 0 
-estado.BT1 1 
+estado.ESCRITURA 1 

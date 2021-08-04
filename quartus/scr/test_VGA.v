@@ -43,7 +43,7 @@ module test_VGA(
  	
 	// input/output
 	
-	input wire [7:0]FILTER // Seleccion filtro con los switch.
+	input wire [7:0]filter // Seleccion filtro con los switch.
 		
 );
 
@@ -121,7 +121,7 @@ buffer_ram_dp #( AW,DW)
 	.addr_in(DP_RAM_addr_in), 
 	.data_in(DP_RAM_data_in),
 	.regwrite(DP_RAM_regW),
-	.filter(FILTER),
+	.filter(filter),
 
 	.clk_r(clk31M), 
 	.addr_out(DP_RAM_addr_out),
@@ -176,10 +176,10 @@ assign pwdn=0;
 este bloque debe crear un nuevo archivo 
 **************************************************************************** */
 FSM_data  datos( 
-		.D(dat),
-		.VSYNC(vsync),
-		.PCLK(pclk),
-		.HREF(href),
+		.data(dat),
+		.vsync(vsync),
+		.pclk(pclk),
+		.href(href),
 		.rst(rst),
 		
 		.mem_px_addr(DP_RAM_addr_in),

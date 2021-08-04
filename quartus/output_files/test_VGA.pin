@@ -126,17 +126,17 @@ href                         : 54        : input  : 2.5 V             :         
 dat[1]                       : 55        : input  : 2.5 V             :         : 4         : Y              
 VCCIO4                       : 56        : power  :                   : 2.5V    : 4         :                
 GND                          : 57        : gnd    :                   :         :           :                
-FILTER[7]                    : 58        : input  : 2.5 V             :         : 4         : Y              
-FILTER[6]                    : 59        : input  : 2.5 V             :         : 4         : Y              
-FILTER[5]                    : 60        : input  : 2.5 V             :         : 4         : Y              
+filter[7]                    : 58        : input  : 2.5 V             :         : 4         : Y              
+filter[6]                    : 59        : input  : 2.5 V             :         : 4         : Y              
+filter[5]                    : 60        : input  : 2.5 V             :         : 4         : Y              
 VCCINT                       : 61        : power  :                   : 1.2V    :           :                
 VCCIO4                       : 62        : power  :                   : 2.5V    : 4         :                
 GND                          : 63        : gnd    :                   :         :           :                
-FILTER[4]                    : 64        : input  : 2.5 V             :         : 4         : Y              
-FILTER[3]                    : 65        : input  : 2.5 V             :         : 4         : Y              
-FILTER[2]                    : 66        : input  : 2.5 V             :         : 4         : Y              
-FILTER[1]                    : 67        : input  : 2.5 V             :         : 4         : Y              
-FILTER[0]                    : 68        : input  : 2.5 V             :         : 4         : Y              
+filter[4]                    : 64        : input  : 2.5 V             :         : 4         : Y              
+filter[3]                    : 65        : input  : 2.5 V             :         : 4         : Y              
+filter[2]                    : 66        : input  : 2.5 V             :         : 4         : Y              
+filter[1]                    : 67        : input  : 2.5 V             :         : 4         : Y              
+filter[0]                    : 68        : input  : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 69        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 70        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 71        :        :                   :         : 4         :                

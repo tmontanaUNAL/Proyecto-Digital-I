@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test_VGA
-Sun Aug 01 11:56:48 2021
+Tue Aug 03 09:53:13 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -59,7 +59,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Aug 01 11:56:48 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Aug 03 09:53:12 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; test_VGA                                    ;
 ; Top-level Entity Name              ; test_VGA                                    ;
@@ -171,49 +171,50 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 2           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
+;     Processors 3-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; scr/PLL/clk50to31.v              ; yes             ; User Wizard-Generated File   ; C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/PLL/clk50to31.v        ;         ;
-; scr/VGA_driver.v                 ; yes             ; User Verilog HDL File        ; C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/VGA_driver.v           ;         ;
-; scr/test_VGA.v                   ; yes             ; User Verilog HDL File        ; C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v             ;         ;
-; scr/buffer_ram_dp.v              ; yes             ; User Verilog HDL File        ; C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/buffer_ram_dp.v        ;         ;
-; scr/FSM_data.v                   ; yes             ; User Verilog HDL File        ; C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/FSM_data.v             ;         ;
-; scr/PLL/clk50to24.v              ; yes             ; User Wizard-Generated File   ; C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/PLL/clk50to24.v        ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf            ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc        ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
-; db/clk50to31_altpll1.v           ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/db/clk50to31_altpll1.v     ;         ;
-; db/clk50to24_altpll.v            ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/db/clk50to24_altpll.v      ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_s9d1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/db/altsyncram_s9d1.tdf     ;         ;
-; db/decode_msa.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/db/decode_msa.tdf          ;         ;
-; db/decode_f8a.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/db/decode_f8a.tdf          ;         ;
-; db/mux_1nb.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/db/mux_1nb.tdf             ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; scr/PLL/clk50to31.v              ; yes             ; User Wizard-Generated File   ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/PLL/clk50to31.v    ;         ;
+; scr/VGA_driver.v                 ; yes             ; User Verilog HDL File        ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/VGA_driver.v       ;         ;
+; scr/test_VGA.v                   ; yes             ; User Verilog HDL File        ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v         ;         ;
+; scr/buffer_ram_dp.v              ; yes             ; User Verilog HDL File        ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/buffer_ram_dp.v    ;         ;
+; scr/FSM_data.v                   ; yes             ; User Verilog HDL File        ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/FSM_data.v         ;         ;
+; scr/PLL/clk50to24.v              ; yes             ; User Wizard-Generated File   ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/PLL/clk50to24.v    ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf                          ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                      ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc                     ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc                   ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cycloneii_pll.inc                   ;         ;
+; db/clk50to31_altpll1.v           ; yes             ; Auto-Generated Megafunction  ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/clk50to31_altpll1.v ;         ;
+; db/clk50to24_altpll.v            ; yes             ; Auto-Generated Megafunction  ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/clk50to24_altpll.v  ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                      ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc               ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                         ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                      ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                       ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                          ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                          ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                        ;         ;
+; db/altsyncram_s9d1.tdf           ; yes             ; Auto-Generated Megafunction  ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/altsyncram_s9d1.tdf ;         ;
+; db/decode_msa.tdf                ; yes             ; Auto-Generated Megafunction  ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/decode_msa.tdf      ;         ;
+; db/decode_f8a.tdf                ; yes             ; Auto-Generated Megafunction  ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/decode_f8a.tdf      ;         ;
+; db/mux_1nb.tdf                   ; yes             ; Auto-Generated Megafunction  ; E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/mux_1nb.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -298,12 +299,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Encoding Type:  One-Hot
 +-------------------------------------------------+
 ; State Machine - |test_VGA|FSM_data:datos|estado ;
-+------------+------------------------------------+
-; Name       ; estado.BT1                         ;
-+------------+------------------------------------+
-; estado.00  ; 0                                  ;
-; estado.BT1 ; 1                                  ;
-+------------+------------------------------------+
++------------------+------------------------------+
+; Name             ; estado.ESCRITURA             ;
++------------------+------------------------------+
+; estado.00        ; 0                            ;
+; estado.ESCRITURA ; 1                            ;
++------------------+------------------------------+
 
 
 +------------------------------------------------------------+
@@ -1301,35 +1302,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Aug 01 11:56:16 2021
+    Info: Processing started: Tue Aug 03 09:52:59 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test_VGA -c test_VGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file scr/pll/clk50to31.v
-    Info (12023): Found entity 1: clk50to31 File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/PLL/clk50to31.v Line: 40
+    Info (12023): Found entity 1: clk50to31 File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/PLL/clk50to31.v Line: 40
 Warning (12019): Can't analyze file -- file scr/FSM_game.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file scr/vga_driver.v
-    Info (12023): Found entity 1: VGA_Driver640x480 File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 18
+    Info (12023): Found entity 1: VGA_Driver640x480 File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 18
 Info (12021): Found 1 design units, including 1 entities, in source file scr/test_vga.v
-    Info (12023): Found entity 1: test_VGA File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 21
+    Info (12023): Found entity 1: test_VGA File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file scr/buffer_ram_dp.v
-    Info (12023): Found entity 1: buffer_ram_dp File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/buffer_ram_dp.v Line: 19
+    Info (12023): Found entity 1: buffer_ram_dp File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/buffer_ram_dp.v Line: 19
 Info (12021): Found 1 design units, including 1 entities, in source file scr/fsm_data.v
-    Info (12023): Found entity 1: FSM_data File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/FSM_data.v Line: 3
+    Info (12023): Found entity 1: FSM_data File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/FSM_data.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file scr/pll/clk50to24.v
-    Info (12023): Found entity 1: clk50to24 File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/PLL/clk50to24.v Line: 40
+    Info (12023): Found entity 1: clk50to24 File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/PLL/clk50to24.v Line: 40
 Warning (12162): EDA synthesis tool is specified as "Custom", but Library Mapping File is not specified
 Warning (12163): EDA synthesis tool is specified as "Custom", but VCC is not specified
 Warning (12164): EDA synthesis tool is specified as "Custom", but GND is not specified
 Info (12127): Elaborating entity "test_VGA" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at test_VGA.v(158): truncated value with size 32 to match size of target (11) File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 158
-Warning (10230): Verilog HDL assignment warning at test_VGA.v(159): truncated value with size 32 to match size of target (11) File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 159
-Warning (10230): Verilog HDL assignment warning at test_VGA.v(160): truncated value with size 32 to match size of target (15) File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 160
-Warning (10034): Output port "clkout" at test_VGA.v(42) has no driver File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 42
-Info (12128): Elaborating entity "clk50to31" for hierarchy "clk50to31:clk31" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 106
-Info (12128): Elaborating entity "altpll" for hierarchy "clk50to31:clk31|altpll:altpll_component" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/PLL/clk50to31.v Line: 91
-Info (12130): Elaborated megafunction instantiation "clk50to31:clk31|altpll:altpll_component" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/PLL/clk50to31.v Line: 91
-Info (12133): Instantiated megafunction "clk50to31:clk31|altpll:altpll_component" with the following parameter: File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/PLL/clk50to31.v Line: 91
+Warning (10230): Verilog HDL assignment warning at test_VGA.v(158): truncated value with size 32 to match size of target (11) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 158
+Warning (10230): Verilog HDL assignment warning at test_VGA.v(159): truncated value with size 32 to match size of target (11) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 159
+Warning (10230): Verilog HDL assignment warning at test_VGA.v(160): truncated value with size 32 to match size of target (15) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 160
+Warning (10034): Output port "clkout" at test_VGA.v(42) has no driver File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 42
+Info (12128): Elaborating entity "clk50to31" for hierarchy "clk50to31:clk31" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 106
+Info (12128): Elaborating entity "altpll" for hierarchy "clk50to31:clk31|altpll:altpll_component" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/PLL/clk50to31.v Line: 91
+Info (12130): Elaborated megafunction instantiation "clk50to31:clk31|altpll:altpll_component" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/PLL/clk50to31.v Line: 91
+Info (12133): Instantiated megafunction "clk50to31:clk31|altpll:altpll_component" with the following parameter: File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/PLL/clk50to31.v Line: 91
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "100"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1385,12 +1386,12 @@ Info (12133): Instantiated megafunction "clk50to31:clk31|altpll:altpll_component
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/clk50to31_altpll1.v
-    Info (12023): Found entity 1: clk50to31_altpll1 File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/db/clk50to31_altpll1.v Line: 30
+    Info (12023): Found entity 1: clk50to31_altpll1 File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/clk50to31_altpll1.v Line: 30
 Info (12128): Elaborating entity "clk50to31_altpll1" for hierarchy "clk50to31:clk31|altpll:altpll_component|clk50to31_altpll1:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "clk50to24" for hierarchy "clk50to24:clk24" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 112
-Info (12128): Elaborating entity "altpll" for hierarchy "clk50to24:clk24|altpll:altpll_component" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/PLL/clk50to24.v Line: 91
-Info (12130): Elaborated megafunction instantiation "clk50to24:clk24|altpll:altpll_component" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/PLL/clk50to24.v Line: 91
-Info (12133): Instantiated megafunction "clk50to24:clk24|altpll:altpll_component" with the following parameter: File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/PLL/clk50to24.v Line: 91
+Info (12128): Elaborating entity "clk50to24" for hierarchy "clk50to24:clk24" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 112
+Info (12128): Elaborating entity "altpll" for hierarchy "clk50to24:clk24|altpll:altpll_component" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/PLL/clk50to24.v Line: 91
+Info (12130): Elaborated megafunction instantiation "clk50to24:clk24|altpll:altpll_component" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/PLL/clk50to24.v Line: 91
+Info (12133): Instantiated megafunction "clk50to24:clk24|altpll:altpll_component" with the following parameter: File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/PLL/clk50to24.v Line: 91
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "25"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1446,17 +1447,17 @@ Info (12133): Instantiated megafunction "clk50to24:clk24|altpll:altpll_component
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/clk50to24_altpll.v
-    Info (12023): Found entity 1: clk50to24_altpll File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/db/clk50to24_altpll.v Line: 30
+    Info (12023): Found entity 1: clk50to24_altpll File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/clk50to24_altpll.v Line: 30
 Info (12128): Elaborating entity "clk50to24_altpll" for hierarchy "clk50to24:clk24|altpll:altpll_component|clk50to24_altpll:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "buffer_ram_dp" for hierarchy "buffer_ram_dp:DP_RAM" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 129
-Info (12128): Elaborating entity "VGA_Driver640x480" for hierarchy "VGA_Driver640x480:VGA640x480" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 146
-Warning (10230): Verilog HDL assignment warning at VGA_driver.v(57): truncated value with size 32 to match size of target (11) File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 57
-Warning (10230): Verilog HDL assignment warning at VGA_driver.v(58): truncated value with size 32 to match size of target (11) File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 58
-Warning (10230): Verilog HDL assignment warning at VGA_driver.v(67): truncated value with size 32 to match size of target (11) File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 67
-Warning (10230): Verilog HDL assignment warning at VGA_driver.v(71): truncated value with size 32 to match size of target (11) File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 71
-Info (12128): Elaborating entity "FSM_data" for hierarchy "FSM_data:datos" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 189
-Warning (10230): Verilog HDL assignment warning at FSM_data.v(27): truncated value with size 32 to match size of target (15) File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/FSM_data.v Line: 27
-Warning (10230): Verilog HDL assignment warning at FSM_data.v(43): truncated value with size 32 to match size of target (15) File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/FSM_data.v Line: 43
+Info (12128): Elaborating entity "buffer_ram_dp" for hierarchy "buffer_ram_dp:DP_RAM" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 129
+Info (12128): Elaborating entity "VGA_Driver640x480" for hierarchy "VGA_Driver640x480:VGA640x480" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 146
+Warning (10230): Verilog HDL assignment warning at VGA_driver.v(57): truncated value with size 32 to match size of target (11) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 57
+Warning (10230): Verilog HDL assignment warning at VGA_driver.v(58): truncated value with size 32 to match size of target (11) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 58
+Warning (10230): Verilog HDL assignment warning at VGA_driver.v(67): truncated value with size 32 to match size of target (11) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 67
+Warning (10230): Verilog HDL assignment warning at VGA_driver.v(71): truncated value with size 32 to match size of target (11) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/VGA_driver.v Line: 71
+Info (12128): Elaborating entity "FSM_data" for hierarchy "FSM_data:datos" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 189
+Warning (10230): Verilog HDL assignment warning at FSM_data.v(27): truncated value with size 32 to match size of target (15) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/FSM_data.v Line: 27
+Warning (10230): Verilog HDL assignment warning at FSM_data.v(43): truncated value with size 32 to match size of target (15) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/FSM_data.v Line: 43
 Warning (276027): Inferred dual-clock RAM node "buffer_ram_dp:DP_RAM|ram_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "buffer_ram_dp:DP_RAM|ram_rtl_0" 
@@ -1491,30 +1492,30 @@ Info (12133): Instantiated megafunction "buffer_ram_dp:DP_RAM|altsyncram:ram_rtl
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_s9d1.tdf
-    Info (12023): Found entity 1: altsyncram_s9d1 File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/db/altsyncram_s9d1.tdf Line: 34
+    Info (12023): Found entity 1: altsyncram_s9d1 File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/altsyncram_s9d1.tdf Line: 34
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_msa.tdf
-    Info (12023): Found entity 1: decode_msa File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/db/decode_msa.tdf Line: 23
+    Info (12023): Found entity 1: decode_msa File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/decode_msa.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_f8a.tdf
-    Info (12023): Found entity 1: decode_f8a File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/db/decode_f8a.tdf Line: 23
+    Info (12023): Found entity 1: decode_f8a File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/decode_f8a.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_1nb.tdf
-    Info (12023): Found entity 1: mux_1nb File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/db/mux_1nb.tdf Line: 23
+    Info (12023): Found entity 1: mux_1nb File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/mux_1nb.tdf Line: 23
 Warning (12162): EDA synthesis tool is specified as "Custom", but Library Mapping File is not specified
 Warning (12163): EDA synthesis tool is specified as "Custom", but VCC is not specified
 Warning (12164): EDA synthesis tool is specified as "Custom", but GND is not specified
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "pwdn" is stuck at GND File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 31
-    Warning (13410): Pin "clkout" is stuck at GND File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 42
+    Warning (13410): Pin "pwdn" is stuck at GND File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 31
+    Warning (13410): Pin "clkout" is stuck at GND File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 42
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 6 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "dat[2]" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
-    Warning (15610): No output dependent on input pin "dat[1]" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
-    Warning (15610): No output dependent on input pin "dat[0]" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
-    Warning (15610): No output dependent on input pin "dat[6]" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
-    Warning (15610): No output dependent on input pin "dat[5]" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
-    Warning (15610): No output dependent on input pin "dat[4]" File: C:/Users/fabia/Desktop/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
+    Warning (15610): No output dependent on input pin "dat[2]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
+    Warning (15610): No output dependent on input pin "dat[1]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
+    Warning (15610): No output dependent on input pin "dat[0]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
+    Warning (15610): No output dependent on input pin "dat[6]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
+    Warning (15610): No output dependent on input pin "dat[5]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
+    Warning (15610): No output dependent on input pin "dat[4]" File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 26
 Info (21057): Implemented 158 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 21 input pins
     Info (21059): Implemented 9 output pins
@@ -1522,9 +1523,9 @@ Info (21057): Implemented 158 device resources after synthesis - the final resou
     Info (21064): Implemented 12 RAM segments
     Info (21065): Implemented 2 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 4754 megabytes
-    Info: Processing ended: Sun Aug 01 11:56:48 2021
-    Info: Elapsed time: 00:00:32
-    Info: Total CPU time (on all processors): 00:00:36
+    Info: Peak virtual memory: 4793 megabytes
+    Info: Processing ended: Tue Aug 03 09:53:13 2021
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:17
 
 
