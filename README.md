@@ -1,15 +1,98 @@
 # Proyecto-Digital-I
 Proyecto curso Digital I, camara VGA
 ## Funcionamiento de Modulo OV7670
-El módulo OV7670 es un  sensor de imagen capaz de tomar hasta un máximo de 30 fotogramas por segundo , con una  resolución de 640x480 pixeles y voltaje de operación 3.3V. Para este proyecto se configuro los registros internos de este módulo mediante el uso  del puerto I2C de un Arduino mega 2560. Esta configuración nos permitió modificar el formato de imagen que nos envía la cámara , que  posteriormente será procesado por la FPGA.
+El módulo OV7670 es un  sensor de imagen capaz de tomar hasta un máximo de 30 fotogramas por segundo , con una  resolución de 640x480 pixeles y voltaje de operación 3.3V. Para este proyecto se configuro los registros internos de este módulo mediante el uso  del puerto I2C de un Arduino mega 2560(Pin 20  y Pin 21 ). Esta configuración nos permitió modificar el formato de imagen que nos envía la cámara , que  posteriormente será procesado por la FPGA.
 
 Lo que se configura en los registros internos de la cámara es principalmente la exposición y el control de ganancia , la exposición debido a que esto hace que el lente de la  cámara tome de una mejor o peor  manera  la imagen que se desea capturar . Esta configuración nos permitió modificar la forma como se enviaron la señales:
 <ol>HREF: Sincroniza los pixeles en  forma horizontal </ol> 
 <ol>VSYNC: Sincroniza los pixeles en  forma vertical </ol>
 <ol>PCLK: Reloj que nos envía la cámara</ol>  
+
 <img src="https://user-images.githubusercontent.com/80170093/126074371-762d4df3-53be-41d3-aef7-fd3918965739.PNG"width="700"height="400">
 
-Como este tipo de módulo no tiene memoria FIFO que permita guardar los datos , este nos enviara datos  de pixeles constante mente , es por esto que mediante el uso de la FPGA creamos nuestra memoria FIFO a partir de registros 
+Como este tipo de módulo no tiene memoria FIFO que permita guardar los datos , este nos enviara datos  de pixeles constante mente , es por esto que mediante el uso de la FPGA creamos nuestra memoria FIFO a partir de registros . 
+
+
+
+Los registros configurados fueron:
+
+* Configuración del formato RGB de imagen  : 
+
+![image](https://user-images.githubusercontent.com/80170093/128038045-9a07b324-59e9-4749-b8da-636ba2b47c6e.png)
+
+
+Como se evidencia en la tabla del registro 12 (COM7), para configurar la cámara en  formato RGB es necesario que el valor del registro en formato binario sea 0000100  que en hexadecimal  es 04.
+
+OV7670_write(0x12, 0x04);
+
+
+Para configurar la cámara en RGB 444 se usa el registro 8C (RGB 444):
+
+![image](https://user-images.githubusercontent.com/80170093/128046962-a5e39cf9-b1a1-4965-8a59-a387d90ff102.png)
+
+
+OV7670_write(0x8C,0x02); 
+ OV7670_write(0x40,0xD0);
+
+Como se evidencia en la tabla del registro 8C (RGB 444) , para configurar la cámara en  formato RGB 444 es necesario que el valor del registro en formato binario sea 00000010  que en hexadecimal  es 02, esto solo es valido cundo el registro 40( COM15[4]) en el posicion 4  esta en alto (1) , en este casa cundo esta activa la función RGB 555 o RGB 565.
+
+
+
+Para que nuestra cámara nos envié la imagen en formato QQVGA es necesario entender la relación que existen entré este formato y el formato VGA:
+
+
+![image](https://user-images.githubusercontent.com/80170093/128084881-2d9955db-8f55-4b4e-9e19-003ccd6c4e96.png)
+
+Como se evidencia en el anterior gráfico , el frame timing del formato QQVGA es 1/4 del frame timing del VGA, por tal motivo es necesario dividir el reloj del formato VGA entre 4, para esto modificamos los siguientes registros:
+
+* Activa el factor de escala  : OV7670_write(0x0C, 0x04);      
+
+![image](https://user-images.githubusercontent.com/80170093/128079565-0ba940eb-b79c-49fe-8668-b26ef7c39d39.png)
+
+Para esto el bit[3] del registro 0C(COM3) debe estar en alto , es así como el dato binario que debe estar en este registro debe ser 00000100 que en hexadecimal es 04 , esto solo sucede si  se establece un formato predefinido , el cual es que el registro 3E (COM14) en su posición 3 (COM14[3]) este en estado alto para que se de el ajuste manual. 
+
+* Para dividir el PCLK entre 4 es necesario configurar el registro 3E(COM14):
+
+
+![image](https://user-images.githubusercontent.com/80170093/128082814-3d66666f-85f2-496f-a0fe-a7a2589a163b.png)
+
+OV7670_write(0x3E, 0x1A);
+
+como muestra la anterior tabla , dado que se tiene que dividir entre 4 el PCLK (reloj que genera la Cámara) entonces los 3 primeros bit de byte son 010 , el 4 bit debe ser 1 dado que es una condición que se estableció anteriormente para el ajuste manual el 5 bit debe ser 1 debido a que con este se habilita el  DCW y la escala del PCLK , y los bit restantes son 0, es así como el valor binario  que le corresponde al registro 3E (COM14) es 00011010 que en hexadecimal es  1A . 
+
+
+* Para configurar el factor de escala usamos el registro 72:
+
+![image](https://user-images.githubusercontent.com/80170093/128089954-2ecf45c3-f0f7-4979-bf1b-004d42da8d57.png)
+
+Como se debe dividir entre 4 la escala inicial , entonces quiere decir que cada muestra  horizontal hacia  a bajo equivale a 4  muestras del reloj original , para configurar la representación hacemos que los 2 primeros bits menos significativos del byte sean 1 y 0 , para las muestras verticales se configura de la misma manera haciendo que el bits[5:4] sean 1 y 0 .Es así como el factor de escala es configurada manualmente a partir del número binario 00100010 que en hexadecimal es 34 .
+
+ OV7670_write(0x72,0x22);
+ 
+* Ahora realizamos la divicion  del PCLK usando el registro 73:
+ 
+ ![image](https://user-images.githubusercontent.com/80170093/128091745-fcd51946-1b0b-4974-9bc9-4a94d1183729.png)
+
+ Para poder hacer la división primero escogemos la magnitud entera a la cual se va a dividir,  que en este caso es 4 , mirando la anterior tablan  vemos que para dividir entre este valor, los tres primeros bit de menor peso deben ser 010. Para la configuración del divisor de reloj de bypass para control de escala DSP,  tenemos que seleccionar la opción divisor de reloj de bypass , esto se hace colocando el 4 bit del byte en 1 en el registro 73 , finalmente tenemos que el valor del byte en el registro 72  en binario debe se de 11110010 que en hexadecimal es F2.
+ 
+ OV7670_write(0x73,0xF2);
+ 
+ 
+ 
+ 
+ 
+
+Para configurar la ganancia de la camara  se medifico el registro 14(COM9):
+
+
+![image](https://user-images.githubusercontent.com/80170093/128097222-e29e2e0d-7385-4225-bf60-d4e5abc2fe2a.png)
+
+Para configurar la ganancia  de la cámara la cual nos da la tonalidad del  brillo de cada imagen , tenemos que tener en cuenta cuales son los factores que nos permiten distinguir de una mejor manera la imagen que se captura , un factor es la cantidad de colores con los cuales estamos trabajando y también el timo de imágenes que tomaremos, después de realizar pruebas cambiando las diferentes ganancias tenemos que la ganancia que se adecua mas a la cantidad de colores que manejamos es  de 4x. Como los cuatro bits menos significativos  están  reservados y configurados previamente  con 1010 , entonces tenemos que el byte que representa la configuración de ese registro en binario es 00011010 que en hexadecimal es 18.
+
+OV7670_write(0x14,0x18);
+
+
+
 ## Documentación de Código 
 El proyecto se dividió en cuatro módulos: test_VGA , buffer_ram_dp, VGA_Driver640x480 y FSM_data.
 ### test_VGA
