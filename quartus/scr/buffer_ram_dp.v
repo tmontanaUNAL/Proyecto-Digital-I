@@ -57,13 +57,7 @@ always @(posedge clk_r) begin
 
 	data <= ram[addr_out]; // escribe el pixel en un registro temporal para su posterior manipulación
 	
-	// cada caso representa un filtro de color aplicado al pixel, selecciona con los switches
-	
-	
-	/*data_out[2] <= data[2];
-	data_out[1] <= data[1];
-	data_out[0] <= data[0];*/
-	
+	// cada caso representa un filtro de color aplicado al pixel, se selecciona con los switches de la tarjeta
 	case(filter)
 			
 		8'd0:begin //sin filto
@@ -96,7 +90,7 @@ always @(posedge clk_r) begin
 		data_out[0] <= data[0];
 		end
 		
-		default:begin
+		default:begin //por defecto se deja sin filtro
 	   data_out[2] <= data[2];
 		data_out[1] <= data[1];
 		data_out[0] <= data[0];
