@@ -364,7 +364,7 @@ end
 endmodule
 ```
 ### VGA_Driver640x480
-Se encarga de controlar la posicion donde se dibujan los pixeles, tambien fija la resolucion de la pantalla. Esto lo hace con dos contadores que va recorriendo los pixeles de la resolucion especificada en vertical y horizontal (cuando llegan al final se resetean). Estos contadores funcionan como un sistema de coodenadas que inidican la direccion del pixel al test_VGA. Tambien a partir de estos contadores se crean las señales Vsync y Hsync ve van a la pantalla.
+Se encarga de controlar la posicion donde se dibujan los pixeles, tambien fija la resolucion de la pantalla. Esto lo hace con dos contadores que va recorriendo los pixeles de la resolucion especificada en vertical y horizontal (cuando llegan al final se resetean). Estos contadores funcionan como un sistema de coodenadas que inidican la direccion del pixel al test_VGA. Tambien a partir de estos contadores se crean las señales Vsync y Hsync que van a la pantalla.
 ```verilog
 module VGA_Driver640x480 (
 	input rst,
@@ -428,7 +428,7 @@ end
 endmodule
 ```
 ### FSM_data
-Este modulo se encarga de recibir los datos del pixel de la cámara, asi como el reloj PCLK, y las señales de sincronización de la imagen VSYNC y HREF. Tambien convierte el formato de los datos de RGB 444 a RGB 111, crea la señal de direccion de memoria de escritura con un contador.
+Este modulo se encarga de recibir los datos del pixel de la cámara, el reloj PCLK, y las señales de sincronización de la imagen VSYNC y HREF. Tambien convierte el formato de los datos de RGB 444 a RGB 111, y de crear la señal de direccion de memoria de escritura con un contador para poder mandar los pixeles a que se escriban en memoria en el modulo de la RAM.
 
 Es de notar que un pixel lo recibe en 2 pulsos de PCLK debido a que la camara solo puede manda 8 bits al tiempo y se requieren 16 para un pixel en RGB 444.
 
