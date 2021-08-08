@@ -41,11 +41,10 @@ always @(posedge pclk) begin
 			mem_px_addr<=mem_px_addr+1; //Aumenta una posición en memoria
 			mem_px_data[2]<=(data[3:0]<8) ? (1'b0):(1'b1); //Se escribe el rojo convirtiendo de RGB444 a RGB111
 			end
-			if(i==1)begin
+			else begin
 			mem_px_data[1]<=(data[7:4]<8) ? (1'b0):(1'b1); //Se escribe el verde convirtiendo de RGB444 a RGB111
 			mem_px_data[0]<=(data[3:0]<8) ? (1'b0):(1'b1); //Se escribe el azul convirtiendo de RGB444 a RGB111
 			px_wr<=1;
-
 			end
 			i<=~i;		
 			end
