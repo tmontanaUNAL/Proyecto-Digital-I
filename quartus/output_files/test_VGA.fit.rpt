@@ -1,5 +1,5 @@
 Fitter report for test_VGA
-Sun Aug 08 09:52:31 2021
+Sun Aug 08 10:05:10 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -71,14 +71,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Aug 08 09:52:31 2021       ;
+; Fitter Status                      ; Successful - Sun Aug 08 10:05:10 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; test_VGA                                    ;
 ; Top-level Entity Name              ; test_VGA                                    ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE10E22C8                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 113 / 10,320 ( 1 % )                        ;
+; Total logic elements               ; 114 / 10,320 ( 1 % )                        ;
 ;     Total combinational functions  ; 110 / 10,320 ( 1 % )                        ;
 ;     Dedicated logic registers      ; 49 / 10,320 ( < 1 % )                       ;
 ; Total registers                    ; 49                                          ;
@@ -162,8 +162,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.9%      ;
-;     Processors 3-6         ;   0.9%      ;
+;     Processor 2            ;   1.1%      ;
+;     Processors 3-6         ;   1.0%      ;
 +----------------------------+-------------+
 
 
@@ -213,16 +213,16 @@ The pin-out file can be found in E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyec
 +---------------------------------------------+----------------------------+
 ; Resource                                    ; Usage                      ;
 +---------------------------------------------+----------------------------+
-; Total logic elements                        ; 113 / 10,320 ( 1 % )       ;
-;     -- Combinational with no register       ; 64                         ;
-;     -- Register only                        ; 3                          ;
-;     -- Combinational with a register        ; 46                         ;
+; Total logic elements                        ; 114 / 10,320 ( 1 % )       ;
+;     -- Combinational with no register       ; 65                         ;
+;     -- Register only                        ; 4                          ;
+;     -- Combinational with a register        ; 45                         ;
 ;                                             ;                            ;
 ; Logic element usage by number of LUT inputs ;                            ;
 ;     -- 4 input functions                    ; 30                         ;
 ;     -- 3 input functions                    ; 25                         ;
 ;     -- <=2 input functions                  ; 55                         ;
-;     -- Register only                        ; 3                          ;
+;     -- Register only                        ; 4                          ;
 ;                                             ;                            ;
 ; Logic elements by mode                      ;                            ;
 ;     -- normal mode                          ; 60                         ;
@@ -232,7 +232,7 @@ The pin-out file can be found in E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyec
 ;     -- Dedicated logic registers            ; 49 / 10,320 ( < 1 % )      ;
 ;     -- I/O registers                        ; 0 / 412 ( 0 % )            ;
 ;                                             ;                            ;
-; Total LABs:  partially or completely used   ; 11 / 645 ( 2 % )           ;
+; Total LABs:  partially or completely used   ; 15 / 645 ( 2 % )           ;
 ; Virtual pins                                ; 0                          ;
 ; I/O pins                                    ; 30 / 92 ( 33 % )           ;
 ;     -- Clock pins                           ; 2 / 3 ( 67 % )             ;
@@ -250,12 +250,12 @@ The pin-out file can be found in E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyec
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )              ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )              ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )              ;
-; Average interconnect usage (total/H/V)      ; 1.2% / 1.4% / 0.9%         ;
-; Peak interconnect usage (total/H/V)         ; 3.4% / 3.9% / 2.7%         ;
+; Average interconnect usage (total/H/V)      ; 1.3% / 1.3% / 1.2%         ;
+; Peak interconnect usage (total/H/V)         ; 4.7% / 4.2% / 5.4%         ;
 ; Maximum fan-out                             ; 39                         ;
 ; Highest non-global fan-out                  ; 34                         ;
-; Total fan-out                               ; 905                        ;
-; Average fan-out                             ; 3.65                       ;
+; Total fan-out                               ; 907                        ;
+; Average fan-out                             ; 3.63                       ;
 +---------------------------------------------+----------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -268,16 +268,16 @@ The pin-out file can be found in E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyec
 +---------------------------------------------+----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
-; Total logic elements                        ; 113 / 10320 ( 1 % )  ; 0 / 10320 ( 0 % )              ;
-;     -- Combinational with no register       ; 64                   ; 0                              ;
-;     -- Register only                        ; 3                    ; 0                              ;
-;     -- Combinational with a register        ; 46                   ; 0                              ;
+; Total logic elements                        ; 114 / 10320 ( 1 % )  ; 0 / 10320 ( 0 % )              ;
+;     -- Combinational with no register       ; 65                   ; 0                              ;
+;     -- Register only                        ; 4                    ; 0                              ;
+;     -- Combinational with a register        ; 45                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
 ;     -- 4 input functions                    ; 30                   ; 0                              ;
 ;     -- 3 input functions                    ; 25                   ; 0                              ;
 ;     -- <=2 input functions                  ; 55                   ; 0                              ;
-;     -- Register only                        ; 3                    ; 0                              ;
+;     -- Register only                        ; 4                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
 ;     -- normal mode                          ; 60                   ; 0                              ;
@@ -287,7 +287,7 @@ The pin-out file can be found in E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyec
 ;     -- Dedicated logic registers            ; 49 / 10320 ( < 1 % ) ; 0 / 10320 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 11 / 645 ( 2 % )     ; 0 / 645 ( 0 % )                ;
+; Total LABs:  partially or completely used   ; 15 / 645 ( 2 % )     ; 0 / 645 ( 0 % )                ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 30                   ; 0                              ;
@@ -305,7 +305,7 @@ The pin-out file can be found in E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyec
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 908                  ; 51                             ;
+;     -- Total Connections                    ; 910                  ; 51                             ;
 ;     -- Registered Connections               ; 416                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
@@ -373,8 +373,8 @@ The pin-out file can be found in E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyec
 ; VGA_R       ; 2     ; 1        ; 0            ; 23           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_Vsync_n ; 143   ; 8        ; 1            ; 24           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; clkout      ; 72    ; 4        ; 32           ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; pwdn        ; 80    ; 5        ; 34           ; 7            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; resetcam    ; 84    ; 5        ; 34           ; 9            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; pwdn        ; 84    ; 5        ; 34           ; 9            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; resetcam    ; 85    ; 5        ; 34           ; 9            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; xclk        ; 28    ; 2        ; 0            ; 9            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
@@ -501,12 +501,12 @@ The pin-out file can be found in E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyec
 ; 77       ; 107        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 78       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; 79       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 80       ; 113        ; 5        ; pwdn                                                      ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 80       ; 113        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; 81       ;            ; 5        ; VCCIO5                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; 82       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 83       ; 117        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; 84       ; 118        ; 5        ; resetcam                                                  ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; 85       ; 119        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 84       ; 118        ; 5        ; pwdn                                                      ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 85       ; 119        ; 5        ; resetcam                                                  ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 86       ; 120        ; 5        ; rst                                                       ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; 87       ; 121        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; 88       ; 125        ; 5        ; dat[0]                                                    ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
@@ -668,12 +668,12 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node                  ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                         ; Entity Name       ; Library Name ;
 +---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------------------------------------------------+-------------------+--------------+
-; |test_VGA                                   ; 113 (19)    ; 49 (0)                    ; 0 (0)         ; 98304       ; 12   ; 0            ; 0       ; 0         ; 30   ; 0            ; 64 (19)      ; 3 (0)             ; 46 (1)           ; |test_VGA                                                                                                   ; test_VGA          ; work         ;
+; |test_VGA                                   ; 114 (20)    ; 49 (0)                    ; 0 (0)         ; 98304       ; 12   ; 0            ; 0       ; 0         ; 30   ; 0            ; 65 (20)      ; 4 (0)             ; 45 (0)           ; |test_VGA                                                                                                   ; test_VGA          ; work         ;
 ;    |FSM_data:datos|                         ; 30 (30)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 2 (2)             ; 20 (20)          ; |test_VGA|FSM_data:datos                                                                                    ; FSM_data          ; work         ;
 ;    |VGA_Driver640x480:VGA640x480|           ; 37 (37)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 22 (22)          ; |test_VGA|VGA_Driver640x480:VGA640x480                                                                      ; VGA_Driver640x480 ; work         ;
-;    |buffer_ram_dp:DP_RAM|                   ; 27 (15)     ; 5 (3)                     ; 0 (0)         ; 98304       ; 12   ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (12)      ; 1 (0)             ; 4 (3)            ; |test_VGA|buffer_ram_dp:DP_RAM                                                                              ; buffer_ram_dp     ; work         ;
-;       |altsyncram:ram_rtl_0|                ; 12 (0)      ; 2 (0)                     ; 0 (0)         ; 98304       ; 12   ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (0)       ; 1 (0)             ; 1 (0)            ; |test_VGA|buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0                                                         ; altsyncram        ; work         ;
-;          |altsyncram_s9d1:auto_generated|   ; 12 (2)      ; 2 (2)                     ; 0 (0)         ; 98304       ; 12   ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (0)       ; 1 (1)             ; 1 (1)            ; |test_VGA|buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated                          ; altsyncram_s9d1   ; work         ;
+;    |buffer_ram_dp:DP_RAM|                   ; 27 (15)     ; 5 (3)                     ; 0 (0)         ; 98304       ; 12   ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (12)      ; 2 (0)             ; 3 (3)            ; |test_VGA|buffer_ram_dp:DP_RAM                                                                              ; buffer_ram_dp     ; work         ;
+;       |altsyncram:ram_rtl_0|                ; 12 (0)      ; 2 (0)                     ; 0 (0)         ; 98304       ; 12   ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (0)       ; 2 (0)             ; 0 (0)            ; |test_VGA|buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0                                                         ; altsyncram        ; work         ;
+;          |altsyncram_s9d1:auto_generated|   ; 12 (2)      ; 2 (2)                     ; 0 (0)         ; 98304       ; 12   ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (0)       ; 2 (2)             ; 0 (0)            ; |test_VGA|buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated                          ; altsyncram_s9d1   ; work         ;
 ;             |decode_f8a:rden_decode_b|      ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |test_VGA|buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_f8a:rden_decode_b ; decode_f8a        ; work         ;
 ;             |decode_msa:decode2|            ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |test_VGA|buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_msa:decode2       ; decode_msa        ; work         ;
 ;             |mux_1nb:mux3|                  ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |test_VGA|buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|mux_1nb:mux3             ; mux_1nb           ; work         ;
@@ -712,7 +712,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; filter[7]   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; filter[3]   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; filter[4]   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; filter[5]   ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; filter[5]   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; filter[6]   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; filter[2]   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; filter[1]   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
@@ -751,7 +751,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; filter[4]                                                                                     ;                   ;         ;
 ;      - buffer_ram_dp:DP_RAM|Selector0~0                                                       ; 0                 ; 6       ;
 ; filter[5]                                                                                     ;                   ;         ;
-;      - buffer_ram_dp:DP_RAM|Selector0~0                                                       ; 1                 ; 6       ;
+;      - buffer_ram_dp:DP_RAM|Selector0~0                                                       ; 0                 ; 6       ;
 ; filter[6]                                                                                     ;                   ;         ;
 ;      - buffer_ram_dp:DP_RAM|Selector0~0                                                       ; 0                 ; 6       ;
 ; filter[2]                                                                                     ;                   ;         ;
@@ -771,7 +771,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - buffer_ram_dp:DP_RAM|Selector1~2                                                       ; 1                 ; 6       ;
 ;      - buffer_ram_dp:DP_RAM|Selector2~0                                                       ; 1                 ; 6       ;
 ; pclk                                                                                          ;                   ;         ;
-;      - FSM_data:datos|px_wr                                                                   ; 0                 ; 0       ;
+;      - FSM_data:datos|px_wr                                                                   ; 1                 ; 0       ;
 ;      - FSM_data:datos|mem_px_addr[0]                                                          ; 1                 ; 0       ;
 ;      - FSM_data:datos|mem_px_addr[1]                                                          ; 1                 ; 0       ;
 ;      - FSM_data:datos|mem_px_addr[2]                                                          ; 1                 ; 0       ;
@@ -790,21 +790,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a0  ; 1                 ; 0       ;
 ;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a1  ; 1                 ; 0       ;
 ;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a2  ; 1                 ; 0       ;
-;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a3  ; 0                 ; 0       ;
-;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a4  ; 0                 ; 0       ;
-;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a5  ; 0                 ; 0       ;
-;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a6  ; 0                 ; 0       ;
-;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a7  ; 0                 ; 0       ;
+;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a3  ; 1                 ; 0       ;
+;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a4  ; 1                 ; 0       ;
+;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a5  ; 1                 ; 0       ;
+;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a6  ; 1                 ; 0       ;
+;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a7  ; 1                 ; 0       ;
 ;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a8  ; 1                 ; 0       ;
 ;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a9  ; 0                 ; 0       ;
 ;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a10 ; 1                 ; 0       ;
-;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11 ; 1                 ; 0       ;
-;      - FSM_data:datos|mem_px_data[2]                                                          ; 0                 ; 0       ;
-;      - FSM_data:datos|mem_px_data[1]                                                          ; 1                 ; 0       ;
-;      - FSM_data:datos|mem_px_data[0]                                                          ; 1                 ; 0       ;
-;      - FSM_data:datos|i                                                                       ; 0                 ; 0       ;
-;      - FSM_data:datos|estado.ESCRITURA                                                        ; 0                 ; 0       ;
-;      - FSM_data:datos|vsync_antes                                                             ; 0                 ; 0       ;
+;      - buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11 ; 0                 ; 0       ;
+;      - FSM_data:datos|mem_px_data[2]                                                          ; 1                 ; 0       ;
+;      - FSM_data:datos|mem_px_data[1]                                                          ; 0                 ; 0       ;
+;      - FSM_data:datos|mem_px_data[0]                                                          ; 0                 ; 0       ;
+;      - FSM_data:datos|i                                                                       ; 1                 ; 0       ;
+;      - FSM_data:datos|estado.ESCRITURA                                                        ; 1                 ; 0       ;
+;      - FSM_data:datos|vsync_antes                                                             ; 1                 ; 0       ;
 ; href                                                                                          ;                   ;         ;
 ;      - FSM_data:datos|mem_px_data[0]~0                                                        ; 1                 ; 6       ;
 ;      - FSM_data:datos|mem_px_addr[2]~43                                                       ; 1                 ; 6       ;
@@ -824,19 +824,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------+-------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                                                            ; Location          ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------------------------------------------------------------------------------------+-------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; FSM_data:datos|estado.ESCRITURA                                                                                 ; FF_X23_Y2_N9      ; 21      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; FSM_data:datos|mem_px_addr[2]~43                                                                                ; LCCOMB_X23_Y2_N20 ; 15      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; FSM_data:datos|mem_px_data[0]~2                                                                                 ; LCCOMB_X23_Y2_N30 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; VGA_Driver640x480:VGA640x480|countX[7]~27                                                                       ; LCCOMB_X25_Y5_N8  ; 22      ; Clock enable, Sync. load   ; no     ; --                   ; --               ; --                        ;
-; VGA_Driver640x480:VGA640x480|countY[4]~18                                                                       ; LCCOMB_X24_Y5_N26 ; 11      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_f8a:rden_decode_b|w_anode62w[2] ; LCCOMB_X22_Y5_N10 ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_f8a:rden_decode_b|w_anode76w[2] ; LCCOMB_X22_Y5_N8  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_f8a:rden_decode_b|w_anode85w[2] ; LCCOMB_X22_Y5_N6  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_f8a:rden_decode_b|w_anode94w[2] ; LCCOMB_X22_Y5_N0  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_msa:decode2|w_anode114w[2]~0    ; LCCOMB_X22_Y2_N30 ; 3       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_msa:decode2|w_anode127w[2]~0    ; LCCOMB_X23_Y2_N14 ; 3       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_msa:decode2|w_anode135w[2]~0    ; LCCOMB_X23_Y2_N24 ; 3       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_msa:decode2|w_anode143w[2]~0    ; LCCOMB_X23_Y2_N26 ; 3       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; FSM_data:datos|estado.ESCRITURA                                                                                 ; FF_X17_Y4_N9      ; 21      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; FSM_data:datos|mem_px_addr[2]~43                                                                                ; LCCOMB_X17_Y4_N0  ; 15      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; FSM_data:datos|mem_px_data[0]~2                                                                                 ; LCCOMB_X17_Y4_N18 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; VGA_Driver640x480:VGA640x480|countX[7]~27                                                                       ; LCCOMB_X22_Y7_N26 ; 22      ; Clock enable, Sync. load   ; no     ; --                   ; --               ; --                        ;
+; VGA_Driver640x480:VGA640x480|countY[4]~18                                                                       ; LCCOMB_X21_Y7_N22 ; 11      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_f8a:rden_decode_b|w_anode62w[2] ; LCCOMB_X22_Y6_N10 ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_f8a:rden_decode_b|w_anode76w[2] ; LCCOMB_X19_Y5_N4  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_f8a:rden_decode_b|w_anode85w[2] ; LCCOMB_X22_Y6_N6  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_f8a:rden_decode_b|w_anode94w[2] ; LCCOMB_X22_Y6_N8  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_msa:decode2|w_anode114w[2]~0    ; LCCOMB_X16_Y7_N20 ; 3       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_msa:decode2|w_anode127w[2]~0    ; LCCOMB_X16_Y3_N20 ; 3       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_msa:decode2|w_anode135w[2]~0    ; LCCOMB_X16_Y4_N30 ; 3       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|decode_msa:decode2|w_anode143w[2]~0    ; LCCOMB_X17_Y4_N20 ; 3       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
 ; clk                                                                                                             ; PIN_23            ; 2       ; Clock                      ; no     ; --                   ; --               ; --                        ;
 ; clk                                                                                                             ; PIN_23            ; 1       ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
 ; clk50to31:clk31|altpll:altpll_component|clk50to31_altpll1:auto_generated|wire_pll1_clk[0]                       ; PLL_2             ; 39      ; Clock                      ; yes    ; Global Clock         ; GCLK8            ; --                        ;
@@ -860,89 +860,89 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 ; Name                                                                                ; Type ; Mode             ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size  ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF  ; Location                                                                                                                                                                           ; Mixed Width RDW Mode ; Port A RDW Mode        ; Port B RDW Mode        ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs ;
 +-------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
-; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Dual Clocks ; 32768        ; 3            ; 32768        ; 3            ; yes                    ; no                      ; yes                    ; no                      ; 98304 ; 32768                       ; 3                           ; 32768                       ; 3                           ; 98304               ; 12   ; None ; M9K_X27_Y1_N0, M9K_X15_Y4_N0, M9K_X27_Y2_N0, M9K_X15_Y1_N0, M9K_X15_Y5_N0, M9K_X27_Y4_N0, M9K_X27_Y5_N0, M9K_X15_Y2_N0, M9K_X27_Y6_N0, M9K_X15_Y3_N0, M9K_X15_Y6_N0, M9K_X27_Y3_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
+; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Dual Clocks ; 32768        ; 3            ; 32768        ; 3            ; yes                    ; no                      ; yes                    ; no                      ; 98304 ; 32768                       ; 3                           ; 32768                       ; 3                           ; 98304               ; 12   ; None ; M9K_X15_Y5_N0, M9K_X15_Y6_N0, M9K_X27_Y6_N0, M9K_X27_Y2_N0, M9K_X15_Y2_N0, M9K_X15_Y1_N0, M9K_X15_Y4_N0, M9K_X15_Y7_N0, M9K_X15_Y3_N0, M9K_X15_Y9_N0, M9K_X27_Y4_N0, M9K_X15_Y8_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
 +-------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
 
-+------------------------------------------------+
-; Routing Usage Summary                          ;
-+-----------------------+------------------------+
-; Routing Resource Type ; Usage                  ;
-+-----------------------+------------------------+
-; Block interconnects   ; 467 / 32,401 ( 1 % )   ;
-; C16 interconnects     ; 10 / 1,326 ( < 1 % )   ;
-; C4 interconnects      ; 198 / 21,816 ( < 1 % ) ;
-; Direct links          ; 43 / 32,401 ( < 1 % )  ;
-; Global clocks         ; 3 / 10 ( 30 % )        ;
-; Local interconnects   ; 63 / 10,320 ( < 1 % )  ;
-; R24 interconnects     ; 20 / 1,289 ( 2 % )     ;
-; R4 interconnects      ; 321 / 28,186 ( 1 % )   ;
-+-----------------------+------------------------+
++-----------------------------------------------+
+; Routing Usage Summary                         ;
++-----------------------+-----------------------+
+; Routing Resource Type ; Usage                 ;
++-----------------------+-----------------------+
+; Block interconnects   ; 476 / 32,401 ( 1 % )  ;
+; C16 interconnects     ; 12 / 1,326 ( < 1 % )  ;
+; C4 interconnects      ; 255 / 21,816 ( 1 % )  ;
+; Direct links          ; 31 / 32,401 ( < 1 % ) ;
+; Global clocks         ; 3 / 10 ( 30 % )       ;
+; Local interconnects   ; 68 / 10,320 ( < 1 % ) ;
+; R24 interconnects     ; 21 / 1,289 ( 2 % )    ;
+; R4 interconnects      ; 297 / 28,186 ( 1 % )  ;
++-----------------------+-----------------------+
 
 
-+----------------------------------------------------------------------------+
-; LAB Logic Elements                                                         ;
-+---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 10.27) ; Number of LABs  (Total = 11) ;
-+---------------------------------------------+------------------------------+
-; 1                                           ; 1                            ;
-; 2                                           ; 2                            ;
-; 3                                           ; 0                            ;
-; 4                                           ; 0                            ;
-; 5                                           ; 0                            ;
-; 6                                           ; 1                            ;
-; 7                                           ; 0                            ;
-; 8                                           ; 0                            ;
-; 9                                           ; 1                            ;
-; 10                                          ; 0                            ;
-; 11                                          ; 0                            ;
-; 12                                          ; 0                            ;
-; 13                                          ; 1                            ;
-; 14                                          ; 0                            ;
-; 15                                          ; 0                            ;
-; 16                                          ; 5                            ;
-+---------------------------------------------+------------------------------+
++---------------------------------------------------------------------------+
+; LAB Logic Elements                                                        ;
++--------------------------------------------+------------------------------+
+; Number of Logic Elements  (Average = 7.60) ; Number of LABs  (Total = 15) ;
++--------------------------------------------+------------------------------+
+; 1                                          ; 6                            ;
+; 2                                          ; 1                            ;
+; 3                                          ; 0                            ;
+; 4                                          ; 0                            ;
+; 5                                          ; 0                            ;
+; 6                                          ; 0                            ;
+; 7                                          ; 0                            ;
+; 8                                          ; 1                            ;
+; 9                                          ; 1                            ;
+; 10                                         ; 0                            ;
+; 11                                         ; 0                            ;
+; 12                                         ; 0                            ;
+; 13                                         ; 1                            ;
+; 14                                         ; 2                            ;
+; 15                                         ; 0                            ;
+; 16                                         ; 3                            ;
++--------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.09) ; Number of LABs  (Total = 11) ;
+; LAB-wide Signals  (Average = 0.73) ; Number of LABs  (Total = 15) ;
 +------------------------------------+------------------------------+
 ; 1 Clock                            ; 7                            ;
 ; 1 Clock enable                     ; 3                            ;
-; 1 Sync. load                       ; 2                            ;
+; 1 Sync. load                       ; 1                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 14.64) ; Number of LABs  (Total = 11) ;
+; Number of Signals Sourced  (Average = 10.87) ; Number of LABs  (Total = 15) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 1                            ;
-; 2                                            ; 1                            ;
+; 1                                            ; 6                            ;
+; 2                                            ; 0                            ;
 ; 3                                            ; 0                            ;
 ; 4                                            ; 1                            ;
 ; 5                                            ; 0                            ;
-; 6                                            ; 1                            ;
+; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 1                            ;
-; 10                                           ; 0                            ;
+; 10                                           ; 1                            ;
 ; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
-; 14                                           ; 0                            ;
+; 14                                           ; 1                            ;
 ; 15                                           ; 0                            ;
 ; 16                                           ; 1                            ;
-; 17                                           ; 1                            ;
+; 17                                           ; 0                            ;
 ; 18                                           ; 0                            ;
-; 19                                           ; 0                            ;
+; 19                                           ; 1                            ;
 ; 20                                           ; 0                            ;
-; 21                                           ; 1                            ;
+; 21                                           ; 0                            ;
 ; 22                                           ; 0                            ;
 ; 23                                           ; 0                            ;
 ; 24                                           ; 0                            ;
@@ -959,24 +959,24 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.55) ; Number of LABs  (Total = 11) ;
+; Number of Signals Sourced Out  (Average = 5.40) ; Number of LABs  (Total = 15) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 1                            ;
-; 2                                               ; 2                            ;
+; 1                                               ; 6                            ;
+; 2                                               ; 1                            ;
 ; 3                                               ; 2                            ;
 ; 4                                               ; 0                            ;
 ; 5                                               ; 0                            ;
 ; 6                                               ; 0                            ;
-; 7                                               ; 0                            ;
+; 7                                               ; 1                            ;
 ; 8                                               ; 0                            ;
-; 9                                               ; 2                            ;
+; 9                                               ; 1                            ;
 ; 10                                              ; 1                            ;
-; 11                                              ; 0                            ;
+; 11                                              ; 1                            ;
 ; 12                                              ; 0                            ;
-; 13                                              ; 1                            ;
-; 14                                              ; 0                            ;
-; 15                                              ; 1                            ;
+; 13                                              ; 0                            ;
+; 14                                              ; 1                            ;
+; 15                                              ; 0                            ;
 ; 16                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
@@ -984,13 +984,13 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 8.55) ; Number of LABs  (Total = 11) ;
+; Number of Distinct Inputs  (Average = 6.60) ; Number of LABs  (Total = 15) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
-; 1                                           ; 0                            ;
-; 2                                           ; 0                            ;
-; 3                                           ; 0                            ;
-; 4                                           ; 4                            ;
+; 1                                           ; 1                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 2                            ;
+; 4                                           ; 3                            ;
 ; 5                                           ; 1                            ;
 ; 6                                           ; 1                            ;
 ; 7                                           ; 0                            ;
@@ -1144,35 +1144,29 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; pclk            ; pclk                 ; 3.7               ;
+; pclk            ; pclk                 ; 2.5               ;
 ; I/O             ; pclk                 ; 1.4               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                                                                  ;
-+--------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------+
-; Source Register                ; Destination Register                                                                                      ; Delay Added in ns ;
-+--------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------+
-; pclk                           ; FSM_data:datos|mem_px_data[1]                                                                             ; 1.402             ;
-; FSM_data:datos|mem_px_addr[1]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11~porta_address_reg0 ; 0.447             ;
-; FSM_data:datos|mem_px_data[2]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11~porta_datain_reg0  ; 0.426             ;
-; FSM_data:datos|mem_px_addr[2]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11~porta_address_reg0 ; 0.415             ;
-; FSM_data:datos|mem_px_addr[3]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11~porta_address_reg0 ; 0.399             ;
-; FSM_data:datos|mem_px_addr[0]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a5~porta_address_reg0  ; 0.173             ;
-; FSM_data:datos|mem_px_addr[4]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a5~porta_address_reg0  ; 0.162             ;
-; FSM_data:datos|mem_px_addr[12] ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11~porta_address_reg0 ; 0.118             ;
-; FSM_data:datos|mem_px_addr[7]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11~porta_address_reg0 ; 0.116             ;
-; FSM_data:datos|mem_px_addr[8]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11~porta_address_reg0 ; 0.109             ;
-; FSM_data:datos|mem_px_addr[10] ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11~porta_address_reg0 ; 0.102             ;
-; FSM_data:datos|mem_px_addr[5]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11~porta_address_reg0 ; 0.101             ;
-; FSM_data:datos|mem_px_addr[11] ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11~porta_address_reg0 ; 0.092             ;
-; FSM_data:datos|mem_px_addr[6]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11~porta_address_reg0 ; 0.086             ;
-; FSM_data:datos|mem_px_addr[9]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a11~porta_address_reg0 ; 0.083             ;
-+--------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 15 path(s) that have the largest delay added for hold.
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                                 ;
++--------------------------------+----------------------------------------------------------------------------------------------------------+-------------------+
+; Source Register                ; Destination Register                                                                                     ; Delay Added in ns ;
++--------------------------------+----------------------------------------------------------------------------------------------------------+-------------------+
+; pclk                           ; FSM_data:datos|mem_px_data[1]                                                                            ; 1.351             ;
+; FSM_data:datos|mem_px_addr[8]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a7~porta_address_reg0 ; 0.318             ;
+; FSM_data:datos|mem_px_addr[7]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a7~porta_address_reg0 ; 0.318             ;
+; FSM_data:datos|mem_px_addr[10] ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a7~porta_address_reg0 ; 0.317             ;
+; FSM_data:datos|mem_px_addr[9]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a7~porta_address_reg0 ; 0.317             ;
+; FSM_data:datos|mem_px_addr[6]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a7~porta_address_reg0 ; 0.317             ;
+; FSM_data:datos|mem_px_addr[5]  ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a7~porta_address_reg0 ; 0.317             ;
+; FSM_data:datos|mem_px_addr[11] ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a7~porta_address_reg0 ; 0.317             ;
+; FSM_data:datos|mem_px_addr[12] ; buffer_ram_dp:DP_RAM|altsyncram:ram_rtl_0|altsyncram_s9d1:auto_generated|ram_block1a7~porta_address_reg0 ; 0.317             ;
++--------------------------------+----------------------------------------------------------------------------------------------------------+-------------------+
+Note: This table only shows the top 9 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1228,7 +1222,7 @@ Info (176353): Automatically promoted node clk50to24:clk24|altpll:altpll_compone
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G3
 Info (176353): Automatically promoted node clk50to31:clk31|altpll:altpll_component|clk50to31_altpll1:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_2) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/clk50to31_altpll1.v Line: 78
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G8
-Info (176353): Automatically promoted node clk~input (placed in PIN 23 (CLK1, DIFFCLK_0n)) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 22
+Info (176353): Automatically promoted node clk~input (placed in PIN 23 (CLK1, DIFFCLK_0n)) File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/scr/test_VGA.v Line: 21
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -1250,7 +1244,7 @@ Warning (15058): PLL "clk50to24:clk24|altpll:altpll_component|clk50to24_altpll:a
 Warning (15064): PLL "clk50to24:clk24|altpll:altpll_component|clk50to24_altpll:auto_generated|pll1" output port clk[0] feeds output pin "xclk~output" via non-dedicated routing -- jitter performance depends on switching rate of other design elements. Use PLL dedicated clock outputs to ensure jitter performance File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/clk50to24_altpll.v Line: 44
 Warning (15055): PLL "clk50to31:clk31|altpll:altpll_component|clk50to31_altpll1:auto_generated|pll1" input clock inclk[0] is not fully compensated and may have reduced jitter performance because it is fed by a non-dedicated input File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/clk50to31_altpll1.v Line: 44
     Info (15024): Input port INCLK[0] of node "clk50to31:clk31|altpll:altpll_component|clk50to31_altpll1:auto_generated|pll1" is driven by clk~inputclkctrl which is OUTCLK output port of Clock control block type node clk~inputclkctrl File: E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/db/clk50to31_altpll1.v Line: 44
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1259,7 +1253,7 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 1% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X11_Y0 to location X22_Y11
+    Info (170196): Router estimated peak interconnect usage is 4% of the available device resources in the region that extends from location X11_Y0 to location X22_Y11
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
@@ -1268,12 +1262,12 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Info (144001): Generated suppressed messages file E:/Users/tisam.SUPER-PC/Documents/GitHub/Proyecto-Digital-I/quartus/output_files/test_VGA.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 5625 megabytes
-    Info: Processing ended: Sun Aug 08 09:52:31 2021
-    Info: Elapsed time: 00:00:07
+    Info: Peak virtual memory: 5630 megabytes
+    Info: Processing ended: Sun Aug 08 10:05:11 2021
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:06
 
 
