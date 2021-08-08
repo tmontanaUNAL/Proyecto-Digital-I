@@ -274,7 +274,9 @@ FSM_data  datos(
 endmodule
 ```
 ### buffer_ram_dp
-Este modulo se encarga de guardar los datos de los pixeles enviados por el modulo FSM_data (pixeles provenientes de la cámara luego de procesarlos), para ello se vale del reloj que envia la camara para saber cuando puede escribir y cuando no. Por otro lado se encarag de leer los datos guardados en la ram, para ello se usa el reloj de la VGA (31.5 MHz) y la direccion dada por el test_VGA segun sea la resolucion de la camara y el VGA (escalamiento de la imagen).
+Este modulo se encarga de guardar los datos de los pixeles enviados por el modulo FSM_data (pixeles provenientes de la cámara luego de convertirlos de RGB444 a RGB111), para ello se vale del reloj que envia la camara para saber cuando puede escribir y cuando no. Por otro lado se encarga de leer los datos guardados en la ram, para ello se usa el reloj de la VGA (31.5 MHz) y la direccion dada por el test_VGA segun sea la resolucion de la camara y el VGA (escalamiento de la imagen).
+
+Antes de enviar los datos de la ram hacia el modulo del VGADriver se procesan segun el filtro seleccionado. Se tienen 5 filtros, colores normales, inversor de colores, rojo intenso, verde intenso y azul intenso.
 ```verilog
 module buffer_ram_dp #( 
 	parameter AW = 15, // Cantidad de bits  de la dirección 
