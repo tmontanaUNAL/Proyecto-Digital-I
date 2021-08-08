@@ -434,11 +434,11 @@ Es de notar que un pixel lo recibe en 2 pulsos de PCLK debido a que la camara so
 
 Para el funcionamiento de este modulo se uso una maquina de estado finito, el siguiente es el diagrama de flujo:
 
-![Diagrama en blanco](https://user-images.githubusercontent.com/80001669/127943928-d61f879d-2907-4582-af90-1c705169d446.png)
+![Diagrama en blanco](https://user-images.githubusercontent.com/80001669/128637146-91e68b82-bdd1-4ec0-ad5b-f6eb924f8279.png)
 
 Y el diagrama de estados queda:
 
-![image](https://user-images.githubusercontent.com/80001669/127943799-a0db8879-5577-4575-9c1a-4c5c34d0d902.png)
+![image](https://user-images.githubusercontent.com/80001669/128637144-94e6c849-cfad-43a8-8786-3954db7a28e3.png)
 
 El código en verilog es:
 ```verilog
@@ -485,18 +485,17 @@ always @(posedge pclk) begin
 			mem_px_addr<=mem_px_addr+1; //Aumenta una posición en memoria
 			mem_px_data[2]<=(data[3:0]<8) ? (1'b0):(1'b1); //Se escribe el rojo convirtiendo de RGB444 a RGB111
 			end
-			if(i==1)begin
+			else begin
 			mem_px_data[1]<=(data[7:4]<8) ? (1'b0):(1'b1); //Se escribe el verde convirtiendo de RGB444 a RGB111
 			mem_px_data[0]<=(data[3:0]<8) ? (1'b0):(1'b1); //Se escribe el azul convirtiendo de RGB444 a RGB111
 			px_wr<=1;
-
 			end
 			i<=~i;		
 			end
 		end
 	endcase
 end
-
+	
 
 endmodule
 ```
