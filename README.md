@@ -504,3 +504,8 @@ end
 
 endmodule
 ```
+### Video de las barras de colores proporcionadas por la camara
+
+https://user-images.githubusercontent.com/80001669/129116875-a23e3663-736a-4217-a41b-6390aeea4ab3.mp4
+
+
