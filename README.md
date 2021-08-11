@@ -1,5 +1,10 @@
 # Proyecto-Digital-I
 Proyecto curso Digital I, camara VGA
+## Diagrama de bloques
+A continuacion vemos un diagrama de bloques mostrando el la interconexión de los distintos modulos, asi como el flujo de datos desde y hacia disposistivos externos (pantalla, cámara, switches y arduino).
+
+![image](https://user-images.githubusercontent.com/80001669/126925228-673c0f92-5e86-4c93-a49d-dac757951ee3.png)
+
 ## Funcionamiento de Modulo OV7670
 El módulo OV7670 es un  sensor de imagen capaz de tomar hasta un máximo de 30 fotogramas por segundo , con una  resolución de 640x480 pixeles y voltaje de operación 3.3V. Para este proyecto se configuro los registros internos de este módulo mediante el uso  del puerto I2C de un Arduino mega 2560(Pin 20  y Pin 21 ). Esta configuración nos permitió modificar el formato de imagen que nos envía la cámara , que  posteriormente será procesado por la FPGA.
 
@@ -499,7 +504,3 @@ end
 
 endmodule
 ```
-## Diagrama de bloques
-A continuacion vemos un diagrama de bloques mostrando el la interconexión de los distintos modulos, asi como el flujo de datos desde y hacia disposistivos externos (pantalla, cámara, switches y arduino).
-
-![image](https://user-images.githubusercontent.com/80001669/126925228-673c0f92-5e86-4c93-a49d-dac757951ee3.png)
