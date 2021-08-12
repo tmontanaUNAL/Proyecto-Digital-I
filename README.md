@@ -525,6 +525,6 @@ https://user-images.githubusercontent.com/80001669/129119785-7247010a-f5f6-4e57-
 Vemos que los LEDs mas brillantes llegan a presentar anormalidades en la imagen, y los menos brillantes presentan una imagen estable. Esto se puede deber a que el sensor de la camara se satura agregando colores que no estan presentes.
 
 
-Imagen del montaje del proyecto 
+### Imagen del montaje del proyecto 
 ![WhatsApp Image 2021-08-11 at 7 31 29 PM](https://user-images.githubusercontent.com/80170093/129120648-23636530-2763-4255-9c15-bed714bb9a6b.jpeg)
 
