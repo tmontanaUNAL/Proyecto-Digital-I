@@ -504,8 +504,22 @@ end
 
 endmodule
 ```
-### Video de las barras de colores proporcionadas por la camara
+### Vídeo de las barras de colores proporcionadas por la camara
 
 https://user-images.githubusercontent.com/80001669/129116875-a23e3663-736a-4217-a41b-6390aeea4ab3.mp4
 
+### Vídeos prueba modo imagen con LEDs de colores
 
+https://user-images.githubusercontent.com/80001669/129119579-3b285602-dd3f-4fad-83e5-d13b3ff492c2.mp4
+
+https://user-images.githubusercontent.com/80001669/129119606-076393dc-1d3f-4262-a960-bbb8c8175d11.mp4
+
+https://user-images.githubusercontent.com/80001669/129119638-13467dda-d344-45c8-9218-f3172b7e210e.mp4
+
+https://user-images.githubusercontent.com/80001669/129119751-4c2e704e-160d-4689-aad3-65ecd8d6b2ae.mp4
+
+https://user-images.githubusercontent.com/80001669/129119878-55e24451-71b8-4b32-b1de-318a5705221a.mp4
+
+https://user-images.githubusercontent.com/80001669/129119785-7247010a-f5f6-4e57-acaf-2bbec5f10b0c.mp4
+
+Vemos que los LEDs mas brillantes llegan a presentar anormalidades en la imagen, y los menos brillantes presentan una imagen estable. Esto se puede deber a que el sensor de la camara se satura agregando colores que no estan presentes.
