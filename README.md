@@ -73,7 +73,7 @@ como muestra la anterior tabla , dado que se tiene que dividir entre 4 el PCLK (
 
 ![image](https://user-images.githubusercontent.com/80170093/128089954-2ecf45c3-f0f7-4979-bf1b-004d42da8d57.png)
 
-Como se debe dividir entre 4 la escala inicial , entonces quiere decir que cada muestra  horizontal hacia  a bajo equivale a 4  muestras del reloj original , para configurar la representación hacemos que los 2 primeros bits menos significativos del byte sean 1 y 0 , para las muestras verticales se configura de la misma manera haciendo que el bits[5:4] sean 1 y 0 .Es así como el factor de escala es configurada manualmente a partir del número binario 00100010 que en hexadecimal es 34 .
+Como se debe dividir entre 4 la escala inicial , entonces quiere decir que cada muestra  horizontal hacia  a bajo equivale a 4  muestras del reloj original , para configurar la representación hacemos que los 2 primeros bits menos significativos del byte sean 1 y 0 , para las muestras verticales se configura de la misma manera haciendo que el bits[5:4] sean 1 y 0 .Es así como el factor de escala es configurada manualmente a partir del número binario 00100010 que en hexadecimal es 22 .
 
  OV7670_write(0x72,0x22);
  
